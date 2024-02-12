@@ -1,0 +1,22 @@
+{
+    "Welcome_Back" : "مرحبًا بعودتك",
+    "Sign_In_With_Your_Mail_And_Password" : "تسجيل الدخول بواسطة البريد الإلكتروني وكلمة المرور",
+    "Forgot_Password" : "هل نسيت كلمة المرور",
+    "Sign_In" : "تسجيل الدخول",
+    "Create_Account" : "إنشاء حساب",
+    "Mail" : "البريد الإلكتروني",
+    "Password" :"كلمة المرور",
+    "Confrim_Password" :"تأكيد كلمة المرور",
+    "Welcom_To_Commuter" : "أهلاً بك في Commuter",
+    "Name" : "الاسم" ,
+    "Phone" : "الهاتف",
+    "Search" : "بحث",
+    "Phone_Verification" :"التحقق من الهاتف",
+    "Enter_OTP_Code_Here" : "أدخل رمز OTP هنا",
+    "Seconds_Left" : "ثواني متبقية",
+    "Resend_OTP_Code" : "إعادة إرسال رمز OTP",
+    "ar" : "العربية",
+    "en" : "English",
+    "Already_Have_An_Account" : "لدي حساب بالفعل"
+
+}
