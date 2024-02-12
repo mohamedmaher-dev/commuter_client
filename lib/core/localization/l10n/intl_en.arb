@@ -1,0 +1,22 @@
+{
+    "Welcome_Back" : "Welcome Back",
+    "Sign_In_With_Your_Mail_And_Password" : "Sign In With Your Mail And Password",
+    "Forgot_Password" : "Forgot Password",
+    "Sign_In" : "Sign In",
+    "Create_Account" : "Create Account",
+    "Mail" : "Mail",
+    "Password" :"Password",
+    "Confrim_Password" :"Confirm Password",
+    "Welcom_To_Commuter" : "Welcom To Commuter",
+    "Name" : "Name" ,
+    "Phone" : "Phone",
+    "Search" : "Search",
+    "Phone_Verification" :"Phone Verification",
+    "Enter_OTP_Code_Here" : "Enter OTP Code Here",
+    "Seconds_Left" : "Seconds Left",
+    "Resend_OTP_Code" : "Resend OTP Code",
+    "ar" : "العربية",
+    "en" : "English",
+    "Already_Have_An_Account" : "Already Have An Account"
+    
+}
