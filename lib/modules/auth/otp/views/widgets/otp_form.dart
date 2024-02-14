@@ -24,7 +24,7 @@ class _OtpForm extends StatelessWidget {
           ),
           submittedPinTheme: PinTheme(
             decoration: BoxDecoration(
-              color: ColorManger.colorScheme.primaryContainer,
+              color: ColorManger.primaryContainer,
               borderRadius: BorderRadius.circular(
                 10.r,
               ),

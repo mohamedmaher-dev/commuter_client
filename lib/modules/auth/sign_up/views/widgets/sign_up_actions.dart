@@ -5,39 +5,22 @@ class _SignUpActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Language language = di<Language>();
-
+    Language language = Language.of(context);
     return Column(
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: FilledButton(
-                onPressed: () {},
-                child: Text(
-                  language.Create_Account,
-                ),
-              ),
-            ),
-          ],
+        FilledButton(
+          onPressed: () {},
+          child: Text(
+            language.Create_Account,
+          ),
         ),
         SizedBox(height: 10.h),
-        Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(
-                child: SvgPicture.asset(
-                  AssetsManger.googleIcon,
-                  height: 30.h,
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        ),
+        GoogleBTN(onPressed: () {}, language: language),
         SizedBox(height: 10.h),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            AppRouter.push(context: context, page: Pages.otp);
+          },
           child: Text(
             language.Already_Have_An_Account,
           ),

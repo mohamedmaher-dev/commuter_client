@@ -1,11 +1,10 @@
-import 'package:commuter_client/core/themes/app_theme.dart';
+import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
+import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../../core/di/di.dart';
 import '../../../../core/localization/generated/l10n.dart';
-import '../../../../core/themes/text_styles.dart';
 part 'widgets/otp_intro_msg.dart';
 part 'widgets/otp_form.dart';
 part 'widgets/otp_action.dart';

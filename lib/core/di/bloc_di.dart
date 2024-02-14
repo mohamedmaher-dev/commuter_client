@@ -1,12 +1,17 @@
 part of 'di.dart';
 
 _blocDiInit() {
-  di.registerLazySingleton<MyBlocObserver>(
-    () => MyBlocObserver(
-      mainBloc: di<MainBloc>(),
-      dPrint: di<DebugPrint>(),
+  di.registerLazySingleton<MainBloc>(
+    () => MainBloc(
+      appThemeBloc: di<AppThemeBloc>(),
+      localizationBloc: di<LocalizationBloc>(),
     ),
   );
-  di.registerLazySingleton<MainBloc>(() => MainBloc());
-  di.registerFactory<SignInBloc>(() => SignInBloc());
+  di.registerLazySingleton(() => LocalizationBloc());
+  di.registerLazySingleton(() => AppThemeBloc());
+  di.registerFactory<SignInBloc>(
+    () => SignInBloc(
+      mainBloc: di<MainBloc>(),
+    ),
+  );
 }

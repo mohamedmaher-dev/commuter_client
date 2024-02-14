@@ -1,57 +1,80 @@
-import 'package:commuter_client/core/di/di.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of 'controller/app_theme_bloc.dart';
 
-import '../bloc/main_bloc.dart';
-part 'font_manger.dart';
-part 'color_manger.dart';
-
-class AppTheme {
-  AppTheme._();
-  static String get fontFamily => FontManger.font;
-  static bool get useM3 => true;
-  static ThemeMode get themeMode => ThemeMode.dark;
-  static bool get isLight => themeMode == ThemeMode.light;
-  static ThemeData get theme => ThemeData(
+class _AppTheme {
+  ThemeData get theme => ThemeData(
         colorScheme: ColorManger.colorScheme,
-        fontFamily: AppTheme.fontFamily,
-        useMaterial3: AppTheme.useM3,
-        filledButtonTheme: FilledButtonThemeData(
-          style: ButtonStyle(
-            minimumSize: MaterialStatePropertyAll(
-              Size(
-                double.infinity,
-                40.h,
-              ),
-            ),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-            ),
-          ),
-        ),
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: ButtonStyle(
-            minimumSize: MaterialStatePropertyAll(
-              Size(
-                double.infinity,
-                40.h,
-              ),
-            ),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-            ),
-          ),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide.none,
-          ),
-          filled: true,
-        ),
+        fontFamily: 'Changa',
+        filledButtonTheme: _filledButtonThemeData,
+        outlinedButtonTheme: _outlinedButtonThemeData,
+        elevatedButtonTheme: _elevatedButtonThemeData,
+        textButtonTheme: _textButtonThemeData,
+        inputDecorationTheme: _inputDecorationTheme,
+        pageTransitionsTheme: _pageTransitionsTheme,
       );
+  final FilledButtonThemeData _filledButtonThemeData = FilledButtonThemeData(
+    style: ButtonStyle(
+      minimumSize: MaterialStatePropertyAll(
+        Size(
+          double.infinity,
+          40.h,
+        ),
+      ),
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+    ),
+  );
+
+  final OutlinedButtonThemeData _outlinedButtonThemeData =
+      OutlinedButtonThemeData(
+    style: ButtonStyle(
+      minimumSize: MaterialStatePropertyAll(
+        Size(
+          double.infinity,
+          40.h,
+        ),
+      ),
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+    ),
+  );
+
+  final ElevatedButtonThemeData _elevatedButtonThemeData =
+      ElevatedButtonThemeData(
+    style: ButtonStyle(
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+    ),
+  );
+  final TextButtonThemeData _textButtonThemeData = TextButtonThemeData(
+    style: ButtonStyle(
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+    ),
+  );
+
+  final InputDecorationTheme _inputDecorationTheme = InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.r),
+      borderSide: BorderSide.none,
+    ),
+    filled: true,
+  );
+
+  final PageTransitionsTheme _pageTransitionsTheme = const PageTransitionsTheme(
+    builders: {
+      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+    },
+  );
 }

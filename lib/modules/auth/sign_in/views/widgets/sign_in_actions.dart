@@ -1,49 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+part of '../sign_in_view.dart';
 
-import '../../../../../core/di/di.dart';
-import '../../../../../core/localization/generated/l10n.dart';
-import '../../../../../core/utils/assets_manger.dart';
-
-class SignInActions extends StatelessWidget {
-  const SignInActions({super.key});
-
+class _SignInActions extends StatelessWidget {
+  const _SignInActions();
   @override
   Widget build(BuildContext context) {
-    final Language language = di<Language>();
-
+    final Language language = Language.of(context);
     return Column(
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: FilledButton(
-                onPressed: () {},
-                child: Text(
-                  language.Sign_In,
-                ),
-              ),
-            ),
-          ],
+        FilledButton(
+          onPressed: () {},
+          child: Text(
+            language.Sign_In,
+          ),
         ),
         SizedBox(height: 10.h),
-        Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(
-                child: SvgPicture.asset(
-                  AssetsManger.googleIcon,
-                  height: 30.h,
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        ),
+        GoogleBTN(onPressed: () {}, language: language),
         SizedBox(height: 10.h),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            AppRouter.push(context: context, page: Pages.signUp);
+          },
           child: Text(
             language.Already_Have_An_Account,
           ),

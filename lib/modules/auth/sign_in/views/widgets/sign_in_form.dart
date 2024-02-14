@@ -1,16 +1,10 @@
-import 'package:commuter_client/core/di/di.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of '../sign_in_view.dart';
 
-import '../../../../../core/localization/generated/l10n.dart';
-
-class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
-
+class _SignInForm extends StatelessWidget {
+  const _SignInForm();
   @override
   Widget build(BuildContext context) {
-    final Language language = di<Language>();
-
+    final Language language = Language.of(context);
     return Column(
       children: [
         TextFormField(
@@ -34,7 +28,12 @@ class SignInForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => const ForgotPassDialog(),
+                );
+              },
               child: Text(
                 language.Forgot_Password,
               ),

@@ -210,21 +210,11 @@ class Language {
     );
   }
 
-  /// `العربية`
-  String get ar {
-    return Intl.message(
-      'العربية',
-      name: 'ar',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `English`
-  String get en {
+  String get Language_Name {
     return Intl.message(
       'English',
-      name: 'en',
+      name: 'Language_Name',
       desc: '',
       args: [],
     );
@@ -235,6 +225,46 @@ class Language {
     return Intl.message(
       'Already Have An Account',
       name: 'Already_Have_An_Account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commuter`
+  String get App_Name {
+    return Intl.message(
+      'Commuter',
+      name: 'App_Name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign With Google`
+  String get Sign_In_With_Google {
+    return Intl.message(
+      'Sign With Google',
+      name: 'Sign_In_With_Google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Input Your Mail`
+  String get Please_Input_Your_Mail {
+    return Intl.message(
+      'Please Input Your Mail',
+      name: 'Please_Input_Your_Mail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get Confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'Confirm',
       desc: '',
       args: [],
     );

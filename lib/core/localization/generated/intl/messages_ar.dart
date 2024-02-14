@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Already_Have_An_Account":
             MessageLookupByLibrary.simpleMessage("لدي حساب بالفعل"),
+        "App_Name": MessageLookupByLibrary.simpleMessage("كوميوتر"),
+        "Confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "Confrim_Password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "Create_Account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -31,24 +33,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل رمز OTP هنا"),
         "Forgot_Password":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور"),
+        "Language_Name": MessageLookupByLibrary.simpleMessage("العربية"),
         "Mail": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "Name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "Phone": MessageLookupByLibrary.simpleMessage("الهاتف"),
         "Phone_Verification":
             MessageLookupByLibrary.simpleMessage("التحقق من الهاتف"),
+        "Please_Input_Your_Mail": MessageLookupByLibrary.simpleMessage(
+            "برجاء كتابة البريد الألكتروني"),
         "Resend_OTP_Code":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال رمز OTP"),
         "Search": MessageLookupByLibrary.simpleMessage("بحث"),
         "Seconds_Left": MessageLookupByLibrary.simpleMessage("ثواني متبقية"),
         "Sign_In": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "Sign_In_With_Google":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "Sign_In_With_Your_Mail_And_Password":
             MessageLookupByLibrary.simpleMessage(
                 "تسجيل الدخول بواسطة البريد الإلكتروني وكلمة المرور"),
         "Welcom_To_Commuter":
             MessageLookupByLibrary.simpleMessage("أهلاً بك في Commuter"),
-        "Welcome_Back": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),
-        "ar": MessageLookupByLibrary.simpleMessage("العربية"),
-        "en": MessageLookupByLibrary.simpleMessage("English")
+        "Welcome_Back": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك")
       };
 }

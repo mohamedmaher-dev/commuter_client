@@ -5,7 +5,7 @@ class _OtpActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Language language = di<Language>();
+    Language language = Language.of(context);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

@@ -15,8 +15,11 @@
     "Enter_OTP_Code_Here" : "أدخل رمز OTP هنا",
     "Seconds_Left" : "ثواني متبقية",
     "Resend_OTP_Code" : "إعادة إرسال رمز OTP",
-    "ar" : "العربية",
-    "en" : "English",
-    "Already_Have_An_Account" : "لدي حساب بالفعل"
+    "Language_Name" : "العربية",
+    "Already_Have_An_Account" : "لدي حساب بالفعل",
+    "App_Name" : "كوميوتر",
+    "Sign_In_With_Google" : "تسجيل بواسطة جوجل",
+    "Please_Input_Your_Mail" : "برجاء كتابة البريد الألكتروني",
+    "Confirm" : "تأكيد"
 
 }

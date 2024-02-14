@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'main_bloc.dart';
+part of 'app_theme_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,25 +15,22 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$MainEvent {
+mixin _$AppThemeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() changeLan,
     required TResult Function() changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? changeLan,
     TResult? Function()? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? changeLan,
     TResult Function()? changeTheme,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$MainEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
     required TResult Function(_ChangeTheme value) changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
     TResult? Function(_ChangeTheme value)? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
     TResult Function(_ChangeTheme value)? changeTheme,
     required TResult orElse(),
   }) =>
@@ -63,15 +57,16 @@ mixin _$MainEvent {
 }
 
 /// @nodoc
-abstract class $MainEventCopyWith<$Res> {
-  factory $MainEventCopyWith(MainEvent value, $Res Function(MainEvent) then) =
-      _$MainEventCopyWithImpl<$Res, MainEvent>;
+abstract class $AppThemeEventCopyWith<$Res> {
+  factory $AppThemeEventCopyWith(
+          AppThemeEvent value, $Res Function(AppThemeEvent) then) =
+      _$AppThemeEventCopyWithImpl<$Res, AppThemeEvent>;
 }
 
 /// @nodoc
-class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
-    implements $MainEventCopyWith<$Res> {
-  _$MainEventCopyWithImpl(this._value, this._then);
+class _$AppThemeEventCopyWithImpl<$Res, $Val extends AppThemeEvent>
+    implements $AppThemeEventCopyWith<$Res> {
+  _$AppThemeEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AppThemeEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -102,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'MainEvent.started()';
+    return 'AppThemeEvent.started()';
   }
 
   @override
@@ -118,7 +113,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() changeLan,
     required TResult Function() changeTheme,
   }) {
     return started();
@@ -128,7 +122,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? changeLan,
     TResult? Function()? changeTheme,
   }) {
     return started?.call();
@@ -138,7 +131,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? changeLan,
     TResult Function()? changeTheme,
     required TResult orElse(),
   }) {
@@ -152,7 +144,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
     required TResult Function(_ChangeTheme value) changeTheme,
   }) {
     return started(this);
@@ -162,7 +153,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
     TResult? Function(_ChangeTheme value)? changeTheme,
   }) {
     return started?.call(this);
@@ -172,7 +162,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
     TResult Function(_ChangeTheme value)? changeTheme,
     required TResult orElse(),
   }) {
@@ -183,116 +172,8 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements MainEvent {
+abstract class _Started implements AppThemeEvent {
   const factory _Started() = _$StartedImpl;
-}
-
-/// @nodoc
-abstract class _$$ChangeLanImplCopyWith<$Res> {
-  factory _$$ChangeLanImplCopyWith(
-          _$ChangeLanImpl value, $Res Function(_$ChangeLanImpl) then) =
-      __$$ChangeLanImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangeLanImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeLanImpl>
-    implements _$$ChangeLanImplCopyWith<$Res> {
-  __$$ChangeLanImplCopyWithImpl(
-      _$ChangeLanImpl _value, $Res Function(_$ChangeLanImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ChangeLanImpl implements _ChangeLan {
-  const _$ChangeLanImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.changeLan()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeLanImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() changeLan,
-    required TResult Function() changeTheme,
-  }) {
-    return changeLan();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? changeLan,
-    TResult? Function()? changeTheme,
-  }) {
-    return changeLan?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? changeLan,
-    TResult Function()? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeLan != null) {
-      return changeLan();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
-    required TResult Function(_ChangeTheme value) changeTheme,
-  }) {
-    return changeLan(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
-    TResult? Function(_ChangeTheme value)? changeTheme,
-  }) {
-    return changeLan?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeLan != null) {
-      return changeLan(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeLan implements MainEvent {
-  const factory _ChangeLan() = _$ChangeLanImpl;
 }
 
 /// @nodoc
@@ -304,7 +185,7 @@ abstract class _$$ChangeThemeImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ChangeThemeImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeThemeImpl>
+    extends _$AppThemeEventCopyWithImpl<$Res, _$ChangeThemeImpl>
     implements _$$ChangeThemeImplCopyWith<$Res> {
   __$$ChangeThemeImplCopyWithImpl(
       _$ChangeThemeImpl _value, $Res Function(_$ChangeThemeImpl) _then)
@@ -318,7 +199,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
 
   @override
   String toString() {
-    return 'MainEvent.changeTheme()';
+    return 'AppThemeEvent.changeTheme()';
   }
 
   @override
@@ -334,7 +215,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() changeLan,
     required TResult Function() changeTheme,
   }) {
     return changeTheme();
@@ -344,7 +224,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? changeLan,
     TResult? Function()? changeTheme,
   }) {
     return changeTheme?.call();
@@ -354,7 +233,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? changeLan,
     TResult Function()? changeTheme,
     required TResult orElse(),
   }) {
@@ -368,7 +246,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
     required TResult Function(_ChangeTheme value) changeTheme,
   }) {
     return changeTheme(this);
@@ -378,7 +255,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
     TResult? Function(_ChangeTheme value)? changeTheme,
   }) {
     return changeTheme?.call(this);
@@ -388,7 +264,6 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
     TResult Function(_ChangeTheme value)? changeTheme,
     required TResult orElse(),
   }) {
@@ -399,62 +274,57 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   }
 }
 
-abstract class _ChangeTheme implements MainEvent {
+abstract class _ChangeTheme implements AppThemeEvent {
   const factory _ChangeTheme() = _$ChangeThemeImpl;
 }
 
 /// @nodoc
-mixin _$MainState {
+mixin _$AppThemeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int id) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int id)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int id)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(Refresh value) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(Refresh value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(Refresh value)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MainStateCopyWith<$Res> {
-  factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
-      _$MainStateCopyWithImpl<$Res, MainState>;
+abstract class $AppThemeStateCopyWith<$Res> {
+  factory $AppThemeStateCopyWith(
+          AppThemeState value, $Res Function(AppThemeState) then) =
+      _$AppThemeStateCopyWithImpl<$Res, AppThemeState>;
 }
 
 /// @nodoc
-class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
-    implements $MainStateCopyWith<$Res> {
-  _$MainStateCopyWithImpl(this._value, this._then);
+class _$AppThemeStateCopyWithImpl<$Res, $Val extends AppThemeState>
+    implements $AppThemeStateCopyWith<$Res> {
+  _$AppThemeStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -471,7 +341,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AppThemeStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -485,7 +355,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'MainState.initial()';
+    return 'AppThemeState.initial()';
   }
 
   @override
@@ -501,7 +371,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int id) refresh,
   }) {
     return initial();
   }
@@ -510,7 +379,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int id)? refresh,
   }) {
     return initial?.call();
   }
@@ -519,7 +387,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int id)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -532,7 +399,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(Refresh value) refresh,
   }) {
     return initial(this);
   }
@@ -541,7 +407,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(Refresh value)? refresh,
   }) {
     return initial?.call(this);
   }
@@ -550,7 +415,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(Refresh value)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -560,139 +424,6 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements MainState {
+abstract class _Initial implements AppThemeState {
   const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$RefreshImplCopyWith<$Res> {
-  factory _$$RefreshImplCopyWith(
-          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
-      __$$RefreshImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$$RefreshImplCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$RefreshImpl>
-    implements _$$RefreshImplCopyWith<$Res> {
-  __$$RefreshImplCopyWithImpl(
-      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$RefreshImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RefreshImpl implements Refresh {
-  const _$RefreshImpl({required this.id});
-
-  @override
-  final int id;
-
-  @override
-  String toString() {
-    return 'MainState.refresh(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RefreshImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
-      __$$RefreshImplCopyWithImpl<_$RefreshImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(int id) refresh,
-  }) {
-    return refresh(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(int id)? refresh,
-  }) {
-    return refresh?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(int id)? refresh,
-    required TResult orElse(),
-  }) {
-    if (refresh != null) {
-      return refresh(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Refresh value) refresh,
-  }) {
-    return refresh(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Refresh value)? refresh,
-  }) {
-    return refresh?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Refresh value)? refresh,
-    required TResult orElse(),
-  }) {
-    if (refresh != null) {
-      return refresh(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Refresh implements MainState {
-  const factory Refresh({required final int id}) = _$RefreshImpl;
-
-  int get id;
-  @JsonKey(ignore: true)
-  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

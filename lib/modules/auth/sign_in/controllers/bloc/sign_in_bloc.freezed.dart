@@ -19,32 +19,44 @@ mixin _$SignInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() changeTheme,
+    required TResult Function() changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? changeTheme,
+    TResult? Function()? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? changeTheme,
+    TResult Function()? changeLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +119,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() changeTheme,
+    required TResult Function() changeLanguage,
   }) {
     return started();
   }
@@ -115,6 +129,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? changeTheme,
+    TResult? Function()? changeLanguage,
   }) {
     return started?.call();
   }
@@ -123,6 +139,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? changeTheme,
+    TResult Function()? changeLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -135,6 +153,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
   }) {
     return started(this);
   }
@@ -143,6 +163,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return started?.call(this);
   }
@@ -151,6 +173,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,36 +189,258 @@ abstract class _Started implements SignInEvent {
 }
 
 /// @nodoc
+abstract class _$$ChangeThemeImplCopyWith<$Res> {
+  factory _$$ChangeThemeImplCopyWith(
+          _$ChangeThemeImpl value, $Res Function(_$ChangeThemeImpl) then) =
+      __$$ChangeThemeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeThemeImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$ChangeThemeImpl>
+    implements _$$ChangeThemeImplCopyWith<$Res> {
+  __$$ChangeThemeImplCopyWithImpl(
+      _$ChangeThemeImpl _value, $Res Function(_$ChangeThemeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeThemeImpl implements _ChangeTheme {
+  const _$ChangeThemeImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.changeTheme()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeThemeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() changeTheme,
+    required TResult Function() changeLanguage,
+  }) {
+    return changeTheme();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? changeTheme,
+    TResult? Function()? changeLanguage,
+  }) {
+    return changeTheme?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? changeTheme,
+    TResult Function()? changeLanguage,
+    required TResult orElse(),
+  }) {
+    if (changeTheme != null) {
+      return changeTheme();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
+  }) {
+    return changeTheme(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
+  }) {
+    return changeTheme?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
+    required TResult orElse(),
+  }) {
+    if (changeTheme != null) {
+      return changeTheme(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeTheme implements SignInEvent {
+  const factory _ChangeTheme() = _$ChangeThemeImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeLanguageImplCopyWith<$Res> {
+  factory _$$ChangeLanguageImplCopyWith(_$ChangeLanguageImpl value,
+          $Res Function(_$ChangeLanguageImpl) then) =
+      __$$ChangeLanguageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeLanguageImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$ChangeLanguageImpl>
+    implements _$$ChangeLanguageImplCopyWith<$Res> {
+  __$$ChangeLanguageImplCopyWithImpl(
+      _$ChangeLanguageImpl _value, $Res Function(_$ChangeLanguageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeLanguageImpl implements _ChangeLanguage {
+  const _$ChangeLanguageImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.changeLanguage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeLanguageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() changeTheme,
+    required TResult Function() changeLanguage,
+  }) {
+    return changeLanguage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? changeTheme,
+    TResult? Function()? changeLanguage,
+  }) {
+    return changeLanguage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? changeTheme,
+    TResult Function()? changeLanguage,
+    required TResult orElse(),
+  }) {
+    if (changeLanguage != null) {
+      return changeLanguage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
+  }) {
+    return changeLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
+  }) {
+    return changeLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
+    required TResult orElse(),
+  }) {
+    if (changeLanguage != null) {
+      return changeLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeLanguage implements SignInEvent {
+  const factory _ChangeLanguage() = _$ChangeLanguageImpl;
+}
+
+/// @nodoc
 mixin _$SignInState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(int id) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(int id)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(int id)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -257,6 +503,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(int id) refresh,
   }) {
     return initial();
   }
@@ -265,6 +512,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(int id)? refresh,
   }) {
     return initial?.call();
   }
@@ -273,6 +521,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(int id)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -285,6 +534,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) {
     return initial(this);
   }
@@ -293,6 +543,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) {
     return initial?.call(this);
   }
@@ -301,6 +552,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -312,4 +564,137 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements SignInState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshImplCopyWith<$Res> {
+  factory _$$RefreshImplCopyWith(
+          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
+      __$$RefreshImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$RefreshImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$RefreshImpl>
+    implements _$$RefreshImplCopyWith<$Res> {
+  __$$RefreshImplCopyWithImpl(
+      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$RefreshImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshImpl implements _Refresh {
+  const _$RefreshImpl({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'SignInState.refresh(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      __$$RefreshImplCopyWithImpl<_$RefreshImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int id) refresh,
+  }) {
+    return refresh(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int id)? refresh,
+  }) {
+    return refresh?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int id)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
+  }) {
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Refresh implements SignInState {
+  const factory _Refresh({required final int id}) = _$RefreshImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

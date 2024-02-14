@@ -15,8 +15,13 @@
     "Enter_OTP_Code_Here" : "Enter OTP Code Here",
     "Seconds_Left" : "Seconds Left",
     "Resend_OTP_Code" : "Resend OTP Code",
-    "ar" : "العربية",
-    "en" : "English",
-    "Already_Have_An_Account" : "Already Have An Account"
+    "Language_Name" : "English",
+    "Already_Have_An_Account" : "Already Have An Account",
+    "App_Name" : "Commuter",
+    "Sign_In_With_Google" : "Sign With Google",
+    "Please_Input_Your_Mail" : "Please Input Your Mail",
+    "Confirm" : "Confirm"
+
+
     
 }

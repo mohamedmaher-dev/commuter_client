@@ -5,7 +5,7 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Language language = di<Language>();
+    Language language = Language.of(context);
 
     return Form(
       child: Column(
