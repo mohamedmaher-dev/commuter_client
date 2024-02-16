@@ -41,7 +41,7 @@ dependencies:
   intl_phone_number_input: ^0.7.4
   pinput: ^4.0.0
   flutter_easyloading: ^3.0.5
-
+  awesome_snackbar_content: ^0.1.3
   # ===== State Mangement =====
   flutter_bloc: ^8.1.4
 

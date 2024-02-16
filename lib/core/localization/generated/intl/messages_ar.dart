@@ -68,6 +68,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Sign_In_With_Your_Mail_And_Password":
             MessageLookupByLibrary.simpleMessage(
                 "تسجيل الدخول بواسطة البريد الإلكتروني وكلمة المرور"),
+        "The_Password_Has_Been_Changed_Successfully":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters":
             MessageLookupByLibrary.simpleMessage(
                 "يجب ان تكون كلمة المرور اكبر من او تساوي 6 احرف"),

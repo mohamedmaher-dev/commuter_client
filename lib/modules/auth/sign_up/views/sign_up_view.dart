@@ -1,9 +1,9 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/localization/controller/localization_bloc.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:commuter_client/core/validation/form_validation.dart';
-import 'package:commuter_client/core/widgets/info_dialog.dart';
 import 'package:commuter_client/core/widgets/language_btn.dart';
 import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:commuter_client/modules/auth/sign_up/controllers/sign_up_bloc/sign_up_bloc.dart';
@@ -14,6 +14,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/routes/app_route.dart';
+import '../../../../core/widgets/app_snack_bar.dart';
 part 'widgets/sign_up_actions.dart';
 part 'widgets/sign_up_form.dart';
 part 'widgets/sign_up_intro_msg.dart';
@@ -38,25 +39,22 @@ class _SignUpView extends StatelessWidget {
     final Language language = Language.of(context);
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
-        state.maybeWhen(
+        PopLoading.dismiss();
+
+        state.whenOrNull(
           pLoading: () {
             PopLoading.show();
           },
           failure: (error) {
-            PopLoading.dismiss();
-
-            showDialog(
+            AppSnackBar.show(
+              title: language.Failure,
+              msg: error,
+              type: ContentType.failure,
               context: context,
-              builder: (context) =>
-                  InfoDialog(title: language.Failure, msg: error),
             );
           },
           success: () {
-            PopLoading.dismiss();
             AppRouter.pushReplacement(context: context, page: Pages.home);
-          },
-          orElse: () {
-            PopLoading.dismiss();
           },
         );
       },

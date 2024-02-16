@@ -69,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Sign_In_With_Your_Mail_And_Password":
             MessageLookupByLibrary.simpleMessage(
                 "Sign In With Your Mail And Password"),
+        "The_Password_Has_Been_Changed_Successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "The Password Has Been Changed Successfully"),
         "The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters":
             MessageLookupByLibrary.simpleMessage(
                 "The Password Must Be Greater Than Or Equal To 6 Characters"),

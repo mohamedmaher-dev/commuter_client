@@ -36,7 +36,9 @@
     "Please_Input_Your_New_Password_And_Confirm_It" : "برجاء قم بكتابة كلمة المرور الجديدة",
     "Passwords_Must_Match"  : "كلمات المرور يجب ان تتطابق",
     "Name_Field_Must_Not_Be_Empty" : "حقل الاسم لا يجب ان يكون فارغ",
-    "Phone_Number_Not_Valid" : "رقم الهاتف غير صحيح"
+    "Phone_Number_Not_Valid" : "رقم الهاتف غير صحيح",
+    "The_Password_Has_Been_Changed_Successfully" : "تم تغيير كلمة المرور بنجاح"
+
 
 
 
