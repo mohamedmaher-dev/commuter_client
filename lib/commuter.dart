@@ -1,6 +1,9 @@
 import 'package:commuter_client/core/bloc/main_bloc.dart';
+import 'package:commuter_client/core/localization/controller/localization_bloc.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
-import 'package:commuter_client/modules/auth/sign_in/views/sign_in_view.dart';
+import 'package:commuter_client/core/routes/app_route.dart';
+import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
+import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,40 +15,56 @@ class Commuter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => di<MainBloc>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => di<LocalizationBloc>()),
+        BlocProvider(create: (context) => di<AppThemeBloc>()),
+        BlocProvider(
+          create: (context) => di<MainBloc>()
+            ..add(
+              const MainEvent.started(),
+            ),
+          lazy: false,
+        ),
+      ],
       child: const _Commuter(),
     );
   }
 }
 
-class _Commuter extends StatefulWidget {
+class _Commuter extends StatelessWidget {
   const _Commuter();
 
   @override
-  State<_Commuter> createState() => _CommuterState();
-}
-
-class _CommuterState extends State<_Commuter> {
-  @override
   Widget build(BuildContext context) {
-    MainBloc mainBloc = BlocProvider.of<MainBloc>(context);
-    return BlocBuilder<MainBloc, MainState>(
+    LocalizationBloc localizationBloc =
+        BlocProvider.of<LocalizationBloc>(context);
+    AppThemeBloc appThemeBloc = BlocProvider.of<AppThemeBloc>(context);
+    return BlocBuilder<LocalizationBloc, LocalizationState>(
       builder: (context, state) {
-        return MaterialApp(
-          locale: mainBloc.localizationBloc.locale,
-          localizationsDelegates: const [
-            Language.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: Language.delegate.supportedLocales,
-          debugShowCheckedModeBanner: false,
-          theme: mainBloc.appThemeBloc.appTheme.theme,
-          darkTheme: mainBloc.appThemeBloc.appTheme.theme,
-          themeMode: mainBloc.appThemeBloc.themeMode,
-          home: const SignInView(),
+        return BlocBuilder<AppThemeBloc, AppThemeState>(
+          builder: (context, state) {
+            return BlocBuilder<MainBloc, MainState>(
+              builder: (context, state) {
+                return MaterialApp(
+                  locale: localizationBloc.locale,
+                  localizationsDelegates: const [
+                    Language.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: Language.delegate.supportedLocales,
+                  debugShowCheckedModeBanner: false,
+                  theme: appThemeBloc.appTheme.theme,
+                  darkTheme: appThemeBloc.appTheme.theme,
+                  themeMode: appThemeBloc.themeMode,
+                  builder: PopLoading.init(),
+                  home: Pages.initPage.view,
+                );
+              },
+            );
+          },
         );
       },
     );

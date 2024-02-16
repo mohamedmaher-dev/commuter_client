@@ -5,42 +5,63 @@ class _SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Language language = Language.of(context);
-    return Column(
-      children: [
-        TextFormField(
-          decoration: InputDecoration(
-            hintText: language.Mail,
-            prefixIcon: const Icon(Icons.mail),
-          ),
-        ),
-        SizedBox(height: 10.h),
-        TextFormField(
-          decoration: InputDecoration(
-            hintText: language.Password,
-            prefixIcon: const Icon(Icons.password),
-            suffixIcon: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.visibility),
+    final SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
+    return Form(
+      autovalidateMode: AutovalidateMode.always,
+      key: signInBloc.formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            controller: signInBloc.emailController,
+            decoration: InputDecoration(
+              hintText: language.Mail,
+              prefixIcon: const Icon(Icons.mail),
             ),
+            validator: (value) => FormValidation.email(value, language),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            TextButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => const ForgotPassDialog(),
-                );
-              },
-              child: Text(
-                language.Forgot_Password,
-              ),
-            )
-          ],
-        ),
-      ],
+          SizedBox(height: 10.h),
+          BlocBuilder<SignInBloc, SignInState>(
+            builder: (context, state) {
+              return TextFormField(
+                controller: signInBloc.passwordController,
+                obscureText: signInBloc.passIsHide,
+                decoration: InputDecoration(
+                  hintText: language.Password,
+                  prefixIcon: const Icon(Icons.password),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      signInBloc.add(const SignInEvent.changePassIsHide());
+                    },
+                    icon: Icon(
+                      signInBloc.passIsHide
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                  ),
+                ),
+                validator: (value) => FormValidation.password(value, language),
+              );
+            },
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) =>
+                        ForgotPassDialog(signInBloc: signInBloc),
+                  );
+                },
+                child: Text(
+                  language.Forgot_Password,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

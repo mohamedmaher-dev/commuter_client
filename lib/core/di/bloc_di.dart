@@ -1,17 +1,29 @@
 part of 'di.dart';
 
 _blocDiInit() {
-  di.registerLazySingleton<MainBloc>(
-    () => MainBloc(
-      appThemeBloc: di<AppThemeBloc>(),
-      localizationBloc: di<LocalizationBloc>(),
-    ),
-  );
   di.registerLazySingleton(() => LocalizationBloc());
   di.registerLazySingleton(() => AppThemeBloc());
+  di.registerLazySingleton<MainBloc>(() => MainBloc());
   di.registerFactory<SignInBloc>(
     () => SignInBloc(
-      mainBloc: di<MainBloc>(),
+      di<SignInRebo>(),
+    ),
+  );
+  di.registerFactory<OtpForgotPasswordBloc>(
+    () => OtpForgotPasswordBloc(
+      di<OtpForgotPasswordRebo>(),
+      di<MainBloc>().signInBloc,
+    ),
+  );
+  di.registerFactory<ChangePasswordBloc>(
+    () => ChangePasswordBloc(
+      di<MainBloc>().signInBloc,
+      di<ChangePassRebo>(),
+    ),
+  );
+  di.registerFactory<SignUpBloc>(
+    () => SignUpBloc(
+      di<SignUpRebo>(),
     ),
   );
 }

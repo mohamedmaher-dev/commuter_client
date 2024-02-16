@@ -10,14 +10,14 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
   LocalizationBloc() : super(const _Initial()) {
     on<LocalizationEvent>(
       (event, emit) {
-        event.when(
-          started: () {},
-          change: () {
+        event.whenOrNull(
+          changeLanguage: () {
             if (locale.languageCode == 'ar') {
               locale = const Locale('en');
             } else {
               locale = const Locale('ar');
             }
+            emit(LocalizationState.refresh(locale: locale));
           },
         );
       },

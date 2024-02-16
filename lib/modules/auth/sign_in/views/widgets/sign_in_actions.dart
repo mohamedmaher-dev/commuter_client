@@ -4,11 +4,14 @@ class _SignInActions extends StatelessWidget {
   const _SignInActions();
   @override
   Widget build(BuildContext context) {
+    final SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
     final Language language = Language.of(context);
     return Column(
       children: [
         FilledButton(
-          onPressed: () {},
+          onPressed: () {
+            signInBloc.add(const SignInEvent.signIn());
+          },
           child: Text(
             language.Sign_In,
           ),
@@ -18,7 +21,7 @@ class _SignInActions extends StatelessWidget {
         SizedBox(height: 10.h),
         TextButton(
           onPressed: () {
-            AppRouter.push(context: context, page: Pages.signUp);
+            AppRouter.pushReplacement(context: context, page: Pages.signUp);
           },
           child: Text(
             language.Already_Have_An_Account,

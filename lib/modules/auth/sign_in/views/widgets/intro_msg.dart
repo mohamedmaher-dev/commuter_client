@@ -1,8 +1,7 @@
 part of '../sign_in_view.dart';
 
 class _SignInIntroMsg extends StatelessWidget {
-  const _SignInIntroMsg({required this.language, required this.signInBloc});
-  final SignInBloc signInBloc;
+  const _SignInIntroMsg({required this.language});
   final Language language;
   @override
   Widget build(BuildContext context) {

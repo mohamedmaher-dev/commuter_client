@@ -1,7 +1,15 @@
+import 'package:commuter_client/core/di/di.dart';
+import 'package:commuter_client/core/localization/controller/localization_bloc.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/themes/text_styles.dart';
-import 'package:commuter_client/core/widgets/google_btn.dart';
+import 'package:commuter_client/core/validation/form_validation.dart';
+import 'package:commuter_client/core/widgets/info_dialog.dart';
+import 'package:commuter_client/core/widgets/language_btn.dart';
+import 'package:commuter_client/core/widgets/pop_loading.dart';
+import 'package:commuter_client/modules/auth/sign_up/controllers/sign_up_bloc/sign_up_bloc.dart';
+import 'package:commuter_client/modules/auth/widgets/google_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -15,7 +23,10 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _SignUpView();
+    return BlocProvider(
+      create: (context) => di<SignUpBloc>(),
+      child: const _SignUpView(),
+    );
   }
 }
 
@@ -24,18 +35,46 @@ class _SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.all(10.w),
-        child: ListView(
-          children: [
-            const _SignUpIntroMsg(),
-            SizedBox(height: 50.h),
-            const SignUpForm(),
-            SizedBox(height: 50.h),
-            const _SignUpActions(),
-          ],
+    final Language language = Language.of(context);
+    return BlocListener<SignUpBloc, SignUpState>(
+      listener: (context, state) {
+        state.maybeWhen(
+          pLoading: () {
+            PopLoading.show();
+          },
+          failure: (error) {
+            PopLoading.dismiss();
+
+            showDialog(
+              context: context,
+              builder: (context) =>
+                  InfoDialog(title: language.Failure, msg: error),
+            );
+          },
+          success: () {
+            PopLoading.dismiss();
+            AppRouter.pushReplacement(context: context, page: Pages.home);
+          },
+          orElse: () {
+            PopLoading.dismiss();
+          },
+        );
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          actions: const [LanguageBTN()],
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(10.w),
+          child: ListView(
+            children: [
+              const _SignUpIntroMsg(),
+              SizedBox(height: 50.h),
+              const SignUpForm(),
+              SizedBox(height: 50.h),
+              const _SignUpActions(),
+            ],
+          ),
         ),
       ),
     );
