@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,9 +12,8 @@ part 'app_theme_state.dart';
 part 'app_theme_bloc.freezed.dart';
 
 class AppThemeBloc extends Bloc<AppThemeEvent, AppThemeState> {
-  final appTheme = _AppTheme();
+  _AppTheme get appTheme => _AppTheme();
   ThemeMode themeMode = ThemeMode.dark;
-
   AppThemeBloc() : super(const _Initial()) {
     on<AppThemeEvent>(
       (event, emit) {
@@ -23,6 +24,7 @@ class AppThemeBloc extends Bloc<AppThemeEvent, AppThemeState> {
             } else {
               themeMode = ThemeMode.light;
             }
+            emit(AppThemeState.refresh(themeMode: themeMode));
           },
         );
       },

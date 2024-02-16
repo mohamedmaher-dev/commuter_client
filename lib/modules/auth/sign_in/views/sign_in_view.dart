@@ -3,11 +3,15 @@ import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/routes/app_route.dart';
 import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
 import 'package:commuter_client/core/themes/text_styles.dart';
-import 'package:commuter_client/modules/auth/sign_in/controllers/bloc/sign_in_bloc.dart';
+import 'package:commuter_client/core/validation/form_validation.dart';
+import 'package:commuter_client/core/widgets/info_dialog.dart';
+import 'package:commuter_client/core/widgets/language_btn.dart';
+import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/widgets/google_btn.dart';
+import '../../widgets/google_btn.dart';
+import '../controllers/sign_in_bloc/sign_in_bloc.dart';
 part 'widgets/intro_msg.dart';
 part 'widgets/sign_in_actions.dart';
 part 'widgets/sign_in_form.dart';
@@ -20,58 +24,78 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => di<SignInBloc>(),
-      child: const SignInViewWidget(),
+      child: const _SignInView(),
     );
   }
 }
 
-class SignInViewWidget extends StatelessWidget {
-  const SignInViewWidget({super.key});
+class _SignInView extends StatelessWidget {
+  const _SignInView();
 
   @override
   Widget build(BuildContext context) {
-    int parts = 4;
-    final SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
     Language language = Language.of(context);
-    return BlocBuilder<SignInBloc, SignInState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            forceMaterialTransparency: true,
-            actions: [
-              TextButton(
-                onPressed: () {
-                  signInBloc.add(const SignInEvent.changeLanguage());
-                },
-                child: Text(
-                  language.Language_Name,
-                ),
+    return BlocListener<SignInBloc, SignInState>(
+      listener: (context, state) {
+        PopLoading.dismiss();
+        state.maybeWhen(
+          pLoading: () {
+            PopLoading.show();
+          },
+          failure: (error) {
+            showDialog(
+              context: context,
+              builder: (context) => InfoDialog(
+                title: language.Failure,
+                msg: error,
               ),
-            ],
-          ),
-          body: Padding(
-            padding: EdgeInsets.all(10.w),
-            child: ListView(
-              children: [
-                SizedBox(
-                    height: (MediaQuery.of(context).size.height / 4) / parts),
-                _SignInIntroMsg(
-                  language: language,
-                  signInBloc: signInBloc,
-                ),
-                SizedBox(
-                    height: (MediaQuery.of(context).size.height / 4) / parts),
-                const _SignInForm(),
-                SizedBox(
-                    height: (MediaQuery.of(context).size.height / 4) / parts),
-                const _SignInActions(),
-                SizedBox(
-                    height: (MediaQuery.of(context).size.height / 4) / parts),
-              ],
-            ),
-          ),
+            );
+          },
+          successSignIn: (data) {
+            AppRouter.pushReplacement(context: context, page: Pages.home);
+          },
+          successForgotPass: (data) {
+            AppRouter.pushReplacement(
+              context: context,
+              page: Pages.otpForgotPassword,
+            );
+          },
+          userNotActive: (data) {
+            showDialog(
+              context: context,
+              builder: (context) => InfoDialog(
+                title: language.Warning,
+                msg: language.This_Account_Not_Active,
+              ),
+            );
+          },
+          orElse: () {
+            PopLoading.dismiss();
+          },
         );
       },
+      child: Scaffold(
+        appBar: AppBar(
+          forceMaterialTransparency: true,
+          actions: const [
+            LanguageBTN(),
+          ],
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(10.w),
+          child: ListView(
+            children: [
+              SizedBox(height: 50.h),
+              _SignInIntroMsg(language: language),
+              SizedBox(height: 50.h),
+              const _SignInForm(),
+              SizedBox(height: 50.h),
+              const _SignInActions(),
+              SizedBox(height: 50.h),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

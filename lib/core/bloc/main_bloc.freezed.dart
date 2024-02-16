@@ -19,44 +19,32 @@ mixin _$MainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() changeLan,
-    required TResult Function() changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? changeLan,
-    TResult? Function()? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? changeLan,
-    TResult Function()? changeTheme,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
-    required TResult Function(_ChangeTheme value) changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
-    TResult? Function(_ChangeTheme value)? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
-    TResult Function(_ChangeTheme value)? changeTheme,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,8 +106,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() changeLan,
-    required TResult Function() changeTheme,
   }) {
     return started();
   }
@@ -128,8 +114,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? changeLan,
-    TResult? Function()? changeTheme,
   }) {
     return started?.call();
   }
@@ -138,8 +122,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? changeLan,
-    TResult Function()? changeTheme,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -152,8 +134,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
-    required TResult Function(_ChangeTheme value) changeTheme,
   }) {
     return started(this);
   }
@@ -162,8 +142,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
-    TResult? Function(_ChangeTheme value)? changeTheme,
   }) {
     return started?.call(this);
   }
@@ -172,8 +150,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
-    TResult Function(_ChangeTheme value)? changeTheme,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -185,222 +161,6 @@ class _$StartedImpl implements _Started {
 
 abstract class _Started implements MainEvent {
   const factory _Started() = _$StartedImpl;
-}
-
-/// @nodoc
-abstract class _$$ChangeLanImplCopyWith<$Res> {
-  factory _$$ChangeLanImplCopyWith(
-          _$ChangeLanImpl value, $Res Function(_$ChangeLanImpl) then) =
-      __$$ChangeLanImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangeLanImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeLanImpl>
-    implements _$$ChangeLanImplCopyWith<$Res> {
-  __$$ChangeLanImplCopyWithImpl(
-      _$ChangeLanImpl _value, $Res Function(_$ChangeLanImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ChangeLanImpl implements _ChangeLan {
-  const _$ChangeLanImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.changeLan()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeLanImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() changeLan,
-    required TResult Function() changeTheme,
-  }) {
-    return changeLan();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? changeLan,
-    TResult? Function()? changeTheme,
-  }) {
-    return changeLan?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? changeLan,
-    TResult Function()? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeLan != null) {
-      return changeLan();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
-    required TResult Function(_ChangeTheme value) changeTheme,
-  }) {
-    return changeLan(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
-    TResult? Function(_ChangeTheme value)? changeTheme,
-  }) {
-    return changeLan?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeLan != null) {
-      return changeLan(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeLan implements MainEvent {
-  const factory _ChangeLan() = _$ChangeLanImpl;
-}
-
-/// @nodoc
-abstract class _$$ChangeThemeImplCopyWith<$Res> {
-  factory _$$ChangeThemeImplCopyWith(
-          _$ChangeThemeImpl value, $Res Function(_$ChangeThemeImpl) then) =
-      __$$ChangeThemeImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangeThemeImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$ChangeThemeImpl>
-    implements _$$ChangeThemeImplCopyWith<$Res> {
-  __$$ChangeThemeImplCopyWithImpl(
-      _$ChangeThemeImpl _value, $Res Function(_$ChangeThemeImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ChangeThemeImpl implements _ChangeTheme {
-  const _$ChangeThemeImpl();
-
-  @override
-  String toString() {
-    return 'MainEvent.changeTheme()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeThemeImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() changeLan,
-    required TResult Function() changeTheme,
-  }) {
-    return changeTheme();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? changeLan,
-    TResult? Function()? changeTheme,
-  }) {
-    return changeTheme?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? changeLan,
-    TResult Function()? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeTheme != null) {
-      return changeTheme();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_ChangeLan value) changeLan,
-    required TResult Function(_ChangeTheme value) changeTheme,
-  }) {
-    return changeTheme(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeLan value)? changeLan,
-    TResult? Function(_ChangeTheme value)? changeTheme,
-  }) {
-    return changeTheme?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_ChangeLan value)? changeLan,
-    TResult Function(_ChangeTheme value)? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (changeTheme != null) {
-      return changeTheme(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeTheme implements MainEvent {
-  const factory _ChangeTheme() = _$ChangeThemeImpl;
 }
 
 /// @nodoc

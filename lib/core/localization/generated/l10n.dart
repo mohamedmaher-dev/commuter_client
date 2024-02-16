@@ -269,6 +269,166 @@ class Language {
       args: [],
     );
   }
+
+  /// `You Cannot Leave The Email Empty`
+  String get You_Cannot_Leave_The_Email_Empty {
+    return Intl.message(
+      'You Cannot Leave The Email Empty',
+      name: 'You_Cannot_Leave_The_Email_Empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Cannot Leave The Password Empty`
+  String get You_Cannot_Leave_The_Password_Empty {
+    return Intl.message(
+      'You Cannot Leave The Password Empty',
+      name: 'You_Cannot_Leave_The_Password_Empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Write Your Email Correctly`
+  String get Please_Write_Your_Email_Correctly {
+    return Intl.message(
+      'Please Write Your Email Correctly',
+      name: 'Please_Write_Your_Email_Correctly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Password Must Be Greater Than Or Equal To 6 Characters`
+  String get The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters {
+    return Intl.message(
+      'The Password Must Be Greater Than Or Equal To 6 Characters',
+      name: 'The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warning`
+  String get Warning {
+    return Intl.message(
+      'Warning',
+      name: 'Warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get Ok {
+    return Intl.message(
+      'Ok',
+      name: 'Ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This Account Not Active`
+  String get This_Account_Not_Active {
+    return Intl.message(
+      'This Account Not Active',
+      name: 'This_Account_Not_Active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure`
+  String get Failure {
+    return Intl.message(
+      'Failure',
+      name: 'Failure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Timeout`
+  String get Timeout {
+    return Intl.message(
+      'Timeout',
+      name: 'Timeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Cannot Verify The Code Because Timeout`
+  String get You_Cannot_Verify_The_Code_Because_Timeout {
+    return Intl.message(
+      'You Cannot Verify The Code Because Timeout',
+      name: 'You_Cannot_Verify_The_Code_Because_Timeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get Verify_Code {
+    return Intl.message(
+      'Verify Code',
+      name: 'Verify_Code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get Change_Password {
+    return Intl.message(
+      'Change Password',
+      name: 'Change_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Input Your New Password And Confirm It`
+  String get Please_Input_Your_New_Password_And_Confirm_It {
+    return Intl.message(
+      'Please Input Your New Password And Confirm It',
+      name: 'Please_Input_Your_New_Password_And_Confirm_It',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords Must Match`
+  String get Passwords_Must_Match {
+    return Intl.message(
+      'Passwords Must Match',
+      name: 'Passwords_Must_Match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name Field Must Not Be Empty`
+  String get Name_Field_Must_Not_Be_Empty {
+    return Intl.message(
+      'Name Field Must Not Be Empty',
+      name: 'Name_Field_Must_Not_Be_Empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number Not Valid`
+  String get Phone_Number_Not_Valid {
+    return Intl.message(
+      'Phone Number Not Valid',
+      name: 'Phone_Number_Not_Valid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Language> {

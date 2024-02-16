@@ -283,32 +283,38 @@ mixin _$AppThemeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(ThemeMode themeMode) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(ThemeMode themeMode)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(ThemeMode themeMode)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -371,6 +377,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(ThemeMode themeMode) refresh,
   }) {
     return initial();
   }
@@ -379,6 +386,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(ThemeMode themeMode)? refresh,
   }) {
     return initial?.call();
   }
@@ -387,6 +395,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(ThemeMode themeMode)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -399,6 +408,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) {
     return initial(this);
   }
@@ -407,6 +417,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) {
     return initial?.call(this);
   }
@@ -415,6 +426,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -426,4 +438,138 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements AppThemeState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshImplCopyWith<$Res> {
+  factory _$$RefreshImplCopyWith(
+          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
+      __$$RefreshImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ThemeMode themeMode});
+}
+
+/// @nodoc
+class __$$RefreshImplCopyWithImpl<$Res>
+    extends _$AppThemeStateCopyWithImpl<$Res, _$RefreshImpl>
+    implements _$$RefreshImplCopyWith<$Res> {
+  __$$RefreshImplCopyWithImpl(
+      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? themeMode = null,
+  }) {
+    return _then(_$RefreshImpl(
+      themeMode: null == themeMode
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshImpl implements _Refresh {
+  const _$RefreshImpl({required this.themeMode});
+
+  @override
+  final ThemeMode themeMode;
+
+  @override
+  String toString() {
+    return 'AppThemeState.refresh(themeMode: $themeMode)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshImpl &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, themeMode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      __$$RefreshImplCopyWithImpl<_$RefreshImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ThemeMode themeMode) refresh,
+  }) {
+    return refresh(themeMode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ThemeMode themeMode)? refresh,
+  }) {
+    return refresh?.call(themeMode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ThemeMode themeMode)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(themeMode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
+  }) {
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Refresh implements AppThemeState {
+  const factory _Refresh({required final ThemeMode themeMode}) = _$RefreshImpl;
+
+  ThemeMode get themeMode;
+  @JsonKey(ignore: true)
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

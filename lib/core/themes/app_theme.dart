@@ -1,9 +1,10 @@
 part of 'controller/app_theme_bloc.dart';
 
 class _AppTheme {
+  static const String _fontFamily = 'Changa';
   ThemeData get theme => ThemeData(
         colorScheme: ColorManger.colorScheme,
-        fontFamily: 'Changa',
+        fontFamily: _fontFamily,
         filledButtonTheme: _filledButtonThemeData,
         outlinedButtonTheme: _outlinedButtonThemeData,
         elevatedButtonTheme: _elevatedButtonThemeData,
@@ -22,6 +23,13 @@ class _AppTheme {
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+      textStyle: MaterialStatePropertyAll(
+        TextStyle(
+          fontSize: 15.sp,
+          fontWeight: FontWeight.bold,
+          fontFamily: _fontFamily,
         ),
       ),
     ),

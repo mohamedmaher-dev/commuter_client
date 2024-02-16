@@ -1,15 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:commuter_client/core/bloc/main_bloc.dart';
+import 'package:commuter_client/modules/auth/sign_in/controllers/sign_in_bloc/sign_in_bloc.dart';
 import 'package:debug_print_flutter/debug_print_flutter.dart';
 
 class MyBlocObserver extends BlocObserver {
   final MainBloc mainBloc;
   final DebugPrint dPrint;
-  const MyBlocObserver({required this.dPrint, required this.mainBloc});
+  MyBlocObserver({required this.dPrint, required this.mainBloc});
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-
+    if (bloc is SignInBloc) mainBloc.signInBloc = bloc;
     dPrint.white('onCreate -- ${bloc.runtimeType}');
   }
 

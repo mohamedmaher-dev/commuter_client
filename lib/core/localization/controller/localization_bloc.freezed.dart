@@ -19,38 +19,38 @@ mixin _$LocalizationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() change,
+    required TResult Function() changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? change,
+    TResult? Function()? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? change,
+    TResult Function()? changeLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Change value) change,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Change value)? change,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Change value)? change,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() change,
+    required TResult Function() changeLanguage,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? change,
+    TResult? Function()? changeLanguage,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? change,
+    TResult Function()? changeLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Change value) change,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
   }) {
     return started(this);
   }
@@ -153,7 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Change value)? change,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
     return started?.call(this);
   }
@@ -162,7 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Change value)? change,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -177,35 +177,35 @@ abstract class _Started implements LocalizationEvent {
 }
 
 /// @nodoc
-abstract class _$$ChangeImplCopyWith<$Res> {
-  factory _$$ChangeImplCopyWith(
-          _$ChangeImpl value, $Res Function(_$ChangeImpl) then) =
-      __$$ChangeImplCopyWithImpl<$Res>;
+abstract class _$$ChangeLanguageImplCopyWith<$Res> {
+  factory _$$ChangeLanguageImplCopyWith(_$ChangeLanguageImpl value,
+          $Res Function(_$ChangeLanguageImpl) then) =
+      __$$ChangeLanguageImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChangeImplCopyWithImpl<$Res>
-    extends _$LocalizationEventCopyWithImpl<$Res, _$ChangeImpl>
-    implements _$$ChangeImplCopyWith<$Res> {
-  __$$ChangeImplCopyWithImpl(
-      _$ChangeImpl _value, $Res Function(_$ChangeImpl) _then)
+class __$$ChangeLanguageImplCopyWithImpl<$Res>
+    extends _$LocalizationEventCopyWithImpl<$Res, _$ChangeLanguageImpl>
+    implements _$$ChangeLanguageImplCopyWith<$Res> {
+  __$$ChangeLanguageImplCopyWithImpl(
+      _$ChangeLanguageImpl _value, $Res Function(_$ChangeLanguageImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ChangeImpl implements _Change {
-  const _$ChangeImpl();
+class _$ChangeLanguageImpl implements _ChangeLanguage {
+  const _$ChangeLanguageImpl();
 
   @override
   String toString() {
-    return 'LocalizationEvent.change()';
+    return 'LocalizationEvent.changeLanguage()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeImpl);
+        (other.runtimeType == runtimeType && other is _$ChangeLanguageImpl);
   }
 
   @override
@@ -215,29 +215,29 @@ class _$ChangeImpl implements _Change {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() change,
+    required TResult Function() changeLanguage,
   }) {
-    return change();
+    return changeLanguage();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? change,
+    TResult? Function()? changeLanguage,
   }) {
-    return change?.call();
+    return changeLanguage?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? change,
+    TResult Function()? changeLanguage,
     required TResult orElse(),
   }) {
-    if (change != null) {
-      return change();
+    if (changeLanguage != null) {
+      return changeLanguage();
     }
     return orElse();
   }
@@ -246,36 +246,36 @@ class _$ChangeImpl implements _Change {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Change value) change,
+    required TResult Function(_ChangeLanguage value) changeLanguage,
   }) {
-    return change(this);
+    return changeLanguage(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Change value)? change,
+    TResult? Function(_ChangeLanguage value)? changeLanguage,
   }) {
-    return change?.call(this);
+    return changeLanguage?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Change value)? change,
+    TResult Function(_ChangeLanguage value)? changeLanguage,
     required TResult orElse(),
   }) {
-    if (change != null) {
-      return change(this);
+    if (changeLanguage != null) {
+      return changeLanguage(this);
     }
     return orElse();
   }
 }
 
-abstract class _Change implements LocalizationEvent {
-  const factory _Change() = _$ChangeImpl;
+abstract class _ChangeLanguage implements LocalizationEvent {
+  const factory _ChangeLanguage() = _$ChangeLanguageImpl;
 }
 
 /// @nodoc
@@ -283,32 +283,38 @@ mixin _$LocalizationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Locale locale) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(Locale locale)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Locale locale)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -371,6 +377,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Locale locale) refresh,
   }) {
     return initial();
   }
@@ -379,6 +386,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function(Locale locale)? refresh,
   }) {
     return initial?.call();
   }
@@ -387,6 +395,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Locale locale)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -399,6 +408,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
   }) {
     return initial(this);
   }
@@ -407,6 +417,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
   }) {
     return initial?.call(this);
   }
@@ -415,6 +426,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -426,4 +438,137 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements LocalizationState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshImplCopyWith<$Res> {
+  factory _$$RefreshImplCopyWith(
+          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
+      __$$RefreshImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Locale locale});
+}
+
+/// @nodoc
+class __$$RefreshImplCopyWithImpl<$Res>
+    extends _$LocalizationStateCopyWithImpl<$Res, _$RefreshImpl>
+    implements _$$RefreshImplCopyWith<$Res> {
+  __$$RefreshImplCopyWithImpl(
+      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$RefreshImpl(
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshImpl implements _Refresh {
+  const _$RefreshImpl({required this.locale});
+
+  @override
+  final Locale locale;
+
+  @override
+  String toString() {
+    return 'LocalizationState.refresh(locale: $locale)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshImpl &&
+            (identical(other.locale, locale) || other.locale == locale));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      __$$RefreshImplCopyWithImpl<_$RefreshImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Locale locale) refresh,
+  }) {
+    return refresh(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Locale locale)? refresh,
+  }) {
+    return refresh?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Locale locale)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(locale);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Refresh value) refresh,
+  }) {
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Refresh value)? refresh,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Refresh value)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Refresh implements LocalizationState {
+  const factory _Refresh({required final Locale locale}) = _$RefreshImpl;
+
+  Locale get locale;
+  @JsonKey(ignore: true)
+  _$$RefreshImplCopyWith<_$RefreshImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
