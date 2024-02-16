@@ -7,6 +7,7 @@ import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/di/di.dart';
 
@@ -27,7 +28,12 @@ class Commuter extends StatelessWidget {
           lazy: false,
         ),
       ],
-      child: const _Commuter(),
+      child: const ScreenUtilInit(
+        designSize: Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        child: _Commuter(),
+      ),
     );
   }
 }
@@ -37,9 +43,8 @@ class _Commuter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LocalizationBloc localizationBloc =
-        BlocProvider.of<LocalizationBloc>(context);
-    AppThemeBloc appThemeBloc = BlocProvider.of<AppThemeBloc>(context);
+    final localizationBloc = BlocProvider.of<LocalizationBloc>(context);
+    final appThemeBloc = BlocProvider.of<AppThemeBloc>(context);
     return BlocBuilder<LocalizationBloc, LocalizationState>(
       builder: (context, state) {
         return BlocBuilder<AppThemeBloc, AppThemeState>(

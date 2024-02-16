@@ -24,7 +24,7 @@ class _SignInActions extends StatelessWidget {
             AppRouter.pushReplacement(context: context, page: Pages.signUp);
           },
           child: Text(
-            language.Already_Have_An_Account,
+            language.Create_Account,
           ),
         )
       ],

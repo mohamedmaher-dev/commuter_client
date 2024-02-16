@@ -10,12 +10,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await diInit();
   Bloc.observer = di<MyBlocObserver>();
+  await ScreenUtil.ensureScreenSize();
   runApp(
-    const ScreenUtilInit(
-      designSize: Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: Commuter(),
-    ),
+    const Commuter(),
   );
 }

@@ -30,7 +30,7 @@ class ApiErrorModel {
       case DioExceptionType.badCertificate:
         return ApiErrorModel(
           msg: "Bad Certificate",
-          code: dioException.response!.statusCode,
+          code: 0,
         );
 
       case DioExceptionType.badResponse:
@@ -39,19 +39,19 @@ class ApiErrorModel {
       case DioExceptionType.cancel:
         return ApiErrorModel(
           msg: "Connection Canceled",
-          code: dioException.response!.statusCode,
+          code: 0,
         );
 
       case DioExceptionType.connectionError:
         return ApiErrorModel(
           msg: "Connection Error",
-          code: dioException.response!.statusCode,
+          code: 0,
         );
 
       case DioExceptionType.unknown:
         return ApiErrorModel(
           msg: "Unknown Error",
-          code: dioException.response!.statusCode,
+          code: 0,
         );
     }
   }
