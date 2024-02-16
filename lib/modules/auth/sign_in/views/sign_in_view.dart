@@ -1,10 +1,11 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/routes/app_route.dart';
 import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
 import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:commuter_client/core/validation/form_validation.dart';
-import 'package:commuter_client/core/widgets/info_dialog.dart';
+import 'package:commuter_client/core/widgets/app_snack_bar.dart';
 import 'package:commuter_client/core/widgets/language_btn.dart';
 import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:flutter/material.dart';
@@ -38,17 +39,16 @@ class _SignInView extends StatelessWidget {
     return BlocListener<SignInBloc, SignInState>(
       listener: (context, state) {
         PopLoading.dismiss();
-        state.maybeWhen(
+        state.whenOrNull(
           pLoading: () {
             PopLoading.show();
           },
           failure: (error) {
-            showDialog(
+            AppSnackBar.show(
+              title: language.Failure,
+              msg: error,
+              type: ContentType.failure,
               context: context,
-              builder: (context) => InfoDialog(
-                title: language.Failure,
-                msg: error,
-              ),
             );
           },
           successSignIn: (data) {
@@ -61,16 +61,12 @@ class _SignInView extends StatelessWidget {
             );
           },
           userNotActive: (data) {
-            showDialog(
+            AppSnackBar.show(
+              title: language.Warning,
+              msg: language.This_Account_Not_Active,
+              type: ContentType.warning,
               context: context,
-              builder: (context) => InfoDialog(
-                title: language.Warning,
-                msg: language.This_Account_Not_Active,
-              ),
             );
-          },
-          orElse: () {
-            PopLoading.dismiss();
           },
         );
       },

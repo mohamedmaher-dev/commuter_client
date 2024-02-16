@@ -585,7 +585,7 @@ mixin _$OtpForgotPasswordState {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -596,7 +596,7 @@ mixin _$OtpForgotPasswordState {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -607,7 +607,7 @@ mixin _$OtpForgotPasswordState {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -710,7 +710,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return initial();
   }
@@ -724,7 +724,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return initial?.call();
   }
@@ -738,7 +738,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -868,7 +868,7 @@ class _$RefreshImpl implements Refresh {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return refresh(time);
   }
@@ -882,7 +882,7 @@ class _$RefreshImpl implements Refresh {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return refresh?.call(time);
   }
@@ -896,7 +896,7 @@ class _$RefreshImpl implements Refresh {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (refresh != null) {
@@ -1005,7 +1005,7 @@ class _$PLoadingImpl implements PLoading {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return pLoading();
   }
@@ -1019,7 +1019,7 @@ class _$PLoadingImpl implements PLoading {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return pLoading?.call();
   }
@@ -1033,7 +1033,7 @@ class _$PLoadingImpl implements PLoading {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (pLoading != null) {
@@ -1137,7 +1137,7 @@ class _$SuccessVerifyCodeImpl implements SuccessVerifyCode {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return successVerifyCode();
   }
@@ -1151,7 +1151,7 @@ class _$SuccessVerifyCodeImpl implements SuccessVerifyCode {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return successVerifyCode?.call();
   }
@@ -1165,7 +1165,7 @@ class _$SuccessVerifyCodeImpl implements SuccessVerifyCode {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (successVerifyCode != null) {
@@ -1269,7 +1269,7 @@ class _$SuccessSendCodeImpl implements SuccessSendCode {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return successSendCode();
   }
@@ -1283,7 +1283,7 @@ class _$SuccessSendCodeImpl implements SuccessSendCode {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return successSendCode?.call();
   }
@@ -1297,7 +1297,7 @@ class _$SuccessSendCodeImpl implements SuccessSendCode {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (successSendCode != null) {
@@ -1427,7 +1427,7 @@ class _$FailureImpl implements Failure {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
     return failure(error);
   }
@@ -1441,7 +1441,7 @@ class _$FailureImpl implements Failure {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
     return failure?.call(error);
   }
@@ -1455,7 +1455,7 @@ class _$FailureImpl implements Failure {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1525,6 +1525,8 @@ abstract class _$$OutTimeImplCopyWith<$Res> {
   factory _$$OutTimeImplCopyWith(
           _$OutTimeImpl value, $Res Function(_$OutTimeImpl) then) =
       __$$OutTimeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -1534,26 +1536,50 @@ class __$$OutTimeImplCopyWithImpl<$Res>
   __$$OutTimeImplCopyWithImpl(
       _$OutTimeImpl _value, $Res Function(_$OutTimeImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$OutTimeImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$OutTimeImpl implements OutTime {
-  const _$OutTimeImpl();
+  const _$OutTimeImpl(this.id);
+
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'OtpForgotPasswordState.outTime()';
+    return 'OtpForgotPasswordState.outTime(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OutTimeImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$OutTimeImpl &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OutTimeImplCopyWith<_$OutTimeImpl> get copyWith =>
+      __$$OutTimeImplCopyWithImpl<_$OutTimeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1564,9 +1590,9 @@ class _$OutTimeImpl implements OutTime {
     required TResult Function() successVerifyCode,
     required TResult Function() successSendCode,
     required TResult Function(String error) failure,
-    required TResult Function() outTime,
+    required TResult Function(int id) outTime,
   }) {
-    return outTime();
+    return outTime(id);
   }
 
   @override
@@ -1578,9 +1604,9 @@ class _$OutTimeImpl implements OutTime {
     TResult? Function()? successVerifyCode,
     TResult? Function()? successSendCode,
     TResult? Function(String error)? failure,
-    TResult? Function()? outTime,
+    TResult? Function(int id)? outTime,
   }) {
-    return outTime?.call();
+    return outTime?.call(id);
   }
 
   @override
@@ -1592,11 +1618,11 @@ class _$OutTimeImpl implements OutTime {
     TResult Function()? successVerifyCode,
     TResult Function()? successSendCode,
     TResult Function(String error)? failure,
-    TResult Function()? outTime,
+    TResult Function(int id)? outTime,
     required TResult orElse(),
   }) {
     if (outTime != null) {
-      return outTime();
+      return outTime(id);
     }
     return orElse();
   }
@@ -1649,5 +1675,10 @@ class _$OutTimeImpl implements OutTime {
 }
 
 abstract class OutTime implements OtpForgotPasswordState {
-  const factory OutTime() = _$OutTimeImpl;
+  const factory OutTime(final int id) = _$OutTimeImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$OutTimeImplCopyWith<_$OutTimeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

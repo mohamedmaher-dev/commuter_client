@@ -1,11 +1,12 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/routes/app_route.dart';
-import 'package:commuter_client/core/widgets/info_dialog.dart';
 import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:commuter_client/modules/auth/widgets/otp_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/di.dart';
+import '../../../../core/widgets/app_snack_bar.dart';
 import '../controller/otp_forgot_password_bloc/otp_forgot_password_bloc.dart';
 
 class OtpForgotPasswordView extends StatelessWidget {
@@ -38,13 +39,12 @@ class _OtpForgotPasswordView extends StatelessWidget {
           pLoading: () {
             PopLoading.show();
           },
-          outTime: () {
-            showDialog(
+          outTime: (id) {
+            AppSnackBar.show(
+              title: language.Warning,
+              msg: language.You_Cannot_Verify_The_Code_Because_Timeout,
+              type: ContentType.warning,
               context: context,
-              builder: (context) => InfoDialog(
-                title: language.Timeout,
-                msg: language.You_Cannot_Verify_The_Code_Because_Timeout,
-              ),
             );
           },
           successVerifyCode: () {
@@ -54,12 +54,11 @@ class _OtpForgotPasswordView extends StatelessWidget {
             );
           },
           failure: (error) {
-            showDialog(
+            AppSnackBar.show(
+              title: language.Failure,
+              msg: error,
+              type: ContentType.failure,
               context: context,
-              builder: (context) => InfoDialog(
-                title: language.Failure,
-                msg: error,
-              ),
             );
           },
         );

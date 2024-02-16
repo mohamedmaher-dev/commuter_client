@@ -78,7 +78,7 @@ class OtpForgotPasswordBloc
         },
       );
     } else {
-      emit(const OtpForgotPasswordState.outTime());
+      emit(OtpForgotPasswordState.outTime(state.hashCode));
     }
   }
 }

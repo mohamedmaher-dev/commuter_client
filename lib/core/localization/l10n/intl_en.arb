@@ -36,5 +36,6 @@
     "Please_Input_Your_New_Password_And_Confirm_It" : "Please Input Your New Password And Confirm It",
     "Passwords_Must_Match"  : "Passwords Must Match",
     "Name_Field_Must_Not_Be_Empty" : "Name Field Must Not Be Empty",
-    "Phone_Number_Not_Valid" : "Phone Number Not Valid"
+    "Phone_Number_Not_Valid" : "Phone Number Not Valid",
+    "The_Password_Has_Been_Changed_Successfully" : "The Password Has Been Changed Successfully"
 }

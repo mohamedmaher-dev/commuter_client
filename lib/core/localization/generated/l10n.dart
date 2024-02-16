@@ -429,6 +429,16 @@ class Language {
       args: [],
     );
   }
+
+  /// `The Password Has Been Changed Successfully`
+  String get The_Password_Has_Been_Changed_Successfully {
+    return Intl.message(
+      'The Password Has Been Changed Successfully',
+      name: 'The_Password_Has_Been_Changed_Successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Language> {

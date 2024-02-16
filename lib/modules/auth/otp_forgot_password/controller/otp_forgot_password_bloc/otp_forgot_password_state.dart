@@ -8,5 +8,5 @@ class OtpForgotPasswordState with _$OtpForgotPasswordState {
   const factory OtpForgotPasswordState.successVerifyCode() = SuccessVerifyCode;
   const factory OtpForgotPasswordState.successSendCode() = SuccessSendCode;
   const factory OtpForgotPasswordState.failure(String error) = Failure;
-  const factory OtpForgotPasswordState.outTime() = OutTime;
+  const factory OtpForgotPasswordState.outTime(int id) = OutTime;
 }
