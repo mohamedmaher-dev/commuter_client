@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "938618055262",
+    "project_id": "commuter-notifications",
+    "storage_bucket": "commuter-notifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938618055262:android:afa784367fd48e02b162cf",
+        "android_client_info": {
+          "package_name": "com.commuter.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938618055262-rgfm2qqgms2i8k08hdjhb70a9948c5io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4urLF7jfvPt_08nrpKjxkHTlV4-Wxs4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938618055262-rgfm2qqgms2i8k08hdjhb70a9948c5io.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "938618055262-4rng8r61blt2rlkbsjakveenfnkeb7nl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.commuterClient"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

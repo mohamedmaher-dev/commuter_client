@@ -1,0 +1,4 @@
+enum LocationFieldType {
+  pickup,
+  landing,
+}
