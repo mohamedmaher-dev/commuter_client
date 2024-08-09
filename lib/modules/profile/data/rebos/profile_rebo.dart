@@ -6,7 +6,7 @@ import 'package:commuter_client/core/networking/api_result.dart';
 import 'package:commuter_client/core/networking/api_service.dart';
 import 'package:commuter_client/modules/profile/data/models/get_me_response_model.dart';
 import 'package:dio/dio.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/networking/api_error_model.dart';
 
@@ -14,12 +14,12 @@ class ProfileRebo {
   final ApiService _apiService;
   final UserSecretDataModel _userSecretDataModel;
   final LocalStorageService _localStorageService;
-  final ImagePicker _imagePicker;
+  // final ImagePicker _imagePicker;
   ProfileRebo(
     this._apiService,
     this._userSecretDataModel,
     this._localStorageService,
-    this._imagePicker,
+    // this._imagePicker,
   );
 
   Future<ApiResult<GetMeResponseModel>> getMe() async {
@@ -74,7 +74,7 @@ class ProfileRebo {
     }
   }
 
-  Future<XFile?> pickImage({required ImageSource imageSource}) async {
-    return await _imagePicker.pickImage(source: imageSource);
-  }
+  // Future<PickedFile?> pickImage({required ImageSource imageSource}) async {
+  //   return await _imagePicker.getImage(source: imageSource);
+  // }
 }

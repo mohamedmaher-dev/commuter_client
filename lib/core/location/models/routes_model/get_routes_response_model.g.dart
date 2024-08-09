@@ -15,7 +15,7 @@ GetRoutesResponseModel _$GetRoutesResponseModelFromJson(
     );
 
 _Route _$RouteFromJson(Map<String, dynamic> json) => _Route(
-      distanceMeters: json['distanceMeters'] as int,
+      distanceMeters: (json['distanceMeters'] as num).toInt(),
       duration: json['duration'] as String,
       polyline: _Polyline.fromJson(json['polyline'] as Map<String, dynamic>),
     );

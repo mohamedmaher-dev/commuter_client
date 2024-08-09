@@ -21,7 +21,7 @@ mixin _$ProfileEvent {
     required TResult Function() started,
     required TResult Function() deleteMe,
     required TResult Function() updateMe,
-    required TResult Function(ImageSource imageSourse) pickImage,
+    required TResult Function() pickImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$ProfileEvent {
     TResult? Function()? started,
     TResult? Function()? deleteMe,
     TResult? Function()? updateMe,
-    TResult? Function(ImageSource imageSourse)? pickImage,
+    TResult? Function()? pickImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$ProfileEvent {
     TResult Function()? started,
     TResult Function()? deleteMe,
     TResult Function()? updateMe,
-    TResult Function(ImageSource imageSourse)? pickImage,
+    TResult Function()? pickImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() deleteMe,
     required TResult Function() updateMe,
-    required TResult Function(ImageSource imageSourse) pickImage,
+    required TResult Function() pickImage,
   }) {
     return started();
   }
@@ -138,7 +138,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? deleteMe,
     TResult? Function()? updateMe,
-    TResult? Function(ImageSource imageSourse)? pickImage,
+    TResult? Function()? pickImage,
   }) {
     return started?.call();
   }
@@ -149,7 +149,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? deleteMe,
     TResult Function()? updateMe,
-    TResult Function(ImageSource imageSourse)? pickImage,
+    TResult Function()? pickImage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -241,7 +241,7 @@ class _$DeleteMeImpl implements DeleteMe {
     required TResult Function() started,
     required TResult Function() deleteMe,
     required TResult Function() updateMe,
-    required TResult Function(ImageSource imageSourse) pickImage,
+    required TResult Function() pickImage,
   }) {
     return deleteMe();
   }
@@ -252,7 +252,7 @@ class _$DeleteMeImpl implements DeleteMe {
     TResult? Function()? started,
     TResult? Function()? deleteMe,
     TResult? Function()? updateMe,
-    TResult? Function(ImageSource imageSourse)? pickImage,
+    TResult? Function()? pickImage,
   }) {
     return deleteMe?.call();
   }
@@ -263,7 +263,7 @@ class _$DeleteMeImpl implements DeleteMe {
     TResult Function()? started,
     TResult Function()? deleteMe,
     TResult Function()? updateMe,
-    TResult Function(ImageSource imageSourse)? pickImage,
+    TResult Function()? pickImage,
     required TResult orElse(),
   }) {
     if (deleteMe != null) {
@@ -355,7 +355,7 @@ class _$UpdateMeImpl implements UpdateMe {
     required TResult Function() started,
     required TResult Function() deleteMe,
     required TResult Function() updateMe,
-    required TResult Function(ImageSource imageSourse) pickImage,
+    required TResult Function() pickImage,
   }) {
     return updateMe();
   }
@@ -366,7 +366,7 @@ class _$UpdateMeImpl implements UpdateMe {
     TResult? Function()? started,
     TResult? Function()? deleteMe,
     TResult? Function()? updateMe,
-    TResult? Function(ImageSource imageSourse)? pickImage,
+    TResult? Function()? pickImage,
   }) {
     return updateMe?.call();
   }
@@ -377,7 +377,7 @@ class _$UpdateMeImpl implements UpdateMe {
     TResult Function()? started,
     TResult Function()? deleteMe,
     TResult Function()? updateMe,
-    TResult Function(ImageSource imageSourse)? pickImage,
+    TResult Function()? pickImage,
     required TResult orElse(),
   }) {
     if (updateMe != null) {
@@ -433,8 +433,6 @@ abstract class _$$PickImageImplCopyWith<$Res> {
   factory _$$PickImageImplCopyWith(
           _$PickImageImpl value, $Res Function(_$PickImageImpl) then) =
       __$$PickImageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ImageSource imageSourse});
 }
 
 /// @nodoc
@@ -444,51 +442,26 @@ class __$$PickImageImplCopyWithImpl<$Res>
   __$$PickImageImplCopyWithImpl(
       _$PickImageImpl _value, $Res Function(_$PickImageImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? imageSourse = null,
-  }) {
-    return _then(_$PickImageImpl(
-      imageSourse: null == imageSourse
-          ? _value.imageSourse
-          : imageSourse // ignore: cast_nullable_to_non_nullable
-              as ImageSource,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$PickImageImpl implements PickImage {
-  const _$PickImageImpl({required this.imageSourse});
-
-  @override
-  final ImageSource imageSourse;
+  const _$PickImageImpl();
 
   @override
   String toString() {
-    return 'ProfileEvent.pickImage(imageSourse: $imageSourse)';
+    return 'ProfileEvent.pickImage()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PickImageImpl &&
-            (identical(other.imageSourse, imageSourse) ||
-                other.imageSourse == imageSourse));
+        (other.runtimeType == runtimeType && other is _$PickImageImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, imageSourse);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
-      __$$PickImageImplCopyWithImpl<_$PickImageImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -496,9 +469,9 @@ class _$PickImageImpl implements PickImage {
     required TResult Function() started,
     required TResult Function() deleteMe,
     required TResult Function() updateMe,
-    required TResult Function(ImageSource imageSourse) pickImage,
+    required TResult Function() pickImage,
   }) {
-    return pickImage(imageSourse);
+    return pickImage();
   }
 
   @override
@@ -507,9 +480,9 @@ class _$PickImageImpl implements PickImage {
     TResult? Function()? started,
     TResult? Function()? deleteMe,
     TResult? Function()? updateMe,
-    TResult? Function(ImageSource imageSourse)? pickImage,
+    TResult? Function()? pickImage,
   }) {
-    return pickImage?.call(imageSourse);
+    return pickImage?.call();
   }
 
   @override
@@ -518,11 +491,11 @@ class _$PickImageImpl implements PickImage {
     TResult Function()? started,
     TResult Function()? deleteMe,
     TResult Function()? updateMe,
-    TResult Function(ImageSource imageSourse)? pickImage,
+    TResult Function()? pickImage,
     required TResult orElse(),
   }) {
     if (pickImage != null) {
-      return pickImage(imageSourse);
+      return pickImage();
     }
     return orElse();
   }
@@ -566,13 +539,7 @@ class _$PickImageImpl implements PickImage {
 }
 
 abstract class PickImage implements ProfileEvent {
-  const factory PickImage({required final ImageSource imageSourse}) =
-      _$PickImageImpl;
-
-  ImageSource get imageSourse;
-  @JsonKey(ignore: true)
-  _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory PickImage() = _$PickImageImpl;
 }
 
 /// @nodoc

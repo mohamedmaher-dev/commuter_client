@@ -6,7 +6,7 @@ part of 'api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _ApiService implements ApiService {
   _ApiService(
@@ -45,8 +45,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SignInResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = SignInResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -74,8 +74,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SignUpResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = SignUpResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -103,8 +103,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ForgotPassResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = ForgotPassResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -132,8 +132,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = VerifyResetCodeResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = VerifyResetCodeResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -161,8 +161,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ChangePassResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = ChangePassResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -192,8 +192,8 @@ class _ApiService implements ApiService {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = _result.data;
-    return value;
+    final _value = _result.data;
+    return _value;
   }
 
   @override
@@ -253,8 +253,8 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetMeResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = GetMeResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override

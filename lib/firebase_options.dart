@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '938618055262',
     projectId: 'commuter-notifications',
     storageBucket: 'commuter-notifications.appspot.com',
-    iosClientId: '938618055262-jft607scpipqaliu7g94df2b4lmo69m4.apps.googleusercontent.com',
+    iosClientId:
+        '938618055262-jft607scpipqaliu7g94df2b4lmo69m4.apps.googleusercontent.com',
     iosBundleId: 'com.commuter.client',
   );
 }
