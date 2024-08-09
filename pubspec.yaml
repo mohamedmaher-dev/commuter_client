@@ -72,6 +72,7 @@ dependencies:
   # ===== Location =====
   geocoding: ^3.0.0
   geolocator: ^12.0.0
+  geolocator_android: 4.5.5
   google_maps_flutter: ^2.9.0
   flutter_polyline_points: ^2.1.0
 
