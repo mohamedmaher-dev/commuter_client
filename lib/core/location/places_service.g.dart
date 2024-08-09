@@ -6,7 +6,7 @@ part of 'places_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _PlacesService implements PlacesService {
   _PlacesService(
@@ -43,8 +43,8 @@ class _PlacesService implements PlacesService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PredictionsResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = PredictionsResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -70,8 +70,8 @@ class _PlacesService implements PlacesService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PlaceDetailsResponseModel.fromJson(_result.data!);
-    return value;
+    final _value = PlaceDetailsResponseModel.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

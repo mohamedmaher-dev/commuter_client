@@ -21,7 +21,7 @@ _UserData _$UserDataFromJson(Map<String, dynamic> json) => _UserData(
       email: json['email'] as String,
       phone: json['phone'] as String?,
       profileImg: json['profileImg'] as String?,
-      ratingsQuantity: json['ratingsQuantity'] as int,
+      ratingsQuantity: (json['ratingsQuantity'] as num).toInt(),
     );
 
 Map<String, dynamic> _$UserDataToJson(_UserData instance) => <String, dynamic>{

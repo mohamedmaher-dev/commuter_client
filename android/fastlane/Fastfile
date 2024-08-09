@@ -18,7 +18,6 @@ default_platform(:android)
 platform :android do
   desc "Lane for  Android App Distribution" 
   lane :dev do
-    sh "flutter clean"
     sh "flutter build apk --release --no-tree-shake-icons"
     firebase_app_distribution(
       app: "1:938618055262:android:afa784367fd48e02b162cf",
@@ -30,7 +29,6 @@ platform :android do
     )
   end
   lane :stage do
-    sh "flutter clean"
     sh "flutter build apk --release --no-tree-shake-icons"
     firebase_app_distribution(
       app: "1:938618055262:android:afa784367fd48e02b162cf",

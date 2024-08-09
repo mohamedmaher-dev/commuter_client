@@ -1,10 +1,8 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:commuter_client/modules/profile/data/models/get_me_response_model.dart';
 import 'package:commuter_client/modules/profile/data/rebos/profile_rebo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';
@@ -13,8 +11,8 @@ part 'profile_bloc.freezed.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final ProfileRebo _profileRebo;
   late GetMeResponseModel getMeResponseModel;
-  late ImageSource imageSource;
-  XFile? imageFile;
+  // late ImageSource imageSource;
+  // PickedFile? imageFile;
   ProfileBloc(this._profileRebo) : super(const _Initial()) {
     on<ProfileEvent>(
       (event, emit) async {
@@ -25,30 +23,30 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           deleteMe: () async {
             await deleteMeMethod(emit);
           },
-          pickImage: (imageSource) async {
-            imageFile = await _profileRebo.pickImage(imageSource: imageSource);
+          pickImage: () async {
+            // imageFile = await _profileRebo.pickImage(imageSource: imageSource);
             emit(ProfileState.refresh(state.hashCode));
           },
           updateMe: () async {
             emit(const ProfileState.loading());
-            final updateMeResult = await _profileRebo.updateMe(
-              name: 'Mohamed Maher',
-              phone: '01065027589',
-              email: 'mohamed@gmail.com',
-              image: File(imageFile!.path),
-            );
-            updateMeResult.when(
-              success: (data) {
-                emit(const ProfileState.updateMeSuccess());
-              },
-              failure: (apiErrorModel) {
-                emit(
-                  ProfileState.failure(
-                    msg: apiErrorModel.msg,
-                  ),
-                );
-              },
-            );
+            // final updateMeResult = await _profileRebo.updateMe(
+            //   name: 'Mohamed Maher',
+            //   phone: '01065027589',
+            //   email: 'mohamed@gmail.com',
+            //   image: File(imageFile!.path),
+            // );
+            // updateMeResult.when(
+            //   success: (data) {
+            //     emit(const ProfileState.updateMeSuccess());
+            //   },
+            //   failure: (apiErrorModel) {
+            //     emit(
+            //       ProfileState.failure(
+            //         msg: apiErrorModel.msg,
+            //       ),
+            //     );
+            //   },
+            // );
           },
         );
       },
