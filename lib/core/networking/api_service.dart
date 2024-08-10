@@ -1,4 +1,3 @@
-import 'package:commuter_client/core/env/env.dart';
 import 'package:commuter_client/core/networking/api_consts.dart';
 import 'package:commuter_client/modules/auth/change_password/data/models/change_pass_request_model.dart';
 import 'package:commuter_client/modules/auth/change_password/data/models/change_pass_response_model.dart';
@@ -18,9 +17,9 @@ import '../../modules/auth/otp_forgot_password/data/models/forgot_pass_response_
 import '../../modules/profile/data/models/get_me_response_model.dart';
 part 'api_service.g.dart';
 
-@RestApi(baseUrl: Env.apiBaseUrl)
+@RestApi()
 abstract class ApiService {
-  factory ApiService(Dio dio) = _ApiService;
+  factory ApiService(Dio dio, {required String baseUrl}) = _ApiService;
   @POST(ApiConsts.signIn)
   Future<SignInResponseModel> signIn(
     @Body() SignInRequestModel signInRequestModel,

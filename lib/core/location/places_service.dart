@@ -1,4 +1,3 @@
-import 'package:commuter_client/core/env/env.dart';
 import 'package:commuter_client/core/location/models/place_details/place_details_model.dart';
 import 'package:commuter_client/core/location/places_consts.dart';
 import 'package:dio/dio.dart';
@@ -13,10 +12,12 @@ abstract class PlacesService {
   @GET(PlacesConsts.predictions)
   Future<PredictionsResponseModel> getPredictions(
     @Query('input') String input,
+    @Query('key') String apiKey,
   );
 
   @GET(PlacesConsts.placeDetails)
   Future<PlaceDetailsResponseModel> getPlaceDetails(
     @Query('place_id') String input,
+    @Query('key') String apiKey,
   );
 }

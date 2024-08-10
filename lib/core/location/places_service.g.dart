@@ -21,9 +21,15 @@ class _PlacesService implements PlacesService {
   String? baseUrl;
 
   @override
-  Future<PredictionsResponseModel> getPredictions(String input) async {
+  Future<PredictionsResponseModel> getPredictions(
+    String input,
+    String apiKey,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'input': input};
+    final queryParameters = <String, dynamic>{
+      r'input': input,
+      r'key': apiKey,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -34,7 +40,7 @@ class _PlacesService implements PlacesService {
     )
             .compose(
               _dio.options,
-              '/autocomplete/json?key=${Env.placesApiKey}',
+              '/autocomplete/json',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -48,9 +54,15 @@ class _PlacesService implements PlacesService {
   }
 
   @override
-  Future<PlaceDetailsResponseModel> getPlaceDetails(String input) async {
+  Future<PlaceDetailsResponseModel> getPlaceDetails(
+    String input,
+    String apiKey,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'place_id': input};
+    final queryParameters = <String, dynamic>{
+      r'place_id': input,
+      r'key': apiKey,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -61,7 +73,7 @@ class _PlacesService implements PlacesService {
     )
             .compose(
               _dio.options,
-              '/details/json?key=${Env.placesApiKey}',
+              '/details/json',
               queryParameters: queryParameters,
               data: _data,
             )

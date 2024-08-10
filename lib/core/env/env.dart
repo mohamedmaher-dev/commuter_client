@@ -28,6 +28,6 @@ abstract class Env {
   static const String firebaseIosClientId = _Env.firebaseIosClientId;
   @EnviedField()
   static const String routesApiKey = _Env.routesApiKey;
-  @EnviedField()
-  static const String placesApiKey = _Env.placesApiKey;
+  @EnviedField(obfuscate: true)
+  static final String placesApiKey = _Env.placesApiKey;
 }

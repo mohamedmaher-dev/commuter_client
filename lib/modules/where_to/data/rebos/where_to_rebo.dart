@@ -1,3 +1,4 @@
+import 'package:commuter_client/core/env/env.dart';
 import 'package:commuter_client/core/local_storage/local_storage_result.dart';
 import 'package:commuter_client/core/local_storage/local_storage_service.dart';
 import 'package:commuter_client/core/local_storage/models/local_commute_model.dart';
@@ -34,7 +35,9 @@ class WhereToRebo {
 
   Future<ApiResult<List<PredictionModel>>> getPredictions(String input) async {
     try {
-      return await _placesService.getPredictions(input).then((value) {
+      return await _placesService
+          .getPredictions(input, Env.placesApiKey)
+          .then((value) {
         return ApiResult.success(value.predictions);
       });
     } catch (e) {
@@ -44,7 +47,9 @@ class WhereToRebo {
 
   Future<ApiResult<PlaceDetailsModel>> getPlaceDetails(String placeId) async {
     try {
-      return await _placesService.getPlaceDetails(placeId).then((value) {
+      return await _placesService
+          .getPlaceDetails(placeId, Env.placesApiKey)
+          .then((value) {
         return ApiResult.success(value.result);
       });
     } catch (e) {

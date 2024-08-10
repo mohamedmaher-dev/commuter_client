@@ -1,4 +1,3 @@
-import 'package:commuter_client/core/env/env.dart';
 import 'package:commuter_client/modules/notifications/data/models/notifi_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
@@ -7,9 +6,10 @@ import '../../../core/networking/api_consts.dart';
 import '../data/models/send_fcm_token_model.dart';
 part 'notifi_api_service.g.dart';
 
-@RestApi(baseUrl: Env.apiNotifiBaseUrl)
+@RestApi()
 abstract class NotifiApiService {
-  factory NotifiApiService(Dio dio) = _NotifiApiService;
+  factory NotifiApiService(Dio dio, {required String baseUrl}) =
+      _NotifiApiService;
   @GET(ApiConsts.getUnreadNotifisEndPoint)
   Future<List<NotifiResponseModel>> getUnReadNotifis(
     @Path('id') String id,

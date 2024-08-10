@@ -10,9 +10,7 @@ _utilsDiInit() async {
   );
   di.registerLazySingleton<Dio>(() => DioFactory.getDio());
   di.registerLazySingleton(
-    () => ApiService(
-      di<Dio>(),
-    ),
+    () => ApiService(di<Dio>(), baseUrl: Env.apiBaseUrl),
   );
 
   di.registerLazySingleton(
@@ -35,8 +33,14 @@ _utilsDiInit() async {
     ),
   );
 
-  di.registerLazySingleton(() => ApiChatService(di<Dio>()));
-  di.registerLazySingleton(() => NotifiApiService(di<Dio>()));
+  di.registerLazySingleton(
+    () => ApiChatService(
+      di<Dio>(),
+      baseUrl: Env.apiChatBaseUrl,
+    ),
+  );
+  di.registerLazySingleton(
+      () => NotifiApiService(di<Dio>(), baseUrl: Env.apiNotifiBaseUrl));
   di.registerLazySingleton<FirebaseMessaging>(() => FirebaseMessaging.instance);
 
   di.registerLazySingleton(
