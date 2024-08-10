@@ -1,0 +1,46 @@
+{
+    "Welcome_Back" : "مرحبًا بعودتك",
+    "Sign_In_With_Your_Mail_And_Password" : "تسجيل الدخول بواسطة البريد الإلكتروني وكلمة المرور",
+    "Forgot_Password" : "هل نسيت كلمة المرور",
+    "Sign_In" : "تسجيل الدخول",
+    "Create_Account" : "إنشاء حساب",
+    "Mail" : "البريد الإلكتروني",
+    "Password" :"كلمة المرور",
+    "Confrim_Password" :"تأكيد كلمة المرور",
+    "Welcom_To_Commuter" : "أهلاً بك في Commuter",
+    "Name" : "الاسم" ,
+    "Phone" : "الهاتف",
+    "Search" : "بحث",
+    "Phone_Verification" :"التحقق من الهاتف",
+    "Enter_OTP_Code_Here" : "أدخل رمز OTP هنا",
+    "Seconds_Left" : "ثواني متبقية",
+    "Resend_OTP_Code" : "إعادة إرسال رمز OTP",
+    "Language_Name" : "العربية",
+    "Already_Have_An_Account" : "لدي حساب بالفعل",
+    "App_Name" : "كوميوتر",
+    "Sign_In_With_Google" : "تسجيل بواسطة جوجل",
+    "Please_Input_Your_Mail" : "برجاء كتابة البريد الألكتروني",
+    "Confirm" : "تأكيد",
+    "You_Cannot_Leave_The_Email_Empty" : "لا يمكنك ترك البريد الاكتروني فارغ",
+    "You_Cannot_Leave_The_Password_Empty" : "لا يمكنك ترك كلمة المرور فارغة",
+    "Please_Write_Your_Email_Correctly":"برجاء كتابة البريد الاكتروني بطريقه صحيحة",
+    "The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters" : "يجب ان تكون كلمة المرور اكبر من او تساوي 6 احرف",
+    "Warning": "تحذير",
+    "Ok" : "حسنا",
+    "This_Account_Not_Active" : "هذا الحساب غير مفعل",
+    "Failure" : "خطأ",
+    "Timeout" :"انتهاء المدة المسموح بها",
+    "You_Cannot_Verify_The_Code_Because_Timeout" : "لا تستطيع تأكيد الرمز بسبب انتهاء المدة المسموح بها",
+    "Verify_Code" :"تاكيد الرمز",
+    "Change_Password" : "تغيير كلمة المرور",
+    "Please_Input_Your_New_Password_And_Confirm_It" : "برجاء قم بكتابة كلمة المرور الجديدة",
+    "Passwords_Must_Match"  : "كلمات المرور يجب ان تتطابق",
+    "Name_Field_Must_Not_Be_Empty" : "حقل الاسم لا يجب ان يكون فارغ",
+    "Phone_Number_Not_Valid" : "رقم الهاتف غير صحيح",
+    "The_Password_Has_Been_Changed_Successfully" : "تم تغيير كلمة المرور بنجاح"
+
+
+
+
+
+}
