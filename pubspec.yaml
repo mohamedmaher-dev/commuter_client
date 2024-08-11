@@ -90,9 +90,7 @@ dependencies:
 
   # ===== Helpers =====
   pretty_dio_logger: ^1.4.0
-  debug_print_flutter:
-    git:
-      url: https://github.com/mohamedmaher-dev/debug_print_flutter
+  logger: ^2.4.0
 
 dev_dependencies:
   flutter_test:

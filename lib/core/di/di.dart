@@ -36,7 +36,6 @@ import 'package:commuter_client/modules/where_to/controllers/where_to_bloc/where
 import 'package:commuter_client/modules/where_to/controllers/where_to_my_commutes_bloc/where_to_my_commutes_bloc.dart';
 import 'package:commuter_client/modules/where_to/controllers/where_to_switch_cubit/where_to_switch_cubit.dart';
 import 'package:commuter_client/modules/where_to/data/rebos/where_to_rebo.dart';
-import 'package:debug_print_flutter/debug_print_flutter.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
