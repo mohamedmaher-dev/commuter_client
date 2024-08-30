@@ -51,6 +51,34 @@ class _AccountBody extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.h),
+            RatingBar(
+              textDirection: TextDirection.ltr,
+              initialRating: 4.5,
+              minRating: 1,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 5,
+              itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+              ratingWidget: RatingWidget(
+                full: const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                half: const Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Icon(
+                    Icons.star_half,
+                    color: Colors.amber,
+                  ),
+                ),
+                empty: const Icon(
+                  Icons.star_border,
+                  color: Colors.amber,
+                ),
+              ),
+              onRatingUpdate: (double value) {},
+            ),
+            SizedBox(height: 10.h),
             ListTile(
               title: Text(
                 email,

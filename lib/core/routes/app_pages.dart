@@ -12,7 +12,7 @@ enum Pages {
   settings(view: SettingsView()),
   profile(view: ProfileView()),
   wallet(view: WalletView()),
-  whareTo(view: WhareTo()),
+  whareTo(view: WhereToView()),
   // commutes(view: CommutesView()),
   // addRoundTrip(view: AddRoundTripView()),
   noPermission(view: CheckPermissionView()),
@@ -20,7 +20,8 @@ enum Pages {
   add(view: AddView()),
   commuterProfile(view: CommuterProfileView()),
   splash(view: SplashView()),
-  signUp(view: SignUpView());
+  signUp(view: SignUpView()),
+  nearbyCommuters(view: NearbyCommutes());
 
   final Widget view;
   const Pages({required this.view});

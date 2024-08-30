@@ -16,6 +16,7 @@ import '../../modules/auth/sign_in/views/sign_in_view.dart';
 import '../../modules/auth/sign_up/views/sign_up_view.dart';
 import '../../modules/check_permission/views/check_permission_view.dart';
 import '../../modules/commuter_profile/views/commuter_profile_view.dart';
+import '../../modules/nearby_commutes/view/nearby_commutes_view.dart';
 import '../../modules/support_help/views/support_help_view.dart';
 part 'app_pages.dart';
 

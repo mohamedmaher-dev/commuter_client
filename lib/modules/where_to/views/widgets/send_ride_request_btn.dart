@@ -1,7 +1,7 @@
 part of '../whare_to_view.dart';
 
 class _SendRideRequestBtn extends StatelessWidget {
-  const _SendRideRequestBtn({super.key});
+  const _SendRideRequestBtn();
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +14,20 @@ class _SendRideRequestBtn extends StatelessWidget {
             builder: (context, state) {
               if (whereToPanelBloc.landingLocation != null &&
                   whereToPanelBloc.pickupLocation != null) {
-                return FilledButton(
-                  onPressed: () {
-                    whereToBloc.add(
-                      WhereToEvent.onSendRideRequest(
-                        pickup: whereToPanelBloc.pickupLocation!.location,
-                        landing: whereToPanelBloc.landingLocation!.location,
-                      ),
-                    );
-                    whereToPanelBloc.add(const WhereToPanelEvent.started());
-                  },
-                  child: const Text('Send Ride Request'),
+                return Padding(
+                  padding: EdgeInsets.only(top: 10.w),
+                  child: FilledButton(
+                    onPressed: () {
+                      whereToBloc.add(
+                        WhereToEvent.onSendRideRequest(
+                          pickup: whereToPanelBloc.pickupLocation!.location,
+                          landing: whereToPanelBloc.landingLocation!.location,
+                        ),
+                      );
+                      whereToPanelBloc.add(const WhereToPanelEvent.started());
+                    },
+                    child: const Text('Send Ride Request'),
+                  ),
                 );
               } else {
                 return const SizedBox.shrink();

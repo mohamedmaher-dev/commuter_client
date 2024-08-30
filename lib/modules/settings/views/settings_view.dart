@@ -73,8 +73,8 @@ class SettingsView extends StatelessWidget {
                     leading: const Icon(Icons.delete),
                     trailing: ElevatedButton.icon(
                       style: ButtonStyle(
-                        elevation: const WidgetStatePropertyAll(0),
-                        foregroundColor: WidgetStatePropertyAll(
+                        elevation: const MaterialStatePropertyAll(0),
+                        foregroundColor: MaterialStatePropertyAll(
                           ColorManger.red,
                         ),
                       ),
@@ -89,8 +89,8 @@ class SettingsView extends StatelessWidget {
                             actions: [
                               ElevatedButton.icon(
                                 style: ButtonStyle(
-                                  elevation: const WidgetStatePropertyAll(0),
-                                  foregroundColor: WidgetStatePropertyAll(
+                                  elevation: const MaterialStatePropertyAll(0),
+                                  foregroundColor: MaterialStatePropertyAll(
                                     ColorManger.red,
                                   ),
                                 ),

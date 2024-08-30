@@ -37,7 +37,7 @@ class _NotifiItemView extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     style: ButtonStyle(
-                      foregroundColor: WidgetStatePropertyAll(
+                      foregroundColor: MaterialStatePropertyAll(
                         ColorManger.red,
                       ),
                     ),

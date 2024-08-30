@@ -13,7 +13,7 @@ part 'app_theme_bloc.freezed.dart';
 
 class AppThemeBloc extends Bloc<AppThemeEvent, AppThemeState> {
   _AppTheme get appTheme => _AppTheme();
-  ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
   AppThemeBloc() : super(const _Initial()) {
     on<AppThemeEvent>(
       (event, emit) {

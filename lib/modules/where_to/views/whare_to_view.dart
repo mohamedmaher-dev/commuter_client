@@ -27,8 +27,8 @@ part 'widgets/send_ride_request_btn.dart';
 part 'widgets/nearby_commuters_actions.dart';
 part 'widgets/nearest_stations_btn.dart';
 
-class WhareTo extends StatelessWidget {
-  const WhareTo({super.key});
+class WhereToView extends StatelessWidget {
+  const WhereToView({super.key});
 
   @override
   Widget build(BuildContext context) {

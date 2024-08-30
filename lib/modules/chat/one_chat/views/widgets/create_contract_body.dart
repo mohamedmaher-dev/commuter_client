@@ -56,9 +56,9 @@ class CreateContractBody extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10.h),
-          FilledButton.icon(
+          FilledButton(
             onPressed: () {},
-            label: const Text('Confirm'),
+            child: const Text('Confirm'),
           )
         ],
       ),

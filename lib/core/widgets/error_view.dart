@@ -27,7 +27,7 @@ class ErrorView extends StatelessWidget {
         ),
         if (showBtn)
           ElevatedButton.icon(
-            style: const ButtonStyle(elevation: WidgetStatePropertyAll(0)),
+            style: const ButtonStyle(elevation: MaterialStatePropertyAll(0)),
             onPressed: onPressed,
             label: const Text('Try Again'),
             icon: const Icon(Icons.refresh),

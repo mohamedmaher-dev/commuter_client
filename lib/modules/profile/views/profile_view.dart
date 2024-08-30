@@ -1,6 +1,7 @@
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:badges/badges.dart' as badges;
 

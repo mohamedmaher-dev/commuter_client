@@ -31,7 +31,6 @@ migrate_working_dir/
 .pub/
 /build/
 
-
 # Symbolication related
 app.*.symbols
 
@@ -50,3 +49,6 @@ app.*.map.json
 *android/app/google-services.json
 *lib/firebase_options.dart
 *firebase.json
+
+# FVM Version Cache
+.fvm/

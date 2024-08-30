@@ -16,7 +16,7 @@ class AppBottomNavView extends StatelessWidget {
   Widget build(BuildContext context) {
     final homeBloc = BlocProvider.of<HomeBloc>(context);
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      padding: EdgeInsets.all(10.w),
       child: Card(
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
@@ -45,7 +45,7 @@ class AppBottomNavView extends StatelessWidget {
                             : BlendMode.dst,
                       ),
                     ),
-                    title: const Text("Nearby Commutes"),
+                    title: const Text("Nearby Commuters"),
                   ),
                   SalomonBottomBarItem(
                     selectedColor: Colors.green,

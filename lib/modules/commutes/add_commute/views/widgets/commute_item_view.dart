@@ -39,7 +39,7 @@ class _AddCommuteItem extends StatelessWidget {
                   child: Center(
                     child: ElevatedButton.icon(
                       style: ButtonStyle(
-                        foregroundColor: WidgetStatePropertyAll(
+                        foregroundColor: MaterialStatePropertyAll(
                           ColorManger.red,
                         ),
                       ),
