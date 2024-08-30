@@ -57,7 +57,7 @@ String _getAppBarTitle(int currentPage) {
   if (currentPage == 0) {
     return 'Whare to go?';
   } else if (currentPage == 1) {
-    return 'Nearby Commutes';
+    return 'Nearby Commuters';
   } else if (currentPage == 2) {
     return 'Transactions';
   } else if (currentPage == 3) {

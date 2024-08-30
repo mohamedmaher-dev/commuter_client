@@ -8,16 +8,16 @@ class _NearestStationsBtn extends StatelessWidget {
     return Expanded(
       child: ElevatedButton(
         style: ButtonStyle(
-          side: WidgetStatePropertyAll(
+          side: MaterialStatePropertyAll(
             BorderSide(
               width: 2,
               color: ColorManger.primaryContainer,
             ),
           ),
-          backgroundColor: WidgetStatePropertyAll(
+          backgroundColor: MaterialStatePropertyAll(
             ColorManger.primaryContainer,
           ),
-          foregroundColor: WidgetStatePropertyAll(
+          foregroundColor: MaterialStatePropertyAll(
             ColorManger.white,
           ),
         ),

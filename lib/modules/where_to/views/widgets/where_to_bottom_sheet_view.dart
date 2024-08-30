@@ -12,6 +12,17 @@ class _WhereToBottomSheetView extends StatelessWidget {
     final searchForPlaceBloc = context.read<SearchForPlaceBloc>();
     return Column(
       children: [
+        ListTile(
+          leading: Icon(
+            Icons.add_location_alt_rounded,
+            color: ColorManger.primary,
+          ),
+          title: Text(
+            'Enter Location',
+            style: TextStyles.tsP15B,
+          ),
+        ),
+        const Divider(),
         Padding(
           padding: EdgeInsets.all(10.w),
           child: TextField(
@@ -29,7 +40,7 @@ class _WhereToBottomSheetView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton.icon(
-              style: const ButtonStyle(elevation: WidgetStatePropertyAll(0)),
+              style: const ButtonStyle(elevation: MaterialStatePropertyAll(0)),
               onPressed: () {
                 whereToBloc.add(const WhereToEvent.onSetOnMap());
                 AppRouter.pop(context: context);
@@ -38,7 +49,7 @@ class _WhereToBottomSheetView extends StatelessWidget {
               icon: const Icon(Icons.pin_drop),
             ),
             ElevatedButton.icon(
-              style: const ButtonStyle(elevation: WidgetStatePropertyAll(0)),
+              style: const ButtonStyle(elevation: MaterialStatePropertyAll(0)),
               onPressed: () {
                 whereToPanelBloc.add(
                   WhereToPanelEvent.onSelectCurrentLocation(
@@ -52,6 +63,17 @@ class _WhereToBottomSheetView extends StatelessWidget {
             )
           ],
         ),
+        Padding(
+          padding: EdgeInsets.all(2.w),
+          child: ActionChip(
+            onPressed: () {},
+            label: const Text('Home'),
+            avatar: const Icon(
+              Icons.route_outlined,
+            ),
+          ),
+        ),
+        const Divider(),
         BlocBuilder<SearchForPlaceBloc, SearchForPlaceState>(
           builder: (context, state) {
             return state.when(

@@ -64,7 +64,7 @@ class _Commuter extends StatelessWidget {
                   darkTheme: appThemeBloc.appTheme.theme,
                   themeMode: appThemeBloc.themeMode,
                   builder: PopLoading.init(),
-                  home: Pages.initPage.view,
+                  home: Pages.home.view,
                 );
               },
             );

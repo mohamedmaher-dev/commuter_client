@@ -16,10 +16,10 @@ class _SetOnMapActionBtn extends StatelessWidget {
               Expanded(
                 child: FilledButton.icon(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(
+                    backgroundColor: MaterialStatePropertyAll(
                       ColorManger.red,
                     ),
-                    foregroundColor: WidgetStatePropertyAll(
+                    foregroundColor: MaterialStatePropertyAll(
                       ColorManger.white,
                     ),
                   ),
@@ -34,10 +34,10 @@ class _SetOnMapActionBtn extends StatelessWidget {
               Expanded(
                 child: FilledButton.icon(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(
+                    backgroundColor: MaterialStatePropertyAll(
                       ColorManger.primaryContainer,
                     ),
-                    foregroundColor: WidgetStatePropertyAll(
+                    foregroundColor: MaterialStatePropertyAll(
                       ColorManger.white,
                     ),
                   ),

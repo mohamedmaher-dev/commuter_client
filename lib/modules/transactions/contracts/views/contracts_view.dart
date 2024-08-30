@@ -60,21 +60,53 @@ class _ContarctItem extends StatelessWidget {
                 )
               ],
             ),
-            ListTile(
-              leading: const Icon(Icons.location_pin),
-              title: Text(
-                'Cairo, Egypt',
-                style: TextStyles.tsP10B,
-              ),
-              subtitle: const Text('Commute Location'),
+            Row(
+              children: [
+                Expanded(
+                  child: ListTile(
+                    leading: const Icon(Icons.route_outlined),
+                    title: Text(
+                      'Home',
+                      style: TextStyles.tsP10B,
+                    ),
+                    subtitle: const Text('Commute Name'),
+                  ),
+                ),
+                Expanded(
+                  child: ListTile(
+                    leading: const Icon(Icons.numbers),
+                    title: Text(
+                      'C-1245879',
+                      style: TextStyles.tsP10B,
+                    ),
+                    subtitle: const Text('Commute ID'),
+                  ),
+                ),
+              ],
             ),
-            ListTile(
-              leading: const Icon(Icons.payments),
-              title: Text(
-                '1000 SAR',
-                style: TextStyles.tsP10B,
-              ),
-              subtitle: const Text('Total Price'),
+            Row(
+              children: [
+                Expanded(
+                  child: ListTile(
+                    leading: const Icon(Icons.location_pin),
+                    title: Text(
+                      'Cairo, Egypt',
+                      style: TextStyles.tsP10B,
+                    ),
+                    subtitle: const Text('Commute Location'),
+                  ),
+                ),
+                Expanded(
+                  child: ListTile(
+                    leading: const Icon(Icons.payments),
+                    title: Text(
+                      '1000 SAR',
+                      style: TextStyles.tsP10B,
+                    ),
+                    subtitle: const Text('Total Price'),
+                  ),
+                ),
+              ],
             ),
             EasyStepper(
               defaultStepBorderType: BorderType.normal,

@@ -16,8 +16,8 @@ class _NearbyCommutersActions extends StatelessWidget {
                 SizedBox(height: 10.w),
                 Row(
                   children: [
-                    const _NearestStationsBtn(),
-                    SizedBox(width: 10.w),
+                    // const _NearestStationsBtn(),
+                    // SizedBox(width: 10.w),
                     Expanded(
                       child:
                           BlocBuilder<WhereToSwitchCubit, WhereToSwitchState>(
@@ -39,7 +39,6 @@ class _NearbyCommutersActions extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10.w),
               ],
             );
           },

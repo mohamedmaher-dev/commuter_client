@@ -17,7 +17,7 @@ class _MyCommutesBodyView extends StatelessWidget {
                     AppRouter.pushReplacement(
                         context: context, page: Pages.add);
                   },
-                  color: WidgetStatePropertyAll(
+                  color: MaterialStatePropertyAll(
                     ColorManger.primaryContainer,
                   ),
                   labelStyle: TextStyles.tsP10B,
@@ -35,7 +35,7 @@ class _MyCommutesBodyView extends StatelessWidget {
                         success: (data) => ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: data.length,
-                          itemBuilder: (context, index) => _CommuteChips(
+                          itemBuilder: (context, index) => CommuteChips(
                             data[index],
                           ),
                         ),

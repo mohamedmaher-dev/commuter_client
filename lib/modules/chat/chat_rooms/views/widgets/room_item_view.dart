@@ -16,7 +16,7 @@ class _RoomItemView extends StatelessWidget {
               padding: EdgeInsets.all(5.w),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(100.r),
-                child: ProfileImage(size: 50.w, url: room.image),
+                child: ProfileImage(size: 35.w, url: room.image),
               ),
             ),
             VerticalDivider(

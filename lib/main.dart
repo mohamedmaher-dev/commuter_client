@@ -24,6 +24,7 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = di<MyBlocObserver>();
   await ScreenUtil.ensureScreenSize();
+
   runApp(const Commuter());
 }
 

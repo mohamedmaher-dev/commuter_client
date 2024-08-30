@@ -22,11 +22,7 @@ class WhereToPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final whereToPanelBloc = context.read<WhereToPanelBloc>();
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorManger.textFormbBackground,
-        borderRadius: BorderRadius.circular(10.r),
-      ),
+    return Card(
       child: BlocBuilder<WhereToPanelBloc, WhereToPanelState>(
         builder: (context, state) {
           return BlocBuilder<WhereToBloc, WhereToState>(
@@ -62,8 +58,9 @@ class WhereToPanel extends StatelessWidget {
                         margin: EdgeInsetsDirectional.only(start: 50.w),
                         width: 2.w,
                         height: 10.h,
-                        decoration:
-                            BoxDecoration(color: ColorManger.background),
+                        decoration: BoxDecoration(
+                          color: ColorManger.textFormbBackground,
+                        ),
                       ),
                     ),
                     _WhereToItem(
@@ -109,7 +106,7 @@ class _WhereToItem extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       margin: margin,
       decoration: BoxDecoration(
-        color: ColorManger.background,
+        color: ColorManger.textFormbBackground,
         borderRadius: BorderRadius.circular(100.r),
       ),
       child: ListTile(

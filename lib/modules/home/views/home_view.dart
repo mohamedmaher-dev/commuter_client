@@ -52,7 +52,7 @@ class _HomeView extends StatelessWidget {
             bottomNavigationBar: const AppBottomNavView(),
             body: Container(
               child: switch (homeBloc.currentPage) {
-                0 => const WhareTo(),
+                0 => const WhereToView(),
                 1 => const NearbyCommutes(),
                 2 => const RidesView(),
                 3 => const ChatRooms(),
