@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:badges/badges.dart' as badges;
 import '../../../core/themes/controller/app_theme_bloc.dart';
 import '../../../core/themes/text_styles.dart';
 

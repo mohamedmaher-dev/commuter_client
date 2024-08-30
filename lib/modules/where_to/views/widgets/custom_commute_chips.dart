@@ -1,13 +1,11 @@
 part of '../whare_to_view.dart';
 
 class CommuteChips extends StatelessWidget {
-  const CommuteChips(this.localCommuteModel);
+  const CommuteChips(this.localCommuteModel, {super.key});
   final LocalCommuteModel localCommuteModel;
 
   @override
   Widget build(BuildContext context) {
-    final whereToBloc = context.read<WhereToBloc>();
-
     return Padding(
       padding: EdgeInsets.all(2.w),
       child: ActionChip(
