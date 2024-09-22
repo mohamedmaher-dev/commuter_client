@@ -9,15 +9,15 @@ class _SignInIntroMsg extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
-          AssetsManger.logo,
+          AssetsManger.imagesLogo,
           width: MediaQuery.of(context).size.width / 2,
         ),
         Text(
-          language.Welcome_Back,
+          language.welcome_back,
           style: TextStyles.tsP25B,
         ),
         Text(
-          language.Sign_In_With_Your_Mail_And_Password,
+          language.sign_in_with_your_mail_and_password,
           style: TextStyles.tsP10N,
         ),
       ],

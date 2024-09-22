@@ -6,7 +6,7 @@ part of 'notifi_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _NotifiApiService implements NotifiApiService {
   _NotifiApiService(
@@ -20,10 +20,10 @@ class _NotifiApiService implements NotifiApiService {
 
   @override
   Future<List<NotifiResponseModel>> getUnReadNotifis(String id) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<List<dynamic>>(_setStreamType<List<NotifiResponseModel>>(Options(
       method: 'GET',
@@ -41,19 +41,19 @@ class _NotifiApiService implements NotifiApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var _value = _result.data!
+    var value = _result.data!
         .map((dynamic i) =>
             NotifiResponseModel.fromJson(i as Map<String, dynamic>))
         .toList();
-    return _value;
+    return value;
   }
 
   @override
   Future<List<NotifiResponseModel>> getReadNotifis(String id) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<List<dynamic>>(_setStreamType<List<NotifiResponseModel>>(Options(
       method: 'GET',
@@ -71,19 +71,19 @@ class _NotifiApiService implements NotifiApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var _value = _result.data!
+    var value = _result.data!
         .map((dynamic i) =>
             NotifiResponseModel.fromJson(i as Map<String, dynamic>))
         .toList();
-    return _value;
+    return value;
   }
 
   @override
   Future<void> readNotifi(String notifiId) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'PATCH',
       headers: _headers,
@@ -107,10 +107,10 @@ class _NotifiApiService implements NotifiApiService {
     String userId,
     String notifiId,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'DELETE',
       headers: _headers,
@@ -134,7 +134,7 @@ class _NotifiApiService implements NotifiApiService {
     String id,
     SendFcmTokenRequestModel sendFcmTokenRequestModel,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};

@@ -7,6 +7,7 @@ class _SetOnMapActionBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     final whereToBloc = context.read<WhereToBloc>();
     final whereToPanel = context.read<WhereToPanelBloc>();
+    final language = Language.of(context);
     return BlocBuilder<WhereToBloc, WhereToState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -19,24 +20,23 @@ class _SetOnMapActionBtn extends StatelessWidget {
                     backgroundColor: MaterialStatePropertyAll(
                       ColorManger.red,
                     ),
-                    foregroundColor: MaterialStatePropertyAll(
+                    foregroundColor: const MaterialStatePropertyAll(
                       ColorManger.white,
                     ),
                   ),
                   onPressed: () {
                     whereToBloc.add(const WhereToEvent.onCancelSetOnMap());
                   },
-                  label: const Text('Cancel'),
+                  label: Text(language.cancel),
                   icon: const Icon(Icons.cancel),
                 ),
               ),
               SizedBox(width: 10.w),
               Expanded(
                 child: FilledButton.icon(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                      ColorManger.primaryContainer,
-                    ),
+                  style: const ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll(ColorManger.myBlue),
                     foregroundColor: MaterialStatePropertyAll(
                       ColorManger.white,
                     ),
@@ -50,7 +50,7 @@ class _SetOnMapActionBtn extends StatelessWidget {
                     );
                     whereToBloc.add(const WhereToEvent.onCancelSetOnMap());
                   },
-                  label: const Text('Confirm'),
+                  label: Text(language.confirm),
                   icon: const Icon(Icons.done),
                 ),
               ),

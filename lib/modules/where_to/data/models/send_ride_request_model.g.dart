@@ -13,6 +13,8 @@ Map<String, dynamic> _$SendRideRequestModelToJson(
       'pickupLocation': instance.pickupLocation.toJson(),
       'dropoffLocation': instance.dropoffLocation.toJson(),
       'fare': instance.fare,
+      'carpool': instance.carpool,
+      'isFemaleOnly': instance.isFemaleOnly,
     };
 
 Map<String, dynamic> _$LoactionSendRideRequestModelToJson(

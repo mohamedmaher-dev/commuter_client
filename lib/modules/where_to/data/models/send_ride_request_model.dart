@@ -7,11 +7,16 @@ class SendRideRequestModel {
   final LoactionSendRideRequestModel pickupLocation;
   final LoactionSendRideRequestModel dropoffLocation;
   final int fare;
-  SendRideRequestModel(
-      {required this.userId,
-      required this.pickupLocation,
-      required this.dropoffLocation,
-      required this.fare});
+  final bool carpool;
+  final bool isFemaleOnly;
+  SendRideRequestModel({
+    required this.userId,
+    required this.pickupLocation,
+    required this.dropoffLocation,
+    required this.fare,
+    required this.carpool,
+    required this.isFemaleOnly,
+  });
 
   Map<String, dynamic> toJson() => _$SendRideRequestModelToJson(this);
 }

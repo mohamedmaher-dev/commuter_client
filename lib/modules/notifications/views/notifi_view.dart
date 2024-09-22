@@ -1,6 +1,4 @@
 import 'package:commuter_client/core/di/di.dart';
-import 'package:commuter_client/core/routes/app_route.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:commuter_client/core/widgets/empty_view.dart';
 import 'package:commuter_client/core/widgets/error_view.dart';
 import 'package:commuter_client/core/widgets/loading_view.dart';
@@ -11,7 +9,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jiffy/jiffy.dart';
 
-import '../../../core/themes/controller/app_theme_bloc.dart';
+import '../../../core/localization/generated/l10n.dart';
+import '../../../core/themes/app_theme_controller.dart';
+
 part 'widgets/notifi_item_view.dart';
 part 'widgets/notifi_app_bar_view.dart';
 
@@ -33,6 +33,7 @@ class _NotifiView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final notifiBloc = BlocProvider.of<NotifiBloc>(context);
+    final language = Language.of(context);
     return Scaffold(
       appBar: const _NotifiAppBarView(),
       body: Padding(
@@ -43,9 +44,9 @@ class _NotifiView extends StatelessWidget {
               builder: (context, state) {
                 return CupertinoSlidingSegmentedControl(
                   thumbColor: ColorManger.primaryContainer,
-                  children: const <NotifiPage, Widget>{
-                    NotifiPage.newNotifi: Text('New'),
-                    NotifiPage.readedNotifi: Text('Readed'),
+                  children: <NotifiPage, Widget>{
+                    NotifiPage.newNotifi: Text(language.new_notifications),
+                    NotifiPage.readedNotifi: Text(language.readed),
                   },
                   onValueChanged: (value) {
                     notifiBloc.add(
@@ -65,9 +66,9 @@ class _NotifiView extends StatelessWidget {
                   initial: () => const Expanded(child: LoadingView()),
                   loading: () => const Expanded(child: LoadingView()),
                   success: (currentPage, notifis) => Expanded(
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) => const Divider(),
+                    child: ListView.builder(
                       shrinkWrap: true,
+                      itemCount: notifis.length,
                       itemBuilder: (context, index) => _NotifiItemView(
                         currentPage: currentPage,
                         title: notifis[index].title,
@@ -75,12 +76,11 @@ class _NotifiView extends StatelessWidget {
                         notifiId: notifis[index].notificationId,
                         time: notifis[index].createdAt,
                       ),
-                      itemCount: notifis.length,
                     ),
                   ),
-                  empty: () => const Expanded(
+                  empty: () => Expanded(
                     child: EmptyView(
-                      text: 'No Notifications',
+                      text: language.no_notifications,
                       icon: Icons.notifications_off_rounded,
                     ),
                   ),

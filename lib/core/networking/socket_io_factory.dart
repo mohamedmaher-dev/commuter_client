@@ -1,3 +1,5 @@
+// ignore_for_file: library_prefixes
+
 import 'package:commuter_client/core/env/env.dart';
 import 'package:socket_io_client/socket_io_client.dart' as socketIo;
 import 'package:socket_io_client/socket_io_client.dart';

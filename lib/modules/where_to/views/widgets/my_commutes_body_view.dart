@@ -1,32 +1,43 @@
 part of '../whare_to_view.dart';
 
 class _MyCommutesBodyView extends StatelessWidget {
-  const _MyCommutesBodyView({super.key});
+  const _MyCommutesBodyView();
 
   @override
   Widget build(BuildContext context) {
+    final whereToMyCommutesBloc =
+        BlocProvider.of<WhereToMyCommutesBloc>(context);
+    final Language language = Language.of(context);
     return BlocBuilder<WhereToBloc, WhereToState>(
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () => Row(
             children: [
-              Padding(
-                padding: EdgeInsets.all(2.w),
+              SizedBox(
+                height: 50.h,
                 child: ActionChip(
-                  onPressed: () {
-                    AppRouter.pushReplacement(
-                        context: context, page: Pages.add);
+                  onPressed: () async {
+                    await AppRouter.push(
+                      context: context,
+                      page: Pages.myCommutes,
+                    );
+                    whereToMyCommutesBloc
+                        .add(const WhereToMyCommutesEvent.started());
                   },
-                  color: MaterialStatePropertyAll(
-                    ColorManger.primaryContainer,
+                  color: const MaterialStatePropertyAll(
+                    ColorManger.myBlue,
                   ),
-                  labelStyle: TextStyles.tsP10B,
-                  label: const Text('My Commutes'),
+                  side: const BorderSide(color: ColorManger.myBlue),
+                  labelStyle: const TextStyle(
+                    color: ColorManger.myGold,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  label: Text(language.my_commutes),
                 ),
               ),
               Expanded(
                 child: SizedBox(
-                  height: 25.h,
+                  height: 50.h,
                   child: BlocBuilder<WhereToMyCommutesBloc,
                       WhereToMyCommutesState>(
                     builder: (context, state) {

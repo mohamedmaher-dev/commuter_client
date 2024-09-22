@@ -2,7 +2,6 @@ import 'package:commuter_client/core/env/env.dart';
 import 'package:commuter_client/core/local_storage/local_storage_result.dart';
 import 'package:commuter_client/core/local_storage/local_storage_service.dart';
 import 'package:commuter_client/core/local_storage/models/local_commute_model.dart';
-import 'package:commuter_client/core/local_storage/models/user_secret_data_model.dart';
 import 'package:commuter_client/core/location/location_service.dart';
 import 'package:commuter_client/core/location/models/place_details/place_details_model.dart';
 import 'package:commuter_client/core/location/places_service.dart';
@@ -18,18 +17,15 @@ import '../../../../core/networking/api_result.dart';
 class WhereToRebo {
   final ApiService _apiService;
   final PlacesService _placesService;
-  final UserSecretDataModel _userSecretDataModel;
   final LocationService _locationService;
   final LocalStorageService _localStorageService;
   WhereToRebo({
     required LocationService locationService,
     required PlacesService placesService,
     required ApiService apiService,
-    required UserSecretDataModel userSecretDataModel,
     required LocalStorageService localStorageService,
   })  : _placesService = placesService,
         _apiService = apiService,
-        _userSecretDataModel = userSecretDataModel,
         _locationService = locationService,
         _localStorageService = localStorageService;
 
@@ -57,21 +53,29 @@ class WhereToRebo {
     }
   }
 
-  Future<ApiResult> sendRideRequest(
-      {required LatLng pickup, required LatLng dropoff}) async {
-    final sendRideRequestModel = SendRideRequestModel(
-      dropoffLocation: LoactionSendRideRequestModel(
-          latitude: dropoff.latitude, longitude: dropoff.longitude),
-      fare: 0,
-      pickupLocation: LoactionSendRideRequestModel(
-          latitude: pickup.latitude, longitude: pickup.longitude),
-      userId: _userSecretDataModel.userId,
-    );
-
+  Future<ApiResult> sendRideRequest({
+    required LatLng? pickup,
+    required LatLng dropoff,
+    required bool carPooling,
+    required bool femaleOnly,
+  }) async {
+    pickup ??= await getCurrentLocation();
     try {
+      final userDataModel = await _localStorageService.getUserSecretData;
+      final sendRideRequestModel = SendRideRequestModel(
+        dropoffLocation: LoactionSendRideRequestModel(
+            latitude: dropoff.latitude, longitude: dropoff.longitude),
+        fare: 0,
+        pickupLocation: LoactionSendRideRequestModel(
+          latitude: pickup!.latitude,
+          longitude: pickup.longitude,
+        ),
+        userId: userDataModel!.userId,
+        carpool: carPooling,
+        isFemaleOnly: femaleOnly,
+      );
       final response = await _apiService.rideRequest(
         sendRideRequestModel,
-        _userSecretDataModel.userToken,
       );
       return ApiResult.success(response);
     } on DioException catch (e) {
@@ -94,42 +98,10 @@ class WhereToRebo {
   Future<LocalStorageResult<List<LocalCommuteModel>>> getLocalCommutes() async {
     try {
       final result = await _localStorageService.getLocalCommutes();
-      return LocalStorageResult.success(result: result);
+      final data = result.where((element) => element.isPinned).toList();
+      return LocalStorageResult.success(result: data);
     } catch (e) {
       return LocalStorageResult.failure(error: e.toString());
-    }
-  }
-
-  Future<ApiResult> sendRideRequestFromLocalCommute(
-      {required LocalCommuteModel commute}) async {
-    final currentLocation = await _locationService.getCurrentPosition();
-
-    if (currentLocation == null) {
-      return ApiResult.failure(
-          ApiErrorModel.fromUnknown(e: 'Failed to get current location'));
-    } else {
-      final sendRideRequestModel = SendRideRequestModel(
-        dropoffLocation: LoactionSendRideRequestModel(
-            latitude: commute.latitude, longitude: commute.longitude),
-        fare: 0,
-        pickupLocation: LoactionSendRideRequestModel(
-            latitude: currentLocation.latitude,
-            longitude: currentLocation.longitude),
-        userId: _userSecretDataModel.userId,
-      );
-
-      try {
-        final response = await _apiService.rideRequest(
-          sendRideRequestModel,
-          _userSecretDataModel.userToken,
-        );
-        return ApiResult.success(response);
-      } on DioException catch (e) {
-        return ApiResult.failure(
-            ApiErrorModel.fromDioException(dioException: e));
-      } catch (e) {
-        return ApiResult.failure(ApiErrorModel.fromUnknown(e: e));
-      }
     }
   }
 }

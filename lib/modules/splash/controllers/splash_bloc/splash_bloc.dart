@@ -1,23 +1,23 @@
 import 'package:bloc/bloc.dart';
-import 'package:commuter_client/core/di/di.dart';
+import 'package:commuter_client/modules/check_permission/data/rebos/check_permission_rebo.dart';
 import 'package:commuter_client/modules/splash/data/rebos/splash_rebo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../../core/local_storage/local_storage_result.dart';
 import '../../../../core/local_storage/models/user_secret_data_model.dart';
-import '../../../../core/location/location_permission.dart';
 part 'splash_event.dart';
 part 'splash_state.dart';
 part 'splash_bloc.freezed.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final SplashRebo _splashRebo;
-  SplashBloc(this._splashRebo) : super(const _Initial()) {
+  final CheckPermissionRebo _checkPermissionRebo;
+  SplashBloc(this._splashRebo, this._checkPermissionRebo)
+      : super(const _Initial()) {
     on<SplashEvent>(
       (event, emit) async {
         await event.when(
           started: () async {
-            final permissionIsGranted = await checkPermission();
+            final permissionIsGranted = await _checkPermissionRebo.check();
             if (permissionIsGranted) {
               await _checkIsLoginMethod(emit, this);
             } else {
@@ -43,12 +43,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           id: data.userData.id,
           token: data.token,
         );
-        saveUserSecretDataResult.when(
-          success: (result) {
-            if (di.isRegistered<UserSecretDataModel>()) {
-              di.unregister<UserSecretDataModel>();
-            }
-            di.registerSingleton<UserSecretDataModel>(userSecretDataModel);
+        await saveUserSecretDataResult.when(
+          success: (result) async {
             emit(const SplashState.success());
           },
           failure: (error) {

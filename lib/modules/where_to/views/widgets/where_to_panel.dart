@@ -1,8 +1,7 @@
 import 'package:commuter_client/core/routes/app_route.dart';
-import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:commuter_client/core/widgets/error_view.dart';
 import 'package:commuter_client/core/widgets/loading_view.dart';
+import 'package:commuter_client/core/widgets/notifi_icon_view.dart';
 import 'package:commuter_client/modules/where_to/controllers/search_for_place_bloc/search_for_place_bloc.dart';
 import 'package:commuter_client/modules/where_to/controllers/where_to_bloc/where_to_bloc.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/di/di.dart';
+import '../../../../core/localization/generated/l10n.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../../controllers/where_to_panel/where_to_panel_bloc.dart';
 import '../../data/location_field_type.dart';
 
@@ -22,6 +23,7 @@ class WhereToPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final whereToPanelBloc = context.read<WhereToPanelBloc>();
+    final Language language = Language.of(context);
     return Card(
       child: BlocBuilder<WhereToPanelBloc, WhereToPanelState>(
         builder: (context, state) {
@@ -40,10 +42,31 @@ class WhereToPanel extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            'Where to?',
+                            language.where_to,
                             style: TextStyles.ts12B,
                           ),
                         ),
+                        Container(
+                          margin: EdgeInsets.all(10.w),
+                          decoration: BoxDecoration(
+                            color: ColorManger.textFormbBackground,
+                            borderRadius: BorderRadius.circular(100.r),
+                          ),
+                          child: Row(
+                            children: [
+                              const NotifiIconView(),
+                              IconButton(
+                                onPressed: () {
+                                  AppRouter.push(
+                                      context: context, page: Pages.settings);
+                                },
+                                icon: const Icon(
+                                  Icons.settings,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                     _WhereToItem(
@@ -101,6 +124,7 @@ class _WhereToItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final whereToPanelBloc = BlocProvider.of<WhereToPanelBloc>(context);
     final whereTolBloc = context.read<WhereToBloc>();
+    final Language language = Language.of(context);
 
     return Container(
       alignment: AlignmentDirectional.centerStart,
@@ -114,8 +138,8 @@ class _WhereToItem extends StatelessWidget {
         title: Text(
           title ??
               (locationType == LocationFieldType.pickup
-                  ? 'Enter Pickup Location'
-                  : 'Enter Landing Location'),
+                  ? language.enter_pickup_location
+                  : language.enter_landing_location),
           maxLines: 1,
           style: title == null
               ? const TextStyle(color: Colors.grey)

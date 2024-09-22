@@ -1,9 +1,8 @@
-import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/local_storage/local_storage_consts.dart';
 import 'package:commuter_client/core/local_storage/models/app_settings_model.dart';
 import 'package:commuter_client/core/local_storage/models/user_secret_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'models/local_commute_model.dart';
 
@@ -11,15 +10,22 @@ class LocalStorageService {
   final FlutterSecureStorage _flutterSecureStorage;
   late Box<AppSettingsModel> _appSettingsBox;
   late Box<LocalCommuteModel> _localCommuteBox;
+  static late UserSecretDataModel userSecretDataModel;
   LocalStorageService(this._flutterSecureStorage);
 
   Future<void> init() async {
+    await Hive.initFlutter();
     Hive.registerAdapter(AppSettingsModelAdapter());
     Hive.registerAdapter(LocalCommuteModelAdapter());
+    userSecretDataModel =
+        await getUserSecretData ?? UserSecretDataModel.defaultUser;
+  }
+
+  Future<void> _openLocalCommuteBox() async {
     final userSecretDataModel = await getUserSecretData;
-    if (userSecretDataModel != null) {
-      di.registerSingleton<UserSecretDataModel>(userSecretDataModel);
-    }
+    _localCommuteBox = await Hive.openBox<LocalCommuteModel>(
+      '${LocalStorageConsts.localCommuteBox}_${userSecretDataModel!.userId}',
+    );
   }
 
   Future<UserSecretDataModel?> get getUserSecretData async {
@@ -51,7 +57,7 @@ class LocalStorageService {
     );
     await _flutterSecureStorage.write(
       key: LocalStorageConsts.userTokenKey,
-      value: 'Bearer $userToken',
+      value: userToken,
     );
     return UserSecretDataModel(
       userId: userId,
@@ -63,6 +69,11 @@ class LocalStorageService {
 
   Future<void> deleteUserSecretData() async {
     await _flutterSecureStorage.deleteAll();
+  }
+
+  Future<void> deleteAllUserCommutes() async {
+    await _openLocalCommuteBox();
+    await _localCommuteBox.deleteFromDisk();
   }
 
   Future<AppSettingsModel> get getAppSettings async {
@@ -86,21 +97,29 @@ class LocalStorageService {
   }
 
   Future<List<LocalCommuteModel>> getLocalCommutes() async {
-    List<LocalCommuteModel> result = [];
-    _localCommuteBox = await Hive.openBox<LocalCommuteModel>(
-      LocalStorageConsts.localCommuteBox,
-    );
-    _localCommuteBox.toMap().forEach((key, value) {
-      result.add(value);
-    });
-    return result;
+    await _openLocalCommuteBox();
+    return _localCommuteBox.values.toList();
   }
 
   Future<void> addLocalCommute(
       {required LocalCommuteModel localCommuteModel}) async {
-    _localCommuteBox = await Hive.openBox<LocalCommuteModel>(
-      LocalStorageConsts.localCommuteBox,
+    await _localCommuteBox.put(localCommuteModel.id, localCommuteModel);
+  }
+
+  Future<void> deleteCommute({
+    required LocalCommuteModel localCommuteModel,
+  }) async {
+    await _localCommuteBox.delete(localCommuteModel.id);
+  }
+
+  Future<void> changePinCommute({
+    required LocalCommuteModel localCommuteModel,
+  }) async {
+    await deleteCommute(localCommuteModel: localCommuteModel);
+    await addLocalCommute(
+      localCommuteModel: localCommuteModel.copyWith(
+        isPinned: !localCommuteModel.isPinned,
+      ),
     );
-    _localCommuteBox.add(localCommuteModel);
   }
 }

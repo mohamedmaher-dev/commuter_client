@@ -6,6 +6,7 @@ class _BottomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chatRoomBloc = BlocProvider.of<OneChatRoomBloc>(context);
+    final language = Language.of(context);
 
     return Padding(
       padding: EdgeInsets.all(10.w),
@@ -24,9 +25,16 @@ class _BottomBody extends StatelessWidget {
           Expanded(
             child: TextFormField(
               controller: chatRoomBloc.textController,
-              decoration: const InputDecoration(
-                hintText: 'اكتب رسالتك ....',
-                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: InputDecoration(
+                hintText: language.enter_your_message,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0.r),
+                  ),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
           ),

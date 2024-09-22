@@ -1,7 +1,11 @@
-import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+
+import '../../../core/routes/app_route.dart';
+import '../../../core/themes/app_theme_controller.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -13,7 +17,12 @@ class OnBoardingPage extends StatefulWidget {
 class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
-  void _onIntroEnd(context) {}
+  void _onIntroEnd(context) {
+    AppRouter.pushReplacement(
+      context: context,
+      page: Pages.signIn,
+    );
+  }
 
   Widget _buildImage(String assetName, [double width = 350]) {
     return Image.asset('assets/images/$assetName', width: width);
@@ -22,7 +31,6 @@ class OnBoardingPageState extends State<OnBoardingPage> {
   @override
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
-
     final pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
         fontSize: 28.0,
@@ -38,9 +46,8 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: ColorManger.primaryContainer,
-      allowImplicitScrolling: true,
-      autoScrollDuration: 3000,
-      infiniteAutoScroll: true,
+      allowImplicitScrolling: false,
+      infiniteAutoScroll: false,
       globalHeader: Align(
         alignment: Alignment.topRight,
         child: SafeArea(

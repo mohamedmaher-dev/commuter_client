@@ -9,14 +9,14 @@ class ForgotPassDialog extends StatelessWidget {
     final Language language = Language.of(context);
 
     return AlertDialog(
-      title: Text(language.Please_Input_Your_Mail),
+      title: Text(language.please_input_your_mail),
       content: Form(
         autovalidateMode: AutovalidateMode.always,
         key: signInBloc.formKeyForgotPass,
         child: TextFormField(
           controller: signInBloc.emailForgotPassController,
           decoration: InputDecoration(
-            hintText: language.Mail,
+            hintText: language.mail,
             prefixIcon: const Icon(
               Icons.mail,
             ),
@@ -30,7 +30,7 @@ class ForgotPassDialog extends StatelessWidget {
             AppRouter.pop(context: context);
             signInBloc.add(const SignInEvent.forgotPass());
           },
-          child: Text(language.Confirm),
+          child: Text(language.confirm),
         ),
       ],
     );

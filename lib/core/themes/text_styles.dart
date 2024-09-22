@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'controller/app_theme_bloc.dart';
+part of 'app_theme_controller.dart';
 
 class TextStyles {
   const TextStyles._();

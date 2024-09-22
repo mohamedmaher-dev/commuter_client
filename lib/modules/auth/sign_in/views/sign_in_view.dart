@@ -2,16 +2,14 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
 import 'package:commuter_client/core/routes/app_route.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
+import 'package:commuter_client/core/utils/assets_manger.dart';
 import 'package:commuter_client/core/validation/form_validation.dart';
 import 'package:commuter_client/core/widgets/app_snack_bar.dart';
-import 'package:commuter_client/core/widgets/language_btn.dart';
 import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/themes/controller/app_theme_bloc.dart';
-import '../../../../core/utils/assets_manger.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../../widgets/google_btn.dart';
 import '../controllers/sign_in_bloc/sign_in_bloc.dart';
 part 'widgets/intro_msg.dart';
@@ -46,7 +44,7 @@ class _SignInView extends StatelessWidget {
           },
           failure: (error) {
             AppSnackBar.show(
-              title: language.Failure,
+              title: language.failure,
               msg: error,
               type: ContentType.failure,
               context: context,
@@ -63,8 +61,8 @@ class _SignInView extends StatelessWidget {
           },
           userNotActive: (data) {
             AppSnackBar.show(
-              title: language.Warning,
-              msg: language.This_Account_Not_Active,
+              title: language.warning,
+              msg: language.this_account_not_active,
               type: ContentType.warning,
               context: context,
             );
@@ -73,12 +71,6 @@ class _SignInView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: ColorManger.primaryContainer,
-        appBar: AppBar(
-          forceMaterialTransparency: true,
-          actions: const [
-            LanguageBTN(),
-          ],
-        ),
         body: Padding(
           padding: EdgeInsets.all(10.w),
           child: ListView(

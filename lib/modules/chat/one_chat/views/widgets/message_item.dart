@@ -17,7 +17,9 @@ class _MessageItemView extends StatelessWidget {
       child: Column(
         children: [
           Align(
-            alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+            alignment: isMe
+                ? AlignmentDirectional.centerEnd
+                : AlignmentDirectional.centerStart,
             child: Container(
               padding: EdgeInsets.all(10.w),
               decoration: isMe
@@ -27,7 +29,7 @@ class _MessageItemView extends StatelessWidget {
                         topEnd: Radius.circular(radius.r),
                         topStart: Radius.circular(radius.r),
                       ),
-                      color: ColorManger.primary,
+                      color: ColorManger.myGold,
                     )
                   : BoxDecoration(
                       borderRadius: BorderRadiusDirectional.only(
@@ -35,16 +37,26 @@ class _MessageItemView extends StatelessWidget {
                         topEnd: Radius.circular(radius.r),
                         topStart: Radius.circular(radius.r),
                       ),
-                      color: ColorManger.primaryContainer,
+                      color: ColorManger.grey,
                     ),
               child: Text(
                 message,
-                style: isMe ? TextStyles.tsB10N : TextStyles.tsW10N,
+                style: isMe
+                    ? TextStyle(
+                        color: ColorManger.black,
+                        fontSize: 10.sp,
+                      )
+                    : TextStyle(
+                        color: ColorManger.black,
+                        fontSize: 10.sp,
+                      ),
               ),
             ),
           ),
           Align(
-            alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+            alignment: isMe
+                ? AlignmentDirectional.centerEnd
+                : AlignmentDirectional.centerStart,
             child: Text(time),
           )
         ],

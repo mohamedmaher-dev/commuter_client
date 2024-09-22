@@ -1,49 +1,74 @@
 part of 'di.dart';
 
 _utilsDiInit() async {
-  di.registerLazySingleton(
+  di.registerLazySingleton<FlutterSecureStorage>(
+    () => const FlutterSecureStorage(),
+  );
+  di.registerLazySingleton<LocalStorageService>(
+    () => LocalStorageService(
+      di<FlutterSecureStorage>(),
+    ),
+  );
+
+  di.registerLazySingleton<AppThemeController>(
+    () => AppThemeController(
+      di<LocalStorageService>(),
+    ),
+  );
+
+  di.registerLazySingleton<AppLocalizationController>(
+    () => AppLocalizationController(
+      di<LocalStorageService>(),
+    ),
+  );
+
+  di.registerLazySingleton<MyBlocObserver>(
     () => MyBlocObserver(
       mainBloc: di<MainBloc>(),
     ),
   );
   di.registerLazySingleton<Dio>(() => DioFactory.getDio());
-  di.registerLazySingleton(
+  di.registerLazySingleton<ApiService>(
     () => ApiService(di<Dio>(), baseUrl: Env.apiBaseUrl),
   );
 
-  di.registerLazySingleton(
+  di.registerLazySingleton<PlacesService>(
     () => PlacesService(
       di<Dio>(),
       baseUrl: PlacesConsts.baseUrl,
     ),
   );
-  di.registerLazySingleton(
-    () => const FlutterSecureStorage(),
-  );
-  di.registerLazySingleton(
-    () => LocalStorageService(
-      di<FlutterSecureStorage>(),
-    ),
-  );
-  di.registerLazySingleton(
+  di.registerLazySingleton<LocationService>(
     () => LocationService(
       di<Dio>(),
+      di<Location>(),
+      di<CheckLocationPermission>(),
     ),
   );
 
-  di.registerLazySingleton(
+  di.registerLazySingleton<ApiChatService>(
     () => ApiChatService(
       di<Dio>(),
       baseUrl: Env.apiChatBaseUrl,
     ),
   );
-  di.registerLazySingleton(
+  di.registerLazySingleton<NotifiApiService>(
       () => NotifiApiService(di<Dio>(), baseUrl: Env.apiNotifiBaseUrl));
+  di.registerLazySingleton<NearbyCommutersApiService>(() =>
+      NearbyCommutersApiService(di<Dio>(),
+          baseUrl: Env.apiNearbyCommutersBaseUrl));
   di.registerLazySingleton<FirebaseMessaging>(() => FirebaseMessaging.instance);
 
-  di.registerLazySingleton(
-    () => FCMManger(
+  di.registerLazySingleton<NotifiService>(
+    () => NotifiService(
       di<FirebaseMessaging>(),
+      di<CheckNotifiPermission>(),
     ),
   );
+  di.registerLazySingleton<Location>(() => Location());
+  di.registerLazySingleton<CheckLocationPermission>(
+      () => CheckLocationPermission(di<Location>()));
+  di.registerLazySingleton<CheckNotifiPermission>(() => CheckNotifiPermission(
+        di<FirebaseMessaging>(),
+      ));
 }

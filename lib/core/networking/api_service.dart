@@ -7,14 +7,14 @@ import 'package:commuter_client/modules/auth/sign_in/data/models/sign_in_request
 import 'package:commuter_client/modules/auth/sign_in/data/models/sign_in_response_model.dart';
 import 'package:commuter_client/modules/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:commuter_client/modules/auth/sign_up/data/models/sign_up_response_model.dart';
+import 'package:commuter_client/modules/nearby_commuters/data/models/join_commute_request_model.dart';
 import 'package:commuter_client/modules/where_to/data/models/send_ride_request_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-
-import '../../modules/commutes/add_commute/data/models/add_commute_request_model.dart';
+import '../../modules/my_commutes/data/models/add_commute_request_model.dart';
 import '../../modules/auth/otp_forgot_password/data/models/forgot_pass_request_model.dart';
 import '../../modules/auth/otp_forgot_password/data/models/forgot_pass_response_model.dart';
-import '../../modules/profile/data/models/get_me_response_model.dart';
+import '../../modules/profiles/my_profile/data/models/get_me_response_model.dart';
 part 'api_service.g.dart';
 
 @RestApi()
@@ -46,33 +46,38 @@ abstract class ApiService {
   @POST(ApiConsts.rideRequest)
   Future rideRequest(
     @Body() SendRideRequestModel sendRideRequestModel,
-    @Header('Authorization') String token,
   );
   @POST(ApiConsts.addCommute)
   Future<void> addCommute(
-    @Header('Authorization') String token,
     @Path() String id,
     @Body() AddCommuteRequestModel addCommuteRequestModel,
   );
-  @GET(ApiConsts.getMe)
+  @GET(ApiConsts.me)
   Future<GetMeResponseModel> getMe(
-    @Header('Authorization') String token,
     @Path() String id,
   );
-  @DELETE(ApiConsts.deleteMe)
+  @DELETE(ApiConsts.me)
   Future<void> deleteMe(
-    @Header('Authorization') String token,
     @Path() String id,
   );
 
-  @PUT(ApiConsts.updateMe)
-  @FormUrlEncoded()
+  @PUT(ApiConsts.me)
+  @MultiPart()
   Future<void> updateMe(
-    @Header('Authorization') String token,
     @Path() String id,
-    @Part() MultipartFile profileImg,
-    @Field("name") String name,
-    @Field("email") String email,
-    @Field("phone") String phone,
+    @Part(name: "image") List<MultipartFile> files,
+    @Part(name: "name") String name,
+    @Part(name: "email") String email,
+    @Part(name: "phone") String? phone,
+  );
+  @GET(ApiConsts.getDriver)
+  Future<GetMeResponseModel> geDriver(
+    @Path() String id,
+  );
+  @POST(ApiConsts.joinCommute)
+  Future<void> joinCommute(
+    @Path() String driverId,
+    @Path() String commuteId,
+    @Body() JoinCommuteRequestModel joinCommuteRequestModel,
   );
 }

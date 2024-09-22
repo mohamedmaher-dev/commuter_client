@@ -17,7 +17,7 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             controller: signUpBloc.nameController,
             decoration: InputDecoration(
-              hintText: language.Name,
+              hintText: language.name,
               prefixIcon: const Icon(Icons.person),
             ),
             validator: (value) => FormValidation.name(value, language),
@@ -26,7 +26,7 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             controller: signUpBloc.emailController,
             decoration: InputDecoration(
-              hintText: language.Mail,
+              hintText: language.mail,
               prefixIcon: const Icon(Icons.mail),
             ),
             validator: (value) => FormValidation.email(value, language),
@@ -38,7 +38,7 @@ class SignUpForm extends StatelessWidget {
                 obscureText: signUpBloc.isHide,
                 controller: signUpBloc.passwordController,
                 decoration: InputDecoration(
-                  hintText: language.Password,
+                  hintText: language.password,
                   prefixIcon: const Icon(Icons.password),
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -63,7 +63,7 @@ class SignUpForm extends StatelessWidget {
                 obscureText: signUpBloc.isHide,
                 controller: signUpBloc.confirmPasswordController,
                 decoration: InputDecoration(
-                  hintText: language.Confrim_Password,
+                  hintText: language.change_password,
                   prefixIcon: const Icon(Icons.password),
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -88,10 +88,10 @@ class SignUpForm extends StatelessWidget {
               onInputValidated: (value) {
                 signUpBloc.add(SignUpEvent.phoneValidChanged(value));
               },
-              errorMessage: language.Phone_Number_Not_Valid,
+              errorMessage: language.phone_number_not_valid,
               autoValidateMode: AutovalidateMode.onUserInteraction,
               inputDecoration: InputDecoration(
-                hintText: language.Phone,
+                hintText: language.phone,
               ),
               selectorConfig: SelectorConfig(
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
@@ -106,7 +106,7 @@ class SignUpForm extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                hintText: language.Search,
+                hintText: language.search,
               ),
               spaceBetweenSelectorAndTextField: 0,
               onInputChanged: (PhoneNumber value) {

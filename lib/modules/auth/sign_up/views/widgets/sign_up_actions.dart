@@ -14,7 +14,7 @@ class _SignUpActions extends StatelessWidget {
             signUpBloc.add(const SignUpEvent.signUp());
           },
           child: Text(
-            language.Create_Account,
+            language.create_account,
           ),
         ),
         SizedBox(height: 10.h),
@@ -25,7 +25,7 @@ class _SignUpActions extends StatelessWidget {
             AppRouter.pushReplacement(context: context, page: Pages.signIn);
           },
           child: Text(
-            language.Already_Have_An_Account,
+            language.already_have_an_account,
           ),
         )
       ],

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/localization/generated/l10n.dart';
-import '../../../../core/themes/text_styles.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../../../../core/widgets/app_snack_bar.dart';
 
 part 'widgets/change_password_intro_msg.dart';
@@ -44,7 +44,7 @@ class _ChangePasswordView extends StatelessWidget {
           },
           failure: (error) {
             AppSnackBar.show(
-              title: language.Failure,
+              title: language.failure,
               msg: error,
               type: ContentType.failure,
               context: context,
@@ -52,8 +52,8 @@ class _ChangePasswordView extends StatelessWidget {
           },
           success: () {
             AppSnackBar.show(
-              title: language.Change_Password,
-              msg: language.The_Password_Has_Been_Changed_Successfully,
+              title: language.change_password,
+              msg: language.the_password_has_been_changed_successfully,
               type: ContentType.success,
               context: context,
             );
@@ -80,7 +80,7 @@ class _ChangePasswordView extends StatelessWidget {
                 );
               },
               child: Text(
-                language.Confirm,
+                language.confirm,
               ),
             )
           ],

@@ -10,26 +10,23 @@ class _WhereToBottomSheetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchForPlaceBloc = context.read<SearchForPlaceBloc>();
+    final Language language = Language.of(context);
     return Column(
       children: [
-        ListTile(
-          leading: Icon(
-            Icons.add_location_alt_rounded,
-            color: ColorManger.primary,
-          ),
-          title: Text(
-            'Enter Location',
-            style: TextStyles.tsP15B,
-          ),
-        ),
-        const Divider(),
         Padding(
           padding: EdgeInsets.all(10.w),
           child: TextField(
-            decoration: const InputDecoration(
-              hintText: 'Search for place',
-              prefixIcon: Icon(Icons.search),
+            decoration: InputDecoration(
+              isDense: true,
+              hintText: language.search_for_place,
+              prefixIcon: const Icon(Icons.search),
               filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.r),
+                ),
+                borderSide: BorderSide.none,
+              ),
             ),
             onSubmitted: (value) => searchForPlaceBloc.add(
               SearchForPlaceEvent.search(text: value),
@@ -45,7 +42,7 @@ class _WhereToBottomSheetView extends StatelessWidget {
                 whereToBloc.add(const WhereToEvent.onSetOnMap());
                 AppRouter.pop(context: context);
               },
-              label: const Text('Set on map'),
+              label: Text(language.set_on_map),
               icon: const Icon(Icons.pin_drop),
             ),
             ElevatedButton.icon(
@@ -58,20 +55,10 @@ class _WhereToBottomSheetView extends StatelessWidget {
                 );
                 AppRouter.pop(context: context);
               },
-              label: const Text('Current location'),
+              label: Text(language.current_location),
               icon: const Icon(Icons.my_location),
             )
           ],
-        ),
-        Padding(
-          padding: EdgeInsets.all(2.w),
-          child: ActionChip(
-            onPressed: () {},
-            label: const Text('Home'),
-            avatar: const Icon(
-              Icons.route_outlined,
-            ),
-          ),
         ),
         const Divider(),
         BlocBuilder<SearchForPlaceBloc, SearchForPlaceState>(

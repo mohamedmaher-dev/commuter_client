@@ -41,8 +41,8 @@ class _OtpForgotPasswordView extends StatelessWidget {
           },
           outTime: (id) {
             AppSnackBar.show(
-              title: language.Warning,
-              msg: language.You_Cannot_Verify_The_Code_Because_Timeout,
+              title: language.warning,
+              msg: language.you_cannot_verify_the_code_because_timeout,
               type: ContentType.warning,
               context: context,
             );
@@ -55,7 +55,7 @@ class _OtpForgotPasswordView extends StatelessWidget {
           },
           failure: (error) {
             AppSnackBar.show(
-              title: language.Failure,
+              title: language.failure,
               msg: error,
               type: ContentType.failure,
               context: context,
@@ -78,8 +78,8 @@ class _OtpForgotPasswordView extends StatelessWidget {
               otpForgotPasswordBloc
                   .add(const OtpForgotPasswordEvent.timerChange());
             },
-            title: language.Verify_Code,
-            subTitle: language.Enter_OTP_Code_Here,
+            title: language.verify_code,
+            subTitle: language.enter_otp_code_here,
             language: language,
             currentTime: otpForgotPasswordBloc.currentTime,
           ),

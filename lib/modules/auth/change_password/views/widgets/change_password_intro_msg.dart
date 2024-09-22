@@ -11,11 +11,11 @@ class _IntroMsg extends StatelessWidget {
       children: [
         SizedBox(height: 10.h),
         Text(
-          language.Change_Password,
+          language.change_password,
           style: TextStyles.tsP25B,
         ),
         Text(
-          language.Please_Input_Your_New_Password_And_Confirm_It,
+          language.please_input_your_new_password_and_confirm_it,
           style: TextStyles.tsP10N,
         ),
       ],

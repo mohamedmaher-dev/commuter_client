@@ -6,56 +6,35 @@ class CommuteChips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final whereToBloc = BlocProvider.of<WhereToBloc>(context);
+    final whereToPanelBloc = BlocProvider.of<WhereToPanelBloc>(context);
+
     return Padding(
-      padding: EdgeInsets.all(2.w),
+      padding: EdgeInsets.symmetric(horizontal: 5.w),
       child: ActionChip(
-        onPressed: () {
-          // whereToBloc.add(
-          //   WhereToEvent.onSendRideRequestFromLocalCommute(
-          //     commute: localCommuteModel,
-          //   ),
-          // );
+        onPressed: () async {
           showModalBottomSheet(
             showDragHandle: true,
             context: context,
-            builder: (context) => Padding(
-              padding: EdgeInsets.all(10.w),
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  SwitchListTile(
-                    title: Row(
-                      children: [
-                        const Icon(Icons.groups_2_rounded),
-                        SizedBox(width: 10.w),
-                        const Text('Carpooling'),
-                      ],
-                    ),
-                    value: true,
-                    onChanged: (value) {},
-                  ),
-                  SwitchListTile(
-                    title: Row(
-                      children: [
-                        const Icon(Icons.female_outlined),
-                        SizedBox(width: 10.w),
-                        const Text("Female Only"),
-                      ],
-                    ),
-                    value: true,
-                    onChanged: (value) {},
-                  ),
-                  FilledButton(
-                      onPressed: () {}, child: const Text('Send Request')),
-                ],
+            builder: (context) => CarPoolFemaleOnlyBottomSheetBody(
+              whereToPanelBloc: whereToPanelBloc,
+              whereToBloc: whereToBloc,
+              dropoff: LatLng(
+                localCommuteModel.latitude,
+                localCommuteModel.longitude,
               ),
+              pickup: null,
             ),
           );
         },
-        label: Text(localCommuteModel.commuteName),
-        avatar: const Icon(
-          Icons.route_outlined,
+        color: const MaterialStatePropertyAll(ColorManger.myGold),
+        side: const BorderSide(color: ColorManger.myBlue),
+        avatar: const Icon(Icons.route_outlined, color: ColorManger.myBlue),
+        labelStyle: const TextStyle(
+          color: ColorManger.myBlue,
+          fontWeight: FontWeight.bold,
         ),
+        label: Text(localCommuteModel.commuteName),
       ),
     );
   }

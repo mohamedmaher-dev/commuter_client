@@ -6,17 +6,22 @@ class _MapView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final WhereToBloc whereToBloc = BlocProvider.of<WhereToBloc>(context);
+    final AppMapBloc appMapBloc = BlocProvider.of<AppMapBloc>(context);
     return Stack(
       children: [
-        GoogleMap(
-          initialCameraPosition: LocationService.defaultCameraPosition,
-          myLocationEnabled: true,
-          myLocationButtonEnabled: false,
-          zoomControlsEnabled: false,
-          onMapCreated: (controller) {},
-          onCameraMove: (position) {
-            whereToBloc.add(
-                WhereToEvent.onCameraPositionChanged(cameraPosition: position));
+        BlocBuilder<AppMapBloc, AppMapState>(
+          builder: (context, state) {
+            return AppMapView(
+              markers: appMapBloc.markers,
+              mapBloc: appMapBloc,
+              autoMove: false,
+              onCameraMove: (position) => whereToBloc.add(
+                WhereToEvent.onCameraPositionChanged(cameraPosition: position),
+              ),
+              onMapCreated: (controller) => whereToBloc.add(
+                WhereToEvent.onMapCreated(controller: controller),
+              ),
+            );
           },
         ),
         BlocBuilder<WhereToBloc, WhereToState>(
@@ -28,10 +33,13 @@ class _MapView extends StatelessWidget {
                   padding: EdgeInsets.all(10.w),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: ColorManger.primaryContainer),
+                    border: Border.all(color: ColorManger.primary),
                     color: ColorManger.transparent,
                   ),
-                  child: CircleAvatar(maxRadius: 3.r),
+                  child: CircleAvatar(
+                    maxRadius: 3.r,
+                    backgroundColor: ColorManger.primary,
+                  ),
                 ),
               ),
             );

@@ -6,7 +6,7 @@ part of 'api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _ApiService implements ApiService {
   _ApiService(
@@ -21,7 +21,7 @@ class _ApiService implements ApiService {
   @override
   Future<SignInResponseModel> signIn(
       SignInRequestModel signInRequestModel) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -43,14 +43,14 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = SignInResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = SignInResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
   Future<SignUpResponseModel> signUp(
       SignUpRequestModel signUpRequestModel) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -72,14 +72,14 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = SignUpResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = SignUpResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
   Future<ForgotPassResponseModel> sendResetCode(
       ForgotPassRequestModel forgotPassRequestModel) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -101,14 +101,14 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = ForgotPassResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = ForgotPassResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
   Future<VerifyResetCodeResponseModel> verifyResetCode(
       VerifyResetCodeRequestModel verifyResetCodeRequestModel) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -130,14 +130,14 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = VerifyResetCodeResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = VerifyResetCodeResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
   Future<ChangePassResponseModel> changePassword(
       ChangePassRequestModel changePassRequestModel) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -159,19 +159,15 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = ChangePassResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = ChangePassResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
-  Future<dynamic> rideRequest(
-    SendRideRequestModel sendRideRequestModel,
-    String token,
-  ) async {
-    final _extra = <String, dynamic>{};
+  Future<dynamic> rideRequest(SendRideRequestModel sendRideRequestModel) async {
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(sendRideRequestModel.toJson());
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
@@ -190,20 +186,18 @@ class _ApiService implements ApiService {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final _value = _result.data;
-    return _value;
+    final value = _result.data;
+    return value;
   }
 
   @override
   Future<void> addCommute(
-    String token,
     String id,
     AddCommuteRequestModel addCommuteRequestModel,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(addCommuteRequestModel.toJson());
     await _dio.fetch<void>(_setStreamType<void>(Options(
@@ -225,15 +219,11 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetMeResponseModel> getMe(
-    String token,
-    String id,
-  ) async {
-    final _extra = <String, dynamic>{};
+  Future<GetMeResponseModel> getMe(String id) async {
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GetMeResponseModel>(Options(
       method: 'GET',
@@ -242,7 +232,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'user/${id}',
+              'users/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -251,20 +241,16 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = GetMeResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = GetMeResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
-  Future<void> deleteMe(
-    String token,
-    String id,
-  ) async {
-    final _extra = <String, dynamic>{};
+  Future<void> deleteMe(String id) async {
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'DELETE',
       headers: _headers,
@@ -272,7 +258,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'user/${id}',
+          'users/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -285,31 +271,97 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> updateMe(
-    String token,
     String id,
-    MultipartFile profileImg,
+    List<MultipartFile> files,
     String name,
     String email,
-    String phone,
+    String? phone,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {
-      'name': name,
-      'email': email,
-      'phone': phone,
-    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.addAll(files.map((i) => MapEntry('image', i)));
+    _data.fields.add(MapEntry(
+      'name',
+      name,
+    ));
+    _data.fields.add(MapEntry(
+      'email',
+      email,
+    ));
+    if (phone != null) {
+      _data.fields.add(MapEntry(
+        'phone',
+        phone,
+      ));
+    }
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
-      contentType: 'application/x-www-form-urlencoded',
+      contentType: 'multipart/form-data',
     )
         .compose(
           _dio.options,
-          'user/${id}',
+          'users/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+  }
+
+  @override
+  Future<GetMeResponseModel> geDriver(String id) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<GetMeResponseModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'drivers/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetMeResponseModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<void> joinCommute(
+    String driverId,
+    String commuteId,
+    JoinCommuteRequestModel joinCommuteRequestModel,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(joinCommuteRequestModel.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'users/requestJoinCommute/${driverId}/${commuteId}',
           queryParameters: queryParameters,
           data: _data,
         )

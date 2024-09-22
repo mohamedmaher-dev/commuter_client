@@ -5,12 +5,13 @@ class _ActionsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        _NearbyCommutersActions(),
-        _SetOnMapActionBtn(),
-        _SendRideRequestBtn(),
+        const _NearbyCommutersActions(),
+        const _SetOnMapActionBtn(),
+        const _SendRideRequestBtn(),
+        SizedBox(height: kBottomNavigationBarHeight.h),
       ],
     );
   }

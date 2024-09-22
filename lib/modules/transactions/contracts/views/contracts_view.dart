@@ -1,10 +1,9 @@
-import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/themes/controller/app_theme_bloc.dart';
+import '../../../../core/localization/generated/l10n.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 
 class ContractsView extends StatelessWidget {
   const ContractsView({super.key});
@@ -25,6 +24,7 @@ class _ContarctItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final language = Language.of(context);
     return Padding(
       padding: EdgeInsets.all(10.w),
       child: Card(
@@ -34,7 +34,7 @@ class _ContarctItem extends StatelessWidget {
             'Mohamed Maher',
             style: TextStyles.tsP12B,
           ),
-          subtitle: const Text('Commuter Name'),
+          subtitle: Text(language.commuter_name),
           children: [
             Row(
               children: [
@@ -45,7 +45,7 @@ class _ContarctItem extends StatelessWidget {
                       'C-1245879',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Contract Number'),
+                    subtitle: Text(language.contract_number),
                   ),
                 ),
                 Expanded(
@@ -55,7 +55,7 @@ class _ContarctItem extends StatelessWidget {
                       '24/04/2024',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Contracts Date'),
+                    subtitle: Text(language.contract_date),
                   ),
                 )
               ],
@@ -69,7 +69,7 @@ class _ContarctItem extends StatelessWidget {
                       'Home',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Commute Name'),
+                    subtitle: Text(language.commute_name),
                   ),
                 ),
                 Expanded(
@@ -79,7 +79,7 @@ class _ContarctItem extends StatelessWidget {
                       'C-1245879',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Commute ID'),
+                    subtitle: Text(language.commute_id),
                   ),
                 ),
               ],
@@ -93,7 +93,7 @@ class _ContarctItem extends StatelessWidget {
                       'Cairo, Egypt',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Commute Location'),
+                    subtitle: Text(language.commute_location),
                   ),
                 ),
                 Expanded(
@@ -103,7 +103,7 @@ class _ContarctItem extends StatelessWidget {
                       '1000 SAR',
                       style: TextStyles.tsP10B,
                     ),
-                    subtitle: const Text('Total Price'),
+                    subtitle: Text(language.total_price),
                   ),
                 ),
               ],
@@ -113,6 +113,8 @@ class _ContarctItem extends StatelessWidget {
               finishedStepIconColor: ColorManger.primaryContainer,
               activeStepIconColor: ColorManger.primary,
               unreachedStepIconColor: ColorManger.transparent,
+              unreachedStepBorderColor: ColorManger.primary,
+              unreachedStepTextColor: ColorManger.primary,
               borderThickness: 3,
               lineStyle: const LineStyle(
                 lineType: LineType.normal,

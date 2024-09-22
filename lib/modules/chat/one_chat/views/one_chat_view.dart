@@ -1,5 +1,5 @@
 import 'package:commuter_client/core/di/di.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
+import 'package:commuter_client/core/widgets/empty_view.dart';
 import 'package:commuter_client/core/widgets/error_view.dart';
 import 'package:commuter_client/core/widgets/loading_view.dart';
 import 'package:commuter_client/core/widgets/profile_image.dart';
@@ -10,10 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jiffy/jiffy.dart';
-
-import '../../../../core/themes/controller/app_theme_bloc.dart';
+import '../../../../core/localization/generated/l10n.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../data/models/one_message_model.dart';
-
 part 'widgets/message_item.dart';
 part 'widgets/bottom_body.dart';
 part 'widgets/app_bar_body.dart';
@@ -41,6 +40,7 @@ class _OneChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Language language = Language.of(context);
     return Scaffold(
       appBar: const _AppBarBody(),
       body: Column(
@@ -52,7 +52,7 @@ class _OneChatView extends StatelessWidget {
                 return state.when(
                   initial: () => const LoadingView(),
                   loading: () => const LoadingView(),
-                  error: () => ErrorView(showBtn: false, onPressed: () {}),
+                  error: () => const ErrorView(onPressed: null),
                   success: (messages, myId) => Padding(
                     padding: EdgeInsets.all(10.0.w),
                     child: ListView.separated(
@@ -69,8 +69,9 @@ class _OneChatView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  empty: () => const Center(
-                    child: Text('No messages yet , start a conversation'),
+                  empty: () => EmptyView(
+                    icon: Icons.chat,
+                    text: language.no_messages_yet,
                   ),
                 );
               },

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:json_annotation/json_annotation.dart';
 part 'get_routes_response_model.g.dart';
 

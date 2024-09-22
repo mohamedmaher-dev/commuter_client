@@ -5,7 +5,6 @@ import 'package:commuter_client/modules/auth/sign_up/data/rebos/sign_up_rebo.dar
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';

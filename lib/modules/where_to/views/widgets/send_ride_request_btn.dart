@@ -7,6 +7,7 @@ class _SendRideRequestBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     final whereToPanelBloc = context.read<WhereToPanelBloc>();
     final whereToBloc = context.read<WhereToBloc>();
+    final language = Language.of(context);
     return BlocBuilder<WhereToBloc, WhereToState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -15,18 +16,21 @@ class _SendRideRequestBtn extends StatelessWidget {
               if (whereToPanelBloc.landingLocation != null &&
                   whereToPanelBloc.pickupLocation != null) {
                 return Padding(
-                  padding: EdgeInsets.only(top: 10.w),
+                  padding: EdgeInsets.only(top: 10.w, bottom: 25.w),
                   child: FilledButton(
                     onPressed: () {
-                      whereToBloc.add(
-                        WhereToEvent.onSendRideRequest(
+                      showModalBottomSheet(
+                        showDragHandle: true,
+                        context: context,
+                        builder: (context) => CarPoolFemaleOnlyBottomSheetBody(
+                          whereToPanelBloc: whereToPanelBloc,
+                          whereToBloc: whereToBloc,
                           pickup: whereToPanelBloc.pickupLocation!.location,
-                          landing: whereToPanelBloc.landingLocation!.location,
+                          dropoff: whereToPanelBloc.landingLocation!.location,
                         ),
                       );
-                      whereToPanelBloc.add(const WhereToPanelEvent.started());
                     },
-                    child: const Text('Send Ride Request'),
+                    child: Text(language.send_ride_request),
                   ),
                 );
               } else {

@@ -1,26 +1,41 @@
+import 'dart:async';
 import 'package:commuter_client/core/env/env.dart';
+import 'package:commuter_client/core/location/location_permission.dart';
 import 'package:commuter_client/core/location/models/routes_model/get_routes_request_model.dart';
 import 'package:commuter_client/core/location/models/routes_model/get_routes_response_model.dart';
+import 'package:commuter_client/core/utils/assets_manger.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'location_permission.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:location/location.dart' as locationimport;
 
 class LocationService {
+  LocationService(this._dio, this.location, this._locationPermission);
+  final locationimport.Location location;
   final Dio _dio;
+  final CheckLocationPermission _locationPermission;
   final PolylinePoints _polylinePoints = PolylinePoints();
-  LocationService(this._dio);
-  static LatLng get defaultLatLong => const LatLng(24.774265, 46.738586);
-  static CameraPosition get defaultCameraPosition =>
-      CameraPosition(target: defaultLatLong, zoom: 17);
+  late LatLng currentLatLng;
+  static BitmapDescriptor carIcon = BitmapDescriptor.defaultMarker;
+  static const defaultLatLng = LatLng(24.713538839859417, 46.675304269015406);
   Future<void> locationServiceInit() async {
-    if (kDebugMode) {
-      AndroidGoogleMapsFlutter.useAndroidViewSurface = true;
-    }
-    checkPermission();
+    await _locationPermission.init();
+    location.onLocationChanged.listen(
+      (event) {
+        if (event.latitude != null && event.longitude != null) {
+          currentLatLng = LatLng(event.latitude!, event.longitude!);
+        } else {
+          currentLatLng = defaultLatLng;
+        }
+      },
+      onError: (e) => currentLatLng = defaultLatLng,
+    );
+    carIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(),
+      AssetsManger.imagesCarIcon,
+    );
   }
 
   Future<Placemark> getLocationName({required LatLng latLng}) {
@@ -30,18 +45,15 @@ class LocationService {
   }
 
   Future<LatLng?> getCurrentPosition() async {
-    final isPermission = await checkPermission();
-    if (isPermission) {
-      return await Geolocator.getCurrentPosition().then(
-        (value) => LatLng(
-          value.latitude,
-          value.longitude,
-        ),
-      );
-    } else {
-      checkPermission();
-      return null;
-    }
+    return await location.getLocation().then(
+      (value) {
+        if (value.latitude != null && value.longitude != null) {
+          return LatLng(value.latitude!, value.longitude!);
+        } else {
+          return null;
+        }
+      },
+    );
   }
 
   Future<List<LatLng>> getRoutes({

@@ -1,29 +1,30 @@
-import 'package:commuter_client/core/local_storage/models/user_secret_data_model.dart';
-import 'package:commuter_client/core/utils/fcm_manger.dart';
+import 'package:commuter_client/core/notifications/notifi_service.dart';
 import 'package:commuter_client/modules/notifications/data/models/notifi_response_model.dart';
 import 'package:commuter_client/modules/notifications/data/models/send_fcm_token_model.dart';
 import 'package:commuter_client/modules/notifications/service/notifi_api_service.dart';
 import 'package:dio/dio.dart';
 
+import '../../../../core/local_storage/local_storage_service.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 
 class NotifiRebo {
-  final UserSecretDataModel _userSecretDataModel;
   final NotifiApiService _notifiApiService;
-  final FCMManger _fcmManger;
+  final NotifiService _fcmManger;
+  final LocalStorageService _localStorageService;
   NotifiRebo(
-      {required UserSecretDataModel userSecretDataModel,
+      {required LocalStorageService localStorageService,
       required NotifiApiService notifiApiService,
-      required FCMManger fcmManger})
-      : _userSecretDataModel = userSecretDataModel,
+      required NotifiService fcmManger})
+      : _localStorageService = localStorageService,
         _notifiApiService = notifiApiService,
         _fcmManger = fcmManger;
 
   Future<ApiResult<List<NotifiResponseModel>>> getUnreadNotifis() async {
     try {
+      final userSecretDataModel = await _localStorageService.getUserSecretData;
       final response =
-          await _notifiApiService.getUnReadNotifis(_userSecretDataModel.userId);
+          await _notifiApiService.getUnReadNotifis(userSecretDataModel!.userId);
 
       return ApiResult.success(response);
     } on DioException catch (e) {
@@ -35,8 +36,9 @@ class NotifiRebo {
 
   Future<ApiResult<List<NotifiResponseModel>>> getReadNotifis() async {
     try {
+      final userSecretDataModel = await _localStorageService.getUserSecretData;
       final response =
-          await _notifiApiService.getReadNotifis(_userSecretDataModel.userId);
+          await _notifiApiService.getReadNotifis(userSecretDataModel!.userId);
       return ApiResult.success(response);
     } on DioException catch (e) {
       return ApiResult.failure(ApiErrorModel.fromDioException(dioException: e));
@@ -58,8 +60,10 @@ class NotifiRebo {
 
   Future<ApiResult<void>> deleteNotifi({required String notifiId}) async {
     try {
+      final userSecretDataModel = await _localStorageService.getUserSecretData;
+
       final response = await _notifiApiService.deleteNotifi(
-          _userSecretDataModel.userId, notifiId);
+          userSecretDataModel!.userId, notifiId);
       return ApiResult.success(response);
     } on DioException catch (e) {
       return ApiResult.failure(ApiErrorModel.fromDioException(dioException: e));
@@ -69,8 +73,9 @@ class NotifiRebo {
   }
 
   Future<void> sendFcmToken() async {
+    final userSecretDataModel = await _localStorageService.getUserSecretData;
     await _notifiApiService.sendFcmToken(
-      _userSecretDataModel.userToken,
+      userSecretDataModel!.userToken,
       SendFcmTokenRequestModel(fcmToken: await _fcmManger.getToken()),
     );
   }

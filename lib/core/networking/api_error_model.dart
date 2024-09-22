@@ -40,7 +40,11 @@ ApiErrorModel _fromBadResponse({required DioException dioException}) {
         return ApiErrorModel(
             msg: response!.data['errors'][0]['msg'], code: code);
       } catch (e) {
-        return ApiErrorModel(msg: response!.data['message'], code: code);
+        try {
+          return ApiErrorModel(msg: response!.data['message'], code: code);
+        } catch (e) {
+          return ApiErrorModel();
+        }
       }
     case 401:
       return ApiErrorModel(msg: response!.data['message'], code: code);

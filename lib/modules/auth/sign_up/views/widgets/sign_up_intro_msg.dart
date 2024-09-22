@@ -11,15 +11,15 @@ class _SignUpIntroMsg extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
-          AssetsManger.logo,
+          AssetsManger.imagesLogo,
           width: MediaQuery.of(context).size.width / 2,
         ),
         Text(
-          language.Create_Account,
+          language.create_account,
           style: TextStyles.tsP30B,
         ),
         Text(
-          language.Welcom_To_Commuter,
+          language.welcom_to_commuter,
           style: TextStyles.tsP15B,
         ),
       ],

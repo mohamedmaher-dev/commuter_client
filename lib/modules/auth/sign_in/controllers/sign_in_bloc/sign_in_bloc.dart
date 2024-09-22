@@ -3,10 +3,8 @@ import 'package:commuter_client/modules/auth/sign_in/data/models/sign_in_request
 import 'package:commuter_client/modules/auth/sign_in/data/rebos/sign_in_rebo.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../otp_forgot_password/data/models/forgot_pass_request_model.dart';
 import '../../data/models/sign_in_response_model.dart';
-
 part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 part 'sign_in_bloc.freezed.dart';

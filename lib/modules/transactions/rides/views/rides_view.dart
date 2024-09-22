@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/themes/controller/app_theme_bloc.dart';
+import '../../../../core/localization/generated/l10n.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../../contracts/views/contracts_view.dart';
 
 class RidesView extends StatefulWidget {
@@ -17,6 +18,7 @@ class _RidesViewState extends State<RidesView> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final language = Language.of(context);
     return Scaffold(
       body: ListView(
         children: [
@@ -26,9 +28,9 @@ class _RidesViewState extends State<RidesView> {
               backgroundColor: ColorManger.textFormbBackground,
               thumbColor: ColorManger.primaryContainer,
               groupValue: currentIndex,
-              children: const {
-                0: Text('Wallet'),
-                1: Text('Contracts'),
+              children: {
+                0: Text(language.wallet),
+                1: Text(language.contracts),
               },
               onValueChanged: (value) {
                 setState(() {

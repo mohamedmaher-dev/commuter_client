@@ -5,16 +5,15 @@ class _NotifiAppBarView extends StatelessWidget implements PreferredSize {
 
   @override
   Widget build(BuildContext context) {
+    final language = Language.of(context);
     return AppBar(
-      title: const Text('Notifications'),
+      title: Text(language.notifications),
     );
   }
 
   @override
-  // TODO: implement child
   Widget get child => throw UnimplementedError();
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size(double.infinity, 30.h);
 }

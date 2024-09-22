@@ -18,7 +18,7 @@ class _ChangePasswordForm extends StatelessWidget {
               TextFormField(
                 controller: changePasswordBloc.passwordController,
                 decoration: InputDecoration(
-                  hintText: language.Password,
+                  hintText: language.password,
                   prefixIcon: const Icon(
                     Icons.password,
                   ),
@@ -45,7 +45,7 @@ class _ChangePasswordForm extends StatelessWidget {
               TextFormField(
                 controller: changePasswordBloc.confirmPasswordController,
                 decoration: InputDecoration(
-                  hintText: language.Confrim_Password,
+                  hintText: language.confrim_password,
                   prefixIcon: const Icon(
                     Icons.password,
                   ),

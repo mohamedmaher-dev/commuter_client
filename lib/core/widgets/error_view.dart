@@ -1,13 +1,12 @@
-import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../themes/app_theme_controller.dart';
+
 class ErrorView extends StatelessWidget {
-  const ErrorView({super.key, this.onPressed, this.showBtn = true});
+  const ErrorView({super.key, this.onPressed});
   final void Function()? onPressed;
-  final bool showBtn;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,8 +24,8 @@ class ErrorView extends StatelessWidget {
           style: TextStyles.tsP10N,
           textAlign: TextAlign.center,
         ),
-        if (showBtn)
-          ElevatedButton.icon(
+        if (onPressed != null)
+          TextButton.icon(
             style: const ButtonStyle(elevation: MaterialStatePropertyAll(0)),
             onPressed: onPressed,
             label: const Text('Try Again'),

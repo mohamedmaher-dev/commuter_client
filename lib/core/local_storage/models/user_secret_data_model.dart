@@ -19,4 +19,11 @@ class UserSecretDataModel {
         userId: json[LocalStorageConsts.userIdKey],
         userToken: json[LocalStorageConsts.userTokenKey],
       );
+
+  static UserSecretDataModel get defaultUser => UserSecretDataModel(
+        email: '',
+        password: '',
+        userId: '',
+        userToken: '',
+      );
 }

@@ -7,13 +7,14 @@ class ApiConsts {
   static const signUp = 'auth/user/signup';
   static const rideRequest = 'rideRequests/booking';
   static const addCommute = 'user/addCommute/{id}';
-  static const getMe = 'user/{id}';
-  static const deleteMe = 'user/{id}';
-  static const updateMe = 'user/{id}';
+  static const joinCommute = 'users/requestJoinCommute/{driverId}/{commuteId}';
+  static const me = 'users/{id}';
+  static const getDriver = 'drivers/{id}';
   static const rooms = 'msg/rooms/{id}/user';
   static const getUnreadNotifisEndPoint = 'notifications/not-read/{id}';
   static const getReadNotifisEndPoint = 'notifications/read/{id}';
   static const readNotifisEndPoint = 'notifications/{notifiId}/read';
   static const delNotifiEndPoint = 'notifications/del/{userId}/{notifiId}';
   static const sendFcmToken = 'register/fcm/user/{id}';
+  static const getNearByCommuters = 'commute/getNearbyCommutes';
 }

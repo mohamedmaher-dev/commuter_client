@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 part of '../whare_to_view.dart';
 
 class _NearestStationsBtn extends StatelessWidget {
@@ -5,6 +7,7 @@ class _NearestStationsBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final language = Language.of(context);
     return Expanded(
       child: ElevatedButton(
         style: ButtonStyle(
@@ -17,13 +20,13 @@ class _NearestStationsBtn extends StatelessWidget {
           backgroundColor: MaterialStatePropertyAll(
             ColorManger.primaryContainer,
           ),
-          foregroundColor: MaterialStatePropertyAll(
+          foregroundColor: const MaterialStatePropertyAll(
             ColorManger.white,
           ),
         ),
         onPressed: () {},
         child: Text(
-          'Nearest Station',
+          language.nearest_station,
           style: TextStyles.ts10B,
         ),
       ),

@@ -14,7 +14,7 @@ class _SignInForm extends StatelessWidget {
           TextFormField(
             controller: signInBloc.emailController,
             decoration: InputDecoration(
-              hintText: language.Mail,
+              hintText: language.mail,
               prefixIcon: const Icon(Icons.mail),
             ),
             validator: (value) => FormValidation.email(value, language),
@@ -26,7 +26,7 @@ class _SignInForm extends StatelessWidget {
                 controller: signInBloc.passwordController,
                 obscureText: signInBloc.passIsHide,
                 decoration: InputDecoration(
-                  hintText: language.Password,
+                  hintText: language.password,
                   prefixIcon: const Icon(Icons.password),
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -55,7 +55,7 @@ class _SignInForm extends StatelessWidget {
                   );
                 },
                 child: Text(
-                  language.Forgot_Password,
+                  language.forgot_password,
                 ),
               )
             ],

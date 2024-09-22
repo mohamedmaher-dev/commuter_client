@@ -6,7 +6,7 @@ part of 'places_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _PlacesService implements PlacesService {
   _PlacesService(
@@ -25,13 +25,13 @@ class _PlacesService implements PlacesService {
     String input,
     String apiKey,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'input': input,
       r'key': apiKey,
     };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PredictionsResponseModel>(Options(
       method: 'GET',
@@ -49,8 +49,8 @@ class _PlacesService implements PlacesService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = PredictionsResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = PredictionsResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   @override
@@ -58,13 +58,13 @@ class _PlacesService implements PlacesService {
     String input,
     String apiKey,
   ) async {
-    final _extra = <String, dynamic>{};
+    const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'place_id': input,
       r'key': apiKey,
     };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PlaceDetailsResponseModel>(Options(
       method: 'GET',
@@ -82,8 +82,8 @@ class _PlacesService implements PlacesService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = PlaceDetailsResponseModel.fromJson(_result.data!);
-    return _value;
+    final value = PlaceDetailsResponseModel.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

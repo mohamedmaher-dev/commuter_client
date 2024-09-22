@@ -1,9 +1,9 @@
 part of '../chat_rooms.dart';
 
 class _RoomItemView extends StatelessWidget {
-  const _RoomItemView(this.room);
-
+  _RoomItemView(this.room);
   final ChatRoomModel room;
+  final Color color = ColorManger.random;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,27 @@ class _RoomItemView extends StatelessWidget {
               padding: EdgeInsets.all(5.w),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(100.r),
-                child: ProfileImage(size: 35.w, url: room.image),
+                child: Hero(
+                  tag: room.id,
+                  child: room.image == null
+                      ? ProfileImage(
+                          fontSize: 15.sp,
+                          size: 35.w,
+                          type: ImageType.avatar,
+                          value: room.name,
+                          color: color,
+                        )
+                      : ProfileImage(
+                          fontSize: 15.sp,
+                          size: 35.w,
+                          type: ImageType.networkImage,
+                          value: room.image!,
+                          color: color,
+                        ),
+                ),
               ),
             ),
-            VerticalDivider(
+            const VerticalDivider(
               thickness: 5,
               color: ColorManger.white,
             ),
@@ -33,14 +50,16 @@ class _RoomItemView extends StatelessWidget {
                       friendId: room.id,
                       friendName: room.name,
                       friendImageUrl: room.image,
+                      color: color,
                     ),
                   );
                 },
                 title: Text(
                   room.name,
-                  style: TextStyles.tsP15B,
+                  style: TextStyles.ts15B,
                 ),
                 subtitle: Text(
+                  maxLines: 1,
                   room.lastMessage,
                 ),
               ),

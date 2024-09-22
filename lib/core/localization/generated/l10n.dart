@@ -50,391 +50,1391 @@ class Language {
     return Localizations.of<Language>(context, Language);
   }
 
-  /// `Welcome Back`
-  String get Welcome_Back {
+  /// `English`
+  String get current_language_value {
     return Intl.message(
-      'Welcome Back',
-      name: 'Welcome_Back',
+      'English',
+      name: 'current_language_value',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign In With Your Mail And Password`
-  String get Sign_In_With_Your_Mail_And_Password {
+  /// `Welcome back`
+  String get welcome_back {
     return Intl.message(
-      'Sign In With Your Mail And Password',
-      name: 'Sign_In_With_Your_Mail_And_Password',
+      'Welcome back',
+      name: 'welcome_back',
       desc: '',
       args: [],
     );
   }
 
-  /// `Forgot Password`
-  String get Forgot_Password {
+  /// `Sign in with your mail and password`
+  String get sign_in_with_your_mail_and_password {
     return Intl.message(
-      'Forgot Password',
-      name: 'Forgot_Password',
+      'Sign in with your mail and password',
+      name: 'sign_in_with_your_mail_and_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign In`
-  String get Sign_In {
+  /// `Forgot password`
+  String get forgot_password {
     return Intl.message(
-      'Sign In',
-      name: 'Sign_In',
+      'Forgot password',
+      name: 'forgot_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Create Account`
-  String get Create_Account {
+  /// `Sign in`
+  String get sign_in {
     return Intl.message(
-      'Create Account',
-      name: 'Create_Account',
+      'Sign in',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account`
+  String get create_account {
+    return Intl.message(
+      'Create account',
+      name: 'create_account',
       desc: '',
       args: [],
     );
   }
 
   /// `Mail`
-  String get Mail {
+  String get mail {
     return Intl.message(
       'Mail',
-      name: 'Mail',
+      name: 'mail',
       desc: '',
       args: [],
     );
   }
 
   /// `Password`
-  String get Password {
+  String get password {
     return Intl.message(
       'Password',
-      name: 'Password',
+      name: 'password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Confirm Password`
-  String get Confrim_Password {
+  /// `Confirm password`
+  String get confrim_password {
     return Intl.message(
-      'Confirm Password',
-      name: 'Confrim_Password',
+      'Confirm password',
+      name: 'confrim_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Welcom To Commuter`
-  String get Welcom_To_Commuter {
+  /// `Welcom to Commuter`
+  String get welcom_to_commuter {
     return Intl.message(
-      'Welcom To Commuter',
-      name: 'Welcom_To_Commuter',
+      'Welcom to Commuter',
+      name: 'welcom_to_commuter',
       desc: '',
       args: [],
     );
   }
 
   /// `Name`
-  String get Name {
+  String get name {
     return Intl.message(
       'Name',
-      name: 'Name',
+      name: 'name',
       desc: '',
       args: [],
     );
   }
 
   /// `Phone`
-  String get Phone {
+  String get phone {
     return Intl.message(
       'Phone',
-      name: 'Phone',
+      name: 'phone',
       desc: '',
       args: [],
     );
   }
 
   /// `Search`
-  String get Search {
+  String get search {
     return Intl.message(
       'Search',
-      name: 'Search',
+      name: 'search',
       desc: '',
       args: [],
     );
   }
 
-  /// `Phone Verification`
-  String get Phone_Verification {
+  /// `Phone verification`
+  String get phone_verification {
     return Intl.message(
-      'Phone Verification',
-      name: 'Phone_Verification',
+      'Phone verification',
+      name: 'phone_verification',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter OTP Code Here`
-  String get Enter_OTP_Code_Here {
+  /// `Enter OTP code here`
+  String get enter_otp_code_here {
     return Intl.message(
-      'Enter OTP Code Here',
-      name: 'Enter_OTP_Code_Here',
+      'Enter OTP code here',
+      name: 'enter_otp_code_here',
       desc: '',
       args: [],
     );
   }
 
-  /// `Seconds Left`
-  String get Seconds_Left {
+  /// `Seconds left`
+  String get seconds_left {
     return Intl.message(
-      'Seconds Left',
-      name: 'Seconds_Left',
+      'Seconds left',
+      name: 'seconds_left',
       desc: '',
       args: [],
     );
   }
 
-  /// `Resend OTP Code`
-  String get Resend_OTP_Code {
+  /// `Resend OTP code`
+  String get resend_otp_code {
     return Intl.message(
-      'Resend OTP Code',
-      name: 'Resend_OTP_Code',
+      'Resend OTP code',
+      name: 'resend_otp_code',
       desc: '',
       args: [],
     );
   }
 
-  /// `English`
-  String get Language_Name {
+  /// `Already have an account`
+  String get already_have_an_account {
     return Intl.message(
-      'English',
-      name: 'Language_Name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Already Have An Account`
-  String get Already_Have_An_Account {
-    return Intl.message(
-      'Already Have An Account',
-      name: 'Already_Have_An_Account',
+      'Already have an account',
+      name: 'already_have_an_account',
       desc: '',
       args: [],
     );
   }
 
   /// `Commuter`
-  String get App_Name {
+  String get app_name {
     return Intl.message(
       'Commuter',
-      name: 'App_Name',
+      name: 'app_name',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign With Google`
-  String get Sign_In_With_Google {
+  /// `Sign in with Google`
+  String get sign_in_with_google {
     return Intl.message(
-      'Sign With Google',
-      name: 'Sign_In_With_Google',
+      'Sign in with Google',
+      name: 'sign_in_with_google',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please Input Your Mail`
-  String get Please_Input_Your_Mail {
+  /// `Please input your mail`
+  String get please_input_your_mail {
     return Intl.message(
-      'Please Input Your Mail',
-      name: 'Please_Input_Your_Mail',
+      'Please input your mail',
+      name: 'please_input_your_mail',
       desc: '',
       args: [],
     );
   }
 
   /// `Confirm`
-  String get Confirm {
+  String get confirm {
     return Intl.message(
       'Confirm',
-      name: 'Confirm',
+      name: 'confirm',
       desc: '',
       args: [],
     );
   }
 
-  /// `You Cannot Leave The Email Empty`
-  String get You_Cannot_Leave_The_Email_Empty {
+  /// `You cannot leave the email empty`
+  String get you_cannot_leave_the_email_empty {
     return Intl.message(
-      'You Cannot Leave The Email Empty',
-      name: 'You_Cannot_Leave_The_Email_Empty',
+      'You cannot leave the email empty',
+      name: 'you_cannot_leave_the_email_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `You Cannot Leave The Password Empty`
-  String get You_Cannot_Leave_The_Password_Empty {
+  /// `You cannot leave the password empty`
+  String get you_cannot_leave_the_password_empty {
     return Intl.message(
-      'You Cannot Leave The Password Empty',
-      name: 'You_Cannot_Leave_The_Password_Empty',
+      'You cannot leave the password empty',
+      name: 'you_cannot_leave_the_password_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please Write Your Email Correctly`
-  String get Please_Write_Your_Email_Correctly {
+  /// `Please write your email correctly`
+  String get please_write_your_email_correctly {
     return Intl.message(
-      'Please Write Your Email Correctly',
-      name: 'Please_Write_Your_Email_Correctly',
+      'Please write your email correctly',
+      name: 'please_write_your_email_correctly',
       desc: '',
       args: [],
     );
   }
 
-  /// `The Password Must Be Greater Than Or Equal To 6 Characters`
-  String get The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters {
+  /// `The password must be greater than or equal to 6 characters`
+  String get the_password_must_be_greater_than_or_equal_to_6_characters {
     return Intl.message(
-      'The Password Must Be Greater Than Or Equal To 6 Characters',
-      name: 'The_Password_Must_Be_Greater_Than_Or_Equal_To_6_Characters',
+      'The password must be greater than or equal to 6 characters',
+      name: 'the_password_must_be_greater_than_or_equal_to_6_characters',
       desc: '',
       args: [],
     );
   }
 
   /// `Warning`
-  String get Warning {
+  String get warning {
     return Intl.message(
       'Warning',
-      name: 'Warning',
+      name: 'warning',
       desc: '',
       args: [],
     );
   }
 
   /// `Ok`
-  String get Ok {
+  String get ok {
     return Intl.message(
       'Ok',
-      name: 'Ok',
+      name: 'ok',
       desc: '',
       args: [],
     );
   }
 
-  /// `This Account Not Active`
-  String get This_Account_Not_Active {
+  /// `This account not active`
+  String get this_account_not_active {
     return Intl.message(
-      'This Account Not Active',
-      name: 'This_Account_Not_Active',
+      'This account not active',
+      name: 'this_account_not_active',
       desc: '',
       args: [],
     );
   }
 
   /// `Failure`
-  String get Failure {
+  String get failure {
     return Intl.message(
       'Failure',
-      name: 'Failure',
+      name: 'failure',
       desc: '',
       args: [],
     );
   }
 
   /// `Timeout`
-  String get Timeout {
+  String get timeout {
     return Intl.message(
       'Timeout',
-      name: 'Timeout',
+      name: 'timeout',
       desc: '',
       args: [],
     );
   }
 
-  /// `You Cannot Verify The Code Because Timeout`
-  String get You_Cannot_Verify_The_Code_Because_Timeout {
+  /// `You cannot verify the code because timeout`
+  String get you_cannot_verify_the_code_because_timeout {
     return Intl.message(
-      'You Cannot Verify The Code Because Timeout',
-      name: 'You_Cannot_Verify_The_Code_Because_Timeout',
+      'You cannot verify the code because timeout',
+      name: 'you_cannot_verify_the_code_because_timeout',
       desc: '',
       args: [],
     );
   }
 
-  /// `Verify Code`
-  String get Verify_Code {
+  /// `Verify code`
+  String get verify_code {
     return Intl.message(
-      'Verify Code',
-      name: 'Verify_Code',
+      'Verify code',
+      name: 'verify_code',
       desc: '',
       args: [],
     );
   }
 
-  /// `Change Password`
-  String get Change_Password {
+  /// `Change password`
+  String get change_password {
     return Intl.message(
-      'Change Password',
-      name: 'Change_Password',
+      'Change password',
+      name: 'change_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please Input Your New Password And Confirm It`
-  String get Please_Input_Your_New_Password_And_Confirm_It {
+  /// `Please input your new password and confirm it`
+  String get please_input_your_new_password_and_confirm_it {
     return Intl.message(
-      'Please Input Your New Password And Confirm It',
-      name: 'Please_Input_Your_New_Password_And_Confirm_It',
+      'Please input your new password and confirm it',
+      name: 'please_input_your_new_password_and_confirm_it',
       desc: '',
       args: [],
     );
   }
 
-  /// `Passwords Must Match`
-  String get Passwords_Must_Match {
+  /// `Passwords must match`
+  String get passwords_must_match {
     return Intl.message(
-      'Passwords Must Match',
-      name: 'Passwords_Must_Match',
+      'Passwords must match',
+      name: 'passwords_must_match',
       desc: '',
       args: [],
     );
   }
 
-  /// `Name Field Must Not Be Empty`
-  String get Name_Field_Must_Not_Be_Empty {
+  /// `Name field must not be empty`
+  String get name_field_must_not_be_empty {
     return Intl.message(
-      'Name Field Must Not Be Empty',
-      name: 'Name_Field_Must_Not_Be_Empty',
+      'Name field must not be empty',
+      name: 'name_field_must_not_be_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Phone Number Not Valid`
-  String get Phone_Number_Not_Valid {
+  /// `Phone number not valid`
+  String get phone_number_not_valid {
     return Intl.message(
-      'Phone Number Not Valid',
-      name: 'Phone_Number_Not_Valid',
+      'Phone number not valid',
+      name: 'phone_number_not_valid',
       desc: '',
       args: [],
     );
   }
 
-  /// `The Password Has Been Changed Successfully`
-  String get The_Password_Has_Been_Changed_Successfully {
+  /// `The password has been changed successfully`
+  String get the_password_has_been_changed_successfully {
     return Intl.message(
-      'The Password Has Been Changed Successfully',
-      name: 'The_Password_Has_Been_Changed_Successfully',
+      'The password has been changed successfully',
+      name: 'the_password_has_been_changed_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No chats found`
+  String get no_chats_found {
+    return Intl.message(
+      'No chats found',
+      name: 'no_chats_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your message`
+  String get enter_your_message {
+    return Intl.message(
+      'Enter your message',
+      name: 'enter_your_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create contract`
+  String get create_contract {
+    return Intl.message(
+      'Create contract',
+      name: 'create_contract',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total price`
+  String get total_price {
+    return Intl.message(
+      'Total price',
+      name: 'total_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of months`
+  String get number_of_months {
+    return Intl.message(
+      'Number of months',
+      name: 'number_of_months',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No messages yet , start a conversation`
+  String get no_messages_yet {
+    return Intl.message(
+      'No messages yet , start a conversation',
+      name: 'no_messages_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow permissions`
+  String get allow_permissions {
+    return Intl.message(
+      'Allow permissions',
+      name: 'allow_permissions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Whare to go?`
+  String get whare_to_go {
+    return Intl.message(
+      'Whare to go?',
+      name: 'whare_to_go',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nearby commuters`
+  String get nearby_commuters {
+    return Intl.message(
+      'Nearby commuters',
+      name: 'nearby_commuters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transactions`
+  String get transactions {
+    return Intl.message(
+      'Transactions',
+      name: 'transactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chats`
+  String get chats {
+    return Intl.message(
+      'Chats',
+      name: 'chats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commute Name`
+  String get commute_name {
+    return Intl.message(
+      'Commute Name',
+      name: 'commute_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not selected`
+  String get not_selected {
+    return Intl.message(
+      'Not selected',
+      name: 'not_selected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message(
+      'Location',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add commute`
+  String get add_commute {
+    return Intl.message(
+      'Add commute',
+      name: 'add_commute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location of the trip`
+  String get location_of_the_trip {
+    return Intl.message(
+      'Location of the trip',
+      name: 'location_of_the_trip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of the trip`
+  String get date_of_the_trip {
+    return Intl.message(
+      'Date of the trip',
+      name: 'date_of_the_trip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add schedules trip`
+  String get add_schedules_trip {
+    return Intl.message(
+      'Add schedules trip',
+      name: 'add_schedules_trip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pin`
+  String get pin {
+    return Intl.message(
+      'Pin',
+      name: 'pin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unpin`
+  String get unpin {
+    return Intl.message(
+      'Unpin',
+      name: 'unpin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commuter name`
+  String get commuter_name {
+    return Intl.message(
+      'Commuter name',
+      name: 'commuter_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My commutes`
+  String get my_commutes {
+    return Intl.message(
+      'My commutes',
+      name: 'my_commutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commutes`
+  String get commutes {
+    return Intl.message(
+      'Commutes',
+      name: 'commutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Schedules trips`
+  String get schedules_trips {
+    return Intl.message(
+      'Schedules trips',
+      name: 'schedules_trips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No commutes found, Please add one`
+  String get no_commutes_found {
+    return Intl.message(
+      'No commutes found, Please add one',
+      name: 'no_commutes_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter by`
+  String get filter_by {
+    return Intl.message(
+      'Filter by',
+      name: 'filter_by',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your preference`
+  String get choose_your_preference {
+    return Intl.message(
+      'Choose your preference',
+      name: 'choose_your_preference',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best match`
+  String get best_match {
+    return Intl.message(
+      'Best match',
+      name: 'best_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Carpooling`
+  String get carpooling {
+    return Intl.message(
+      'Carpooling',
+      name: 'carpooling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female only`
+  String get female_only {
+    return Intl.message(
+      'Female only',
+      name: 'female_only',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `One way`
+  String get one_way {
+    return Intl.message(
+      'One way',
+      name: 'one_way',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Two way`
+  String get two_way {
+    return Intl.message(
+      'Two way',
+      name: 'two_way',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message(
+      'Online',
+      name: 'online',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offline`
+  String get offline {
+    return Intl.message(
+      'Offline',
+      name: 'offline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read`
+  String get read {
+    return Intl.message(
+      'Read',
+      name: 'read',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Readed`
+  String get readed {
+    return Intl.message(
+      'Readed',
+      name: 'readed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New notifications`
+  String get new_notifications {
+    return Intl.message(
+      'New notifications',
+      name: 'new_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications`
+  String get no_notifications {
+    return Intl.message(
+      'No notifications',
+      name: 'no_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My location`
+  String get my_location {
+    return Intl.message(
+      'My location',
+      name: 'my_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message(
+      'Country',
+      name: 'country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street`
+  String get street {
+    return Intl.message(
+      'Street',
+      name: 'street',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not available`
+  String get not_available {
+    return Intl.message(
+      'Not available',
+      name: 'not_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter text`
+  String get enter_text {
+    return Intl.message(
+      'Enter text',
+      name: 'enter_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose you picture`
+  String get choose_your_picture {
+    return Intl.message(
+      'Choose you picture',
+      name: 'choose_your_picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From gallery`
+  String get from_gallery {
+    return Intl.message(
+      'From gallery',
+      name: 'from_gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From camera`
+  String get from_camera {
+    return Intl.message(
+      'From camera',
+      name: 'from_camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get sign_out {
+    return Intl.message(
+      'Sign out',
+      name: 'sign_out',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure to update profile`
+  String get failure_to_update_profile {
+    return Intl.message(
+      'Failure to update profile',
+      name: 'failure_to_update_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an image`
+  String get please_select_an_image {
+    return Intl.message(
+      'Please select an image',
+      name: 'please_select_an_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update profile`
+  String get update_profile {
+    return Intl.message(
+      'Update profile',
+      name: 'update_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get general {
+    return Intl.message(
+      'General',
+      name: 'general',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Night mode`
+  String get night_mode {
+    return Intl.message(
+      'Night mode',
+      name: 'night_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current language`
+  String get current_language {
+    return Intl.message(
+      'Current language',
+      name: 'current_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My profile`
+  String get my_profile {
+    return Intl.message(
+      'My profile',
+      name: 'my_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete my profile`
+  String get delete_my_profile {
+    return Intl.message(
+      'Delete my profile',
+      name: 'delete_my_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete the profile?`
+  String get are_you_sure_you_want_to_delete_the_profile {
+    return Intl.message(
+      'Are you sure you want to delete the profile?',
+      name: 'are_you_sure_you_want_to_delete_the_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contract number`
+  String get contract_number {
+    return Intl.message(
+      'Contract number',
+      name: 'contract_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contract date`
+  String get contract_date {
+    return Intl.message(
+      'Contract date',
+      name: 'contract_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commute ID`
+  String get commute_id {
+    return Intl.message(
+      'Commute ID',
+      name: 'commute_id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commute location`
+  String get commute_location {
+    return Intl.message(
+      'Commute location',
+      name: 'commute_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet`
+  String get wallet {
+    return Intl.message(
+      'Wallet',
+      name: 'wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contracts`
+  String get contracts {
+    return Intl.message(
+      'Contracts',
+      name: 'contracts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current balance`
+  String get current_balance {
+    return Intl.message(
+      'Current balance',
+      name: 'current_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance used`
+  String get balance_used {
+    return Intl.message(
+      'Balance used',
+      name: 'balance_used',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter amount`
+  String get enter_amount {
+    return Intl.message(
+      'Enter amount',
+      name: 'enter_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charge`
+  String get charge {
+    return Intl.message(
+      'Charge',
+      name: 'charge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charge balance`
+  String get charge_balance {
+    return Intl.message(
+      'Charge balance',
+      name: 'charge_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transaction history`
+  String get transaction_history {
+    return Intl.message(
+      'Transaction history',
+      name: 'transaction_history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to balance`
+  String get added_to_balance {
+    return Intl.message(
+      'Added to balance',
+      name: 'added_to_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send request`
+  String get send_request {
+    return Intl.message(
+      'Send request',
+      name: 'send_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nearest station`
+  String get nearest_station {
+    return Intl.message(
+      'Nearest station',
+      name: 'nearest_station',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send ride request`
+  String get send_ride_request {
+    return Intl.message(
+      'Send ride request',
+      name: 'send_ride_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter location`
+  String get enter_location {
+    return Intl.message(
+      'Enter location',
+      name: 'enter_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for place`
+  String get search_for_place {
+    return Intl.message(
+      'Search for place',
+      name: 'search_for_place',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set on map`
+  String get set_on_map {
+    return Intl.message(
+      'Set on map',
+      name: 'set_on_map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current location`
+  String get current_location {
+    return Intl.message(
+      'Current location',
+      name: 'current_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Where to?`
+  String get where_to {
+    return Intl.message(
+      'Where to?',
+      name: 'where_to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter pickup location`
+  String get enter_pickup_location {
+    return Intl.message(
+      'Enter pickup location',
+      name: 'enter_pickup_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter landing location`
+  String get enter_landing_location {
+    return Intl.message(
+      'Enter landing location',
+      name: 'enter_landing_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message(
+      'Success',
+      name: 'success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send ride request success`
+  String get send_ride_request_success {
+    return Intl.message(
+      'Send ride request success',
+      name: 'send_ride_request_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send ride request failure`
+  String get send_ride_request_failure {
+    return Intl.message(
+      'Send ride request failure',
+      name: 'send_ride_request_failure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join commute`
+  String get join_commute {
+    return Intl.message(
+      'Join commute',
+      name: 'join_commute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pickup`
+  String get pickup {
+    return Intl.message(
+      'Pickup',
+      name: 'pickup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dropoff`
+  String get dropoff {
+    return Intl.message(
+      'Dropoff',
+      name: 'dropoff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pickup and dropoff`
+  String get pickup_and_dropoff {
+    return Intl.message(
+      'Pickup and dropoff',
+      name: 'pickup_and_dropoff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Matching`
+  String get matching {
+    return Intl.message(
+      'Matching',
+      name: 'matching',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car brand - Model`
+  String get car_brand_Model {
+    return Intl.message(
+      'Car brand - Model',
+      name: 'car_brand_Model',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time left`
+  String get time_left {
+    return Intl.message(
+      'Time left',
+      name: 'time_left',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No nearby commuters right now, please try again later`
+  String get no_nearby_commuters_right_now_try_again_later {
+    return Intl.message(
+      'No nearby commuters right now, please try again later',
+      name: 'no_nearby_commuters_right_now_try_again_later',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Joined commute successfully`
+  String get joined_commute_successfully {
+    return Intl.message(
+      'Joined commute successfully',
+      name: 'joined_commute_successfully',
       desc: '',
       args: [],
     );
@@ -448,6 +1448,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<Language> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'ur'),
     ];
   }
 

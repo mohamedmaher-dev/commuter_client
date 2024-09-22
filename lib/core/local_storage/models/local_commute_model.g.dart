@@ -20,19 +20,25 @@ class LocalCommuteModelAdapter extends TypeAdapter<LocalCommuteModel> {
       commuteName: fields[0] as String,
       latitude: fields[1] as double,
       longitude: fields[2] as double,
+      id: fields[4] as String,
+      isPinned: fields[3] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, LocalCommuteModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.commuteName)
       ..writeByte(1)
       ..write(obj.latitude)
       ..writeByte(2)
-      ..write(obj.longitude);
+      ..write(obj.longitude)
+      ..writeByte(3)
+      ..write(obj.isPinned)
+      ..writeByte(4)
+      ..write(obj.id);
   }
 
   @override

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 part of '../whare_to_view.dart';
 
 class _SheeduleChips extends StatelessWidget {
@@ -9,8 +11,7 @@ class _SheeduleChips extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(2.w),
       child: ActionChip(
-        onPressed: () {
-        },
+        onPressed: () {},
         label: Text(title),
         avatar: const Icon(
           Icons.calendar_month,

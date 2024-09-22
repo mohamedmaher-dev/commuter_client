@@ -1,31 +1,39 @@
-import 'package:geolocator/geolocator.dart';
+import 'package:location/location.dart';
 
-Future<bool> checkPermission() async {
-  final permission = await Geolocator.checkPermission();
-  final gpsIsEnable = await Geolocator.isLocationServiceEnabled();
-
-  Future<LocationPermission> requestPermission() async {
-    return await Geolocator.requestPermission();
-  }
-
-  Future<bool> checkLocationPermission(LocationPermission permission) async {
-    if (permission == LocationPermission.whileInUse ||
-        permission == LocationPermission.always) {
+class CheckLocationPermission {
+  final Location _location;
+  CheckLocationPermission(this._location);
+  Future<bool> get getServiceEnabled async => await _location.serviceEnabled();
+  Future<PermissionStatus> get getLocationPermissionStatus async =>
+      await _location.hasPermission();
+  Future<bool> get getLocationPermissionIsGranted async {
+    final status = await _location.hasPermission();
+    if (status == PermissionStatus.granted ||
+        status == PermissionStatus.grantedLimited) {
       return true;
     } else {
-      final request = await requestPermission();
-      if (request == LocationPermission.whileInUse ||
-          request == LocationPermission.always) {
-        return true;
+      return false;
+    }
+  }
+
+  Future<bool> init() async {
+    if (await getServiceEnabled) {
+      return await requestLocationPermission();
+    } else {
+      if (await requestLocationService()) {
+        return await requestLocationPermission();
       } else {
         return false;
       }
     }
   }
 
-  if (gpsIsEnable) {
-    return await checkLocationPermission(permission);
-  } else {
-    return false;
+  Future<bool> requestLocationPermission() async {
+    await _location.requestPermission();
+    return await getLocationPermissionIsGranted;
+  }
+
+  Future<bool> requestLocationService() async {
+    return await _location.requestService();
   }
 }

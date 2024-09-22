@@ -21,11 +21,12 @@ mixin _$WhereToEvent {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,10 +34,11 @@ mixin _$WhereToEvent {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,10 +46,11 @@ mixin _$WhereToEvent {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,11 +59,10 @@ mixin _$WhereToEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,10 +70,9 @@ mixin _$WhereToEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,10 +80,9 @@ mixin _$WhereToEvent {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,11 +147,12 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) {
     return started();
   }
@@ -162,10 +163,11 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) {
     return started?.call();
   }
@@ -176,10 +178,11 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -194,11 +197,10 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) {
     return started(this);
   }
@@ -209,10 +211,9 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) {
     return started?.call(this);
   }
@@ -223,10 +224,9 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -281,11 +281,12 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) {
     return onSetOnMap();
   }
@@ -296,10 +297,11 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) {
     return onSetOnMap?.call();
   }
@@ -310,10 +312,11 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) {
     if (onSetOnMap != null) {
@@ -328,11 +331,10 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) {
     return onSetOnMap(this);
   }
@@ -343,10 +345,9 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) {
     return onSetOnMap?.call(this);
   }
@@ -357,10 +358,9 @@ class _$OnSetOnMapImpl implements _OnSetOnMap {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) {
     if (onSetOnMap != null) {
@@ -415,11 +415,12 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) {
     return onCancelSetOnMap();
   }
@@ -430,10 +431,11 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) {
     return onCancelSetOnMap?.call();
   }
@@ -444,10 +446,11 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) {
     if (onCancelSetOnMap != null) {
@@ -462,11 +465,10 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) {
     return onCancelSetOnMap(this);
   }
@@ -477,10 +479,9 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) {
     return onCancelSetOnMap?.call(this);
   }
@@ -491,10 +492,9 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) {
     if (onCancelSetOnMap != null) {
@@ -506,6 +506,173 @@ class _$OnCancelSetOnMapImpl implements _OnCancelSetOnMap {
 
 abstract class _OnCancelSetOnMap implements WhereToEvent {
   const factory _OnCancelSetOnMap() = _$OnCancelSetOnMapImpl;
+}
+
+/// @nodoc
+abstract class _$$OnMapCreatedImplCopyWith<$Res> {
+  factory _$$OnMapCreatedImplCopyWith(
+          _$OnMapCreatedImpl value, $Res Function(_$OnMapCreatedImpl) then) =
+      __$$OnMapCreatedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GoogleMapController controller});
+}
+
+/// @nodoc
+class __$$OnMapCreatedImplCopyWithImpl<$Res>
+    extends _$WhereToEventCopyWithImpl<$Res, _$OnMapCreatedImpl>
+    implements _$$OnMapCreatedImplCopyWith<$Res> {
+  __$$OnMapCreatedImplCopyWithImpl(
+      _$OnMapCreatedImpl _value, $Res Function(_$OnMapCreatedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? controller = null,
+  }) {
+    return _then(_$OnMapCreatedImpl(
+      controller: null == controller
+          ? _value.controller
+          : controller // ignore: cast_nullable_to_non_nullable
+              as GoogleMapController,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnMapCreatedImpl implements _OnMapCreated {
+  const _$OnMapCreatedImpl({required this.controller});
+
+  @override
+  final GoogleMapController controller;
+
+  @override
+  String toString() {
+    return 'WhereToEvent.onMapCreated(controller: $controller)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnMapCreatedImpl &&
+            (identical(other.controller, controller) ||
+                other.controller == controller));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, controller);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnMapCreatedImplCopyWith<_$OnMapCreatedImpl> get copyWith =>
+      __$$OnMapCreatedImplCopyWithImpl<_$OnMapCreatedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onSetOnMap,
+    required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
+    required TResult Function(CameraPosition cameraPosition)
+        onCameraPositionChanged,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
+  }) {
+    return onMapCreated(controller);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onSetOnMap,
+    TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
+    TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
+  }) {
+    return onMapCreated?.call(controller);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onSetOnMap,
+    TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
+    TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
+    required TResult orElse(),
+  }) {
+    if (onMapCreated != null) {
+      return onMapCreated(controller);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnSetOnMap value) onSetOnMap,
+    required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
+    required TResult Function(_OnCameraPositionChanged value)
+        onCameraPositionChanged,
+    required TResult Function(_OnSendRideRequest value) onSendRideRequest,
+  }) {
+    return onMapCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnSetOnMap value)? onSetOnMap,
+    TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
+    TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
+    TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
+  }) {
+    return onMapCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnSetOnMap value)? onSetOnMap,
+    TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
+    TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
+    TResult Function(_OnSendRideRequest value)? onSendRideRequest,
+    required TResult orElse(),
+  }) {
+    if (onMapCreated != null) {
+      return onMapCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMapCreated implements WhereToEvent {
+  const factory _OnMapCreated({required final GoogleMapController controller}) =
+      _$OnMapCreatedImpl;
+
+  GoogleMapController get controller;
+  @JsonKey(ignore: true)
+  _$$OnMapCreatedImplCopyWith<_$OnMapCreatedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -579,11 +746,12 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) {
     return onCameraPositionChanged(cameraPosition);
   }
@@ -594,10 +762,11 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) {
     return onCameraPositionChanged?.call(cameraPosition);
   }
@@ -608,10 +777,11 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) {
     if (onCameraPositionChanged != null) {
@@ -626,11 +796,10 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) {
     return onCameraPositionChanged(this);
   }
@@ -641,10 +810,9 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) {
     return onCameraPositionChanged?.call(this);
   }
@@ -655,10 +823,9 @@ class _$OnCameraPositionChangedImpl implements _OnCameraPositionChanged {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) {
     if (onCameraPositionChanged != null) {
@@ -685,7 +852,7 @@ abstract class _$$OnSendRideRequestImplCopyWith<$Res> {
           $Res Function(_$OnSendRideRequestImpl) then) =
       __$$OnSendRideRequestImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({LatLng pickup, LatLng landing});
+  $Res call({LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly});
 }
 
 /// @nodoc
@@ -699,18 +866,28 @@ class __$$OnSendRideRequestImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pickup = null,
-    Object? landing = null,
+    Object? pickup = freezed,
+    Object? dropoff = null,
+    Object? carPooling = null,
+    Object? femaleOnly = null,
   }) {
     return _then(_$OnSendRideRequestImpl(
-      pickup: null == pickup
+      pickup: freezed == pickup
           ? _value.pickup
           : pickup // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
+      dropoff: null == dropoff
+          ? _value.dropoff
+          : dropoff // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      landing: null == landing
-          ? _value.landing
-          : landing // ignore: cast_nullable_to_non_nullable
-              as LatLng,
+      carPooling: null == carPooling
+          ? _value.carPooling
+          : carPooling // ignore: cast_nullable_to_non_nullable
+              as bool,
+      femaleOnly: null == femaleOnly
+          ? _value.femaleOnly
+          : femaleOnly // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -718,16 +895,24 @@ class __$$OnSendRideRequestImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnSendRideRequestImpl implements _OnSendRideRequest {
-  const _$OnSendRideRequestImpl({required this.pickup, required this.landing});
+  const _$OnSendRideRequestImpl(
+      {required this.pickup,
+      required this.dropoff,
+      required this.carPooling,
+      required this.femaleOnly});
 
   @override
-  final LatLng pickup;
+  final LatLng? pickup;
   @override
-  final LatLng landing;
+  final LatLng dropoff;
+  @override
+  final bool carPooling;
+  @override
+  final bool femaleOnly;
 
   @override
   String toString() {
-    return 'WhereToEvent.onSendRideRequest(pickup: $pickup, landing: $landing)';
+    return 'WhereToEvent.onSendRideRequest(pickup: $pickup, dropoff: $dropoff, carPooling: $carPooling, femaleOnly: $femaleOnly)';
   }
 
   @override
@@ -736,11 +921,16 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
         (other.runtimeType == runtimeType &&
             other is _$OnSendRideRequestImpl &&
             (identical(other.pickup, pickup) || other.pickup == pickup) &&
-            (identical(other.landing, landing) || other.landing == landing));
+            (identical(other.dropoff, dropoff) || other.dropoff == dropoff) &&
+            (identical(other.carPooling, carPooling) ||
+                other.carPooling == carPooling) &&
+            (identical(other.femaleOnly, femaleOnly) ||
+                other.femaleOnly == femaleOnly));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pickup, landing);
+  int get hashCode =>
+      Object.hash(runtimeType, pickup, dropoff, carPooling, femaleOnly);
 
   @JsonKey(ignore: true)
   @override
@@ -755,13 +945,14 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     required TResult Function() started,
     required TResult Function() onSetOnMap,
     required TResult Function() onCancelSetOnMap,
+    required TResult Function(GoogleMapController controller) onMapCreated,
     required TResult Function(CameraPosition cameraPosition)
         onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
+    required TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)
+        onSendRideRequest,
   }) {
-    return onSendRideRequest(pickup, landing);
+    return onSendRideRequest(pickup, dropoff, carPooling, femaleOnly);
   }
 
   @override
@@ -770,12 +961,13 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     TResult? Function()? started,
     TResult? Function()? onSetOnMap,
     TResult? Function()? onCancelSetOnMap,
+    TResult? Function(GoogleMapController controller)? onMapCreated,
     TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult? Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
   }) {
-    return onSendRideRequest?.call(pickup, landing);
+    return onSendRideRequest?.call(pickup, dropoff, carPooling, femaleOnly);
   }
 
   @override
@@ -784,14 +976,15 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     TResult Function()? started,
     TResult Function()? onSetOnMap,
     TResult Function()? onCancelSetOnMap,
+    TResult Function(GoogleMapController controller)? onMapCreated,
     TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
+    TResult Function(
+            LatLng? pickup, LatLng dropoff, bool carPooling, bool femaleOnly)?
+        onSendRideRequest,
     required TResult orElse(),
   }) {
     if (onSendRideRequest != null) {
-      return onSendRideRequest(pickup, landing);
+      return onSendRideRequest(pickup, dropoff, carPooling, femaleOnly);
     }
     return orElse();
   }
@@ -802,11 +995,10 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     required TResult Function(_Started value) started,
     required TResult Function(_OnSetOnMap value) onSetOnMap,
     required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
+    required TResult Function(_OnMapCreated value) onMapCreated,
     required TResult Function(_OnCameraPositionChanged value)
         onCameraPositionChanged,
     required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
   }) {
     return onSendRideRequest(this);
   }
@@ -817,10 +1009,9 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnSetOnMap value)? onSetOnMap,
     TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult? Function(_OnMapCreated value)? onMapCreated,
     TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
   }) {
     return onSendRideRequest?.call(this);
   }
@@ -831,10 +1022,9 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
     TResult Function(_Started value)? started,
     TResult Function(_OnSetOnMap value)? onSetOnMap,
     TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
+    TResult Function(_OnMapCreated value)? onMapCreated,
     TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
     TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
     required TResult orElse(),
   }) {
     if (onSendRideRequest != null) {
@@ -846,188 +1036,18 @@ class _$OnSendRideRequestImpl implements _OnSendRideRequest {
 
 abstract class _OnSendRideRequest implements WhereToEvent {
   const factory _OnSendRideRequest(
-      {required final LatLng pickup,
-      required final LatLng landing}) = _$OnSendRideRequestImpl;
+      {required final LatLng? pickup,
+      required final LatLng dropoff,
+      required final bool carPooling,
+      required final bool femaleOnly}) = _$OnSendRideRequestImpl;
 
-  LatLng get pickup;
-  LatLng get landing;
+  LatLng? get pickup;
+  LatLng get dropoff;
+  bool get carPooling;
+  bool get femaleOnly;
   @JsonKey(ignore: true)
   _$$OnSendRideRequestImplCopyWith<_$OnSendRideRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnSendRideRequestFromLocalCommuteImplCopyWith<$Res> {
-  factory _$$OnSendRideRequestFromLocalCommuteImplCopyWith(
-          _$OnSendRideRequestFromLocalCommuteImpl value,
-          $Res Function(_$OnSendRideRequestFromLocalCommuteImpl) then) =
-      __$$OnSendRideRequestFromLocalCommuteImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({LocalCommuteModel commute});
-}
-
-/// @nodoc
-class __$$OnSendRideRequestFromLocalCommuteImplCopyWithImpl<$Res>
-    extends _$WhereToEventCopyWithImpl<$Res,
-        _$OnSendRideRequestFromLocalCommuteImpl>
-    implements _$$OnSendRideRequestFromLocalCommuteImplCopyWith<$Res> {
-  __$$OnSendRideRequestFromLocalCommuteImplCopyWithImpl(
-      _$OnSendRideRequestFromLocalCommuteImpl _value,
-      $Res Function(_$OnSendRideRequestFromLocalCommuteImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? commute = null,
-  }) {
-    return _then(_$OnSendRideRequestFromLocalCommuteImpl(
-      commute: null == commute
-          ? _value.commute
-          : commute // ignore: cast_nullable_to_non_nullable
-              as LocalCommuteModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnSendRideRequestFromLocalCommuteImpl
-    implements _OnSendRideRequestFromLocalCommute {
-  const _$OnSendRideRequestFromLocalCommuteImpl({required this.commute});
-
-  @override
-  final LocalCommuteModel commute;
-
-  @override
-  String toString() {
-    return 'WhereToEvent.onSendRideRequestFromLocalCommute(commute: $commute)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnSendRideRequestFromLocalCommuteImpl &&
-            (identical(other.commute, commute) || other.commute == commute));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, commute);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnSendRideRequestFromLocalCommuteImplCopyWith<
-          _$OnSendRideRequestFromLocalCommuteImpl>
-      get copyWith => __$$OnSendRideRequestFromLocalCommuteImplCopyWithImpl<
-          _$OnSendRideRequestFromLocalCommuteImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() onSetOnMap,
-    required TResult Function() onCancelSetOnMap,
-    required TResult Function(CameraPosition cameraPosition)
-        onCameraPositionChanged,
-    required TResult Function(LatLng pickup, LatLng landing) onSendRideRequest,
-    required TResult Function(LocalCommuteModel commute)
-        onSendRideRequestFromLocalCommute,
-  }) {
-    return onSendRideRequestFromLocalCommute(commute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? onSetOnMap,
-    TResult? Function()? onCancelSetOnMap,
-    TResult? Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult? Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult? Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
-  }) {
-    return onSendRideRequestFromLocalCommute?.call(commute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? onSetOnMap,
-    TResult Function()? onCancelSetOnMap,
-    TResult Function(CameraPosition cameraPosition)? onCameraPositionChanged,
-    TResult Function(LatLng pickup, LatLng landing)? onSendRideRequest,
-    TResult Function(LocalCommuteModel commute)?
-        onSendRideRequestFromLocalCommute,
-    required TResult orElse(),
-  }) {
-    if (onSendRideRequestFromLocalCommute != null) {
-      return onSendRideRequestFromLocalCommute(commute);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_OnSetOnMap value) onSetOnMap,
-    required TResult Function(_OnCancelSetOnMap value) onCancelSetOnMap,
-    required TResult Function(_OnCameraPositionChanged value)
-        onCameraPositionChanged,
-    required TResult Function(_OnSendRideRequest value) onSendRideRequest,
-    required TResult Function(_OnSendRideRequestFromLocalCommute value)
-        onSendRideRequestFromLocalCommute,
-  }) {
-    return onSendRideRequestFromLocalCommute(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_OnSetOnMap value)? onSetOnMap,
-    TResult? Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
-    TResult? Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
-    TResult? Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult? Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
-  }) {
-    return onSendRideRequestFromLocalCommute?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_OnSetOnMap value)? onSetOnMap,
-    TResult Function(_OnCancelSetOnMap value)? onCancelSetOnMap,
-    TResult Function(_OnCameraPositionChanged value)? onCameraPositionChanged,
-    TResult Function(_OnSendRideRequest value)? onSendRideRequest,
-    TResult Function(_OnSendRideRequestFromLocalCommute value)?
-        onSendRideRequestFromLocalCommute,
-    required TResult orElse(),
-  }) {
-    if (onSendRideRequestFromLocalCommute != null) {
-      return onSendRideRequestFromLocalCommute(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnSendRideRequestFromLocalCommute implements WhereToEvent {
-  const factory _OnSendRideRequestFromLocalCommute(
-          {required final LocalCommuteModel commute}) =
-      _$OnSendRideRequestFromLocalCommuteImpl;
-
-  LocalCommuteModel get commute;
-  @JsonKey(ignore: true)
-  _$$OnSendRideRequestFromLocalCommuteImplCopyWith<
-          _$OnSendRideRequestFromLocalCommuteImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1036,6 +1056,7 @@ mixin _$WhereToState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1045,6 +1066,7 @@ mixin _$WhereToState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1054,6 +1076,7 @@ mixin _$WhereToState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1064,6 +1087,8 @@ mixin _$WhereToState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1075,6 +1100,7 @@ mixin _$WhereToState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1084,6 +1110,7 @@ mixin _$WhereToState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,
@@ -1150,6 +1177,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1162,6 +1190,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1174,6 +1203,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1190,6 +1220,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1204,6 +1236,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1216,6 +1249,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,
@@ -1272,6 +1306,7 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1284,6 +1319,7 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1296,6 +1332,7 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1312,6 +1349,8 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1326,6 +1365,7 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1338,6 +1378,7 @@ class _$PopLoadingImpl implements _PopLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,
@@ -1352,6 +1393,138 @@ class _$PopLoadingImpl implements _PopLoading {
 
 abstract class _PopLoading implements WhereToState {
   const factory _PopLoading() = _$PopLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ReadyToSendRideRequestImplCopyWith<$Res> {
+  factory _$$ReadyToSendRideRequestImplCopyWith(
+          _$ReadyToSendRideRequestImpl value,
+          $Res Function(_$ReadyToSendRideRequestImpl) then) =
+      __$$ReadyToSendRideRequestImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReadyToSendRideRequestImplCopyWithImpl<$Res>
+    extends _$WhereToStateCopyWithImpl<$Res, _$ReadyToSendRideRequestImpl>
+    implements _$$ReadyToSendRideRequestImplCopyWith<$Res> {
+  __$$ReadyToSendRideRequestImplCopyWithImpl(
+      _$ReadyToSendRideRequestImpl _value,
+      $Res Function(_$ReadyToSendRideRequestImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReadyToSendRideRequestImpl implements _ReadyToSendRideRequest {
+  const _$ReadyToSendRideRequestImpl();
+
+  @override
+  String toString() {
+    return 'WhereToState.readyToSendRideRequest()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReadyToSendRideRequestImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
+    required TResult Function() sendRideRequestSuccess,
+    required TResult Function() sendRideRequestFailure,
+    required TResult Function() setOnMap,
+  }) {
+    return readyToSendRideRequest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
+    TResult? Function()? sendRideRequestSuccess,
+    TResult? Function()? sendRideRequestFailure,
+    TResult? Function()? setOnMap,
+  }) {
+    return readyToSendRideRequest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
+    TResult Function()? sendRideRequestSuccess,
+    TResult Function()? sendRideRequestFailure,
+    TResult Function()? setOnMap,
+    required TResult orElse(),
+  }) {
+    if (readyToSendRideRequest != null) {
+      return readyToSendRideRequest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
+    required TResult Function(_SendRideRequestSuccess value)
+        sendRideRequestSuccess,
+    required TResult Function(_SendRideRequestFailure value)
+        sendRideRequestFailure,
+    required TResult Function(_SetOnMap value) setOnMap,
+  }) {
+    return readyToSendRideRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
+    TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
+    TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
+    TResult? Function(_SetOnMap value)? setOnMap,
+  }) {
+    return readyToSendRideRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
+    TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
+    TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
+    TResult Function(_SetOnMap value)? setOnMap,
+    required TResult orElse(),
+  }) {
+    if (readyToSendRideRequest != null) {
+      return readyToSendRideRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReadyToSendRideRequest implements WhereToState {
+  const factory _ReadyToSendRideRequest() = _$ReadyToSendRideRequestImpl;
 }
 
 /// @nodoc
@@ -1397,6 +1570,7 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1409,6 +1583,7 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1421,6 +1596,7 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1437,6 +1613,8 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1451,6 +1629,7 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1463,6 +1642,7 @@ class _$SendRideRequestSuccessImpl implements _SendRideRequestSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,
@@ -1522,6 +1702,7 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1534,6 +1715,7 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1546,6 +1728,7 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1562,6 +1745,8 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1576,6 +1761,7 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1588,6 +1774,7 @@ class _$SendRideRequestFailureImpl implements _SendRideRequestFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,
@@ -1644,6 +1831,7 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() popLoading,
+    required TResult Function() readyToSendRideRequest,
     required TResult Function() sendRideRequestSuccess,
     required TResult Function() sendRideRequestFailure,
     required TResult Function() setOnMap,
@@ -1656,6 +1844,7 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? popLoading,
+    TResult? Function()? readyToSendRideRequest,
     TResult? Function()? sendRideRequestSuccess,
     TResult? Function()? sendRideRequestFailure,
     TResult? Function()? setOnMap,
@@ -1668,6 +1857,7 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? popLoading,
+    TResult Function()? readyToSendRideRequest,
     TResult Function()? sendRideRequestSuccess,
     TResult Function()? sendRideRequestFailure,
     TResult Function()? setOnMap,
@@ -1684,6 +1874,8 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_PopLoading value) popLoading,
+    required TResult Function(_ReadyToSendRideRequest value)
+        readyToSendRideRequest,
     required TResult Function(_SendRideRequestSuccess value)
         sendRideRequestSuccess,
     required TResult Function(_SendRideRequestFailure value)
@@ -1698,6 +1890,7 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PopLoading value)? popLoading,
+    TResult? Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult? Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult? Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult? Function(_SetOnMap value)? setOnMap,
@@ -1710,6 +1903,7 @@ class _$SetOnMapImpl implements _SetOnMap {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_PopLoading value)? popLoading,
+    TResult Function(_ReadyToSendRideRequest value)? readyToSendRideRequest,
     TResult Function(_SendRideRequestSuccess value)? sendRideRequestSuccess,
     TResult Function(_SendRideRequestFailure value)? sendRideRequestFailure,
     TResult Function(_SetOnMap value)? setOnMap,

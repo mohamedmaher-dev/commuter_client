@@ -1,10 +1,13 @@
-part of 'controller/app_theme_bloc.dart';
+part of 'app_theme_controller.dart';
 
-class _AppTheme {
-  static const String _fontFamily = 'Changa';
-  ThemeData get theme => ThemeData(
+class AppTheme {
+  static const String fontFamily = 'Changa';
+  static ThemeMode get themeMode => AppThemeController._themeMode;
+  static String? get mapStyle =>
+      themeMode == ThemeMode.dark ? AppThemeController._darkMapStyle : null;
+  static ThemeData get theme => ThemeData(
         colorScheme: ColorManger.colorScheme,
-        fontFamily: _fontFamily,
+        fontFamily: fontFamily,
         filledButtonTheme: _filledButtonThemeData,
         outlinedButtonTheme: _outlinedButtonThemeData,
         elevatedButtonTheme: _elevatedButtonThemeData,
@@ -13,24 +16,48 @@ class _AppTheme {
         pageTransitionsTheme: _pageTransitionsTheme,
         iconButtonTheme: _iconButtonThemeData,
         chipTheme: _chipThemeData,
+        expansionTileTheme: _expansionTileThemeData,
+        bottomSheetTheme: _bottomSheetThemeData,
+        appBarTheme: _appBarThemeData,
       );
 
-  final ChipThemeData _chipThemeData = ChipThemeData(
-    color: MaterialStatePropertyAll(ColorManger.primary),
-    iconTheme: IconThemeData(color: ColorManger.primaryContainer),
-    labelStyle: TextStyle(
-      color: ColorManger.primaryContainer,
-      fontWeight: FontWeight.bold,
-    ),
-    side: BorderSide(color: ColorManger.primaryContainer),
+  static AppBarTheme get _appBarThemeData => AppBarTheme(
+        backgroundColor: ColorManger.transparent,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarIconBrightness:
+              themeMode == ThemeMode.dark ? Brightness.light : Brightness.dark,
+        ),
+      );
+
+  static BottomSheetThemeData get _bottomSheetThemeData => BottomSheetThemeData(
+        backgroundColor: themeMode == ThemeMode.dark ? null : ColorManger.white,
+        showDragHandle: true,
+      );
+
+  static final _expansionTileThemeData = ExpansionTileThemeData(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(
-        100.r,
-      ),
+      borderRadius: BorderRadius.circular(100.r),
     ),
   );
 
-  final IconButtonThemeData _iconButtonThemeData = IconButtonThemeData(
+  static ChipThemeData get _chipThemeData => ChipThemeData(
+        color: MaterialStatePropertyAll(ColorManger.primary),
+        iconTheme: IconThemeData(color: ColorManger.primaryContainer),
+        labelStyle: TextStyle(
+          color: ColorManger.primaryContainer,
+          fontWeight: FontWeight.bold,
+          fontFamily: AppTheme.fontFamily,
+        ),
+        side: BorderSide(color: ColorManger.primaryContainer),
+        labelPadding: EdgeInsets.symmetric(horizontal: 10.w),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            10.r,
+          ),
+        ),
+      );
+
+  static final IconButtonThemeData _iconButtonThemeData = IconButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
@@ -41,7 +68,8 @@ class _AppTheme {
       ),
     ),
   );
-  final FilledButtonThemeData _filledButtonThemeData = FilledButtonThemeData(
+  static final FilledButtonThemeData _filledButtonThemeData =
+      FilledButtonThemeData(
     style: ButtonStyle(
       minimumSize: MaterialStatePropertyAll(
         Size(
@@ -58,13 +86,13 @@ class _AppTheme {
         TextStyle(
           fontSize: 15.sp,
           fontWeight: FontWeight.bold,
-          fontFamily: _fontFamily,
+          fontFamily: fontFamily,
         ),
       ),
     ),
   );
 
-  final OutlinedButtonThemeData _outlinedButtonThemeData =
+  static final OutlinedButtonThemeData _outlinedButtonThemeData =
       OutlinedButtonThemeData(
     style: ButtonStyle(
       minimumSize: MaterialStatePropertyAll(
@@ -81,7 +109,7 @@ class _AppTheme {
     ),
   );
 
-  final ElevatedButtonThemeData _elevatedButtonThemeData =
+  static final ElevatedButtonThemeData _elevatedButtonThemeData =
       ElevatedButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStatePropertyAll(
@@ -91,7 +119,7 @@ class _AppTheme {
       ),
     ),
   );
-  final TextButtonThemeData _textButtonThemeData = TextButtonThemeData(
+  static final TextButtonThemeData _textButtonThemeData = TextButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
@@ -101,16 +129,19 @@ class _AppTheme {
     ),
   );
 
-  final InputDecorationTheme _inputDecorationTheme = InputDecorationTheme(
+  static final InputDecorationTheme _inputDecorationTheme =
+      InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.r),
     ),
     filled: false,
   );
 
-  final PageTransitionsTheme _pageTransitionsTheme = const PageTransitionsTheme(
+  static const PageTransitionsTheme _pageTransitionsTheme =
+      PageTransitionsTheme(
     builders: {
       TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
     },
   );
 }

@@ -1,9 +1,12 @@
 part of 'di.dart';
 
 _blocDiInit() {
-  di.registerLazySingleton(() => LocalizationBloc());
-  di.registerLazySingleton(() => AppThemeBloc());
-  di.registerLazySingleton<MainBloc>(() => MainBloc());
+  di.registerLazySingleton<MainBloc>(
+    () => MainBloc(
+      di<AppThemeController>(),
+      di<AppLocalizationController>(),
+    ),
+  );
   di.registerFactory<SignInBloc>(
     () => SignInBloc(
       di<SignInRebo>(),
@@ -32,11 +35,12 @@ _blocDiInit() {
   di.registerFactory<SplashBloc>(
     () => SplashBloc(
       di<SplashRebo>(),
+      di<CheckPermissionRebo>(),
     ),
   );
 
-  di.registerFactory<AddCommuteBloc>(
-    () => AddCommuteBloc(
+  di.registerFactory<CommutesBloc>(
+    () => CommutesBloc(
       di<AddCommuteRebo>(),
     ),
   );
@@ -52,7 +56,7 @@ _blocDiInit() {
   di.registerFactory<OneChatRoomBloc>(
     () => OneChatRoomBloc(
       di<OneChatRoomRebo>(),
-      di<UserSecretDataModel>(),
+      di<LocalStorageService>(),
     ),
   );
   di.registerFactory<ChatRoomsBloc>(
@@ -86,6 +90,37 @@ _blocDiInit() {
   di.registerFactory<NotifiIconBloc>(
     () => NotifiIconBloc(
       di<HomeRebo>(),
+    ),
+  );
+  di.registerFactory<MyProfileBloc>(() => MyProfileBloc(di<MyProfileRebo>()));
+  di.registerFactory<MyProfilePicCubit>(() => MyProfilePicCubit());
+  di.registerFactory<MyCommmutesTabCubit>(() => MyCommmutesTabCubit());
+  di.registerFactory<CheckPermissionBloc>(
+    () => CheckPermissionBloc(
+      di<CheckPermissionRebo>(),
+    ),
+  );
+  di.registerFactory<CheckPermIndicatorCubit>(() => CheckPermIndicatorCubit());
+  di.registerFactory<NearbyCommutersBloc>(() => NearbyCommutersBloc(
+        di<NearbyCommutersRebo>(),
+      ));
+
+  di.registerFactory<SettingsDeleteProfileCubit>(
+    () => SettingsDeleteProfileCubit(
+      di<SettingsRebo>(),
+    ),
+  );
+  di.registerFactory<AppMapBloc>(
+    () => AppMapBloc(
+      locationService: di<LocationService>(),
+    ),
+  );
+  di.registerFactory<NearbyCommutersTabsCubit>(
+      () => NearbyCommutersTabsCubit());
+
+  di.registerFactory<JoinCommuteBloc>(
+    () => JoinCommuteBloc(
+      di<NearbyCommutersRebo>(),
     ),
   );
 }

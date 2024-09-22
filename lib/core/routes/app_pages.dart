@@ -10,18 +10,20 @@ enum Pages {
   chats(view: ChatRooms()),
   oneChat(view: OneChatView()),
   settings(view: SettingsView()),
-  profile(view: ProfileView()),
+  profile(view: MyProfileView()),
   wallet(view: WalletView()),
   whareTo(view: WhereToView()),
   // commutes(view: CommutesView()),
   // addRoundTrip(view: AddRoundTripView()),
   noPermission(view: CheckPermissionView()),
   supportHelp(view: SupportHelpView()),
-  add(view: AddView()),
   commuterProfile(view: CommuterProfileView()),
   splash(view: SplashView()),
   signUp(view: SignUpView()),
-  nearbyCommuters(view: NearbyCommutes());
+  nearbyCommuters(view: NearbyCommutersView()),
+  myCommutes(view: MyCommutesView()),
+  onBoarding(view: OnBoardingPage()),
+  ;
 
   final Widget view;
   const Pages({required this.view});

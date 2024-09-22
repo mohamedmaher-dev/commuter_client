@@ -1,9 +1,8 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
+import 'package:commuter_client/core/utils/assets_manger.dart';
 import 'package:commuter_client/core/validation/form_validation.dart';
-import 'package:commuter_client/core/widgets/language_btn.dart';
 import 'package:commuter_client/core/widgets/pop_loading.dart';
 import 'package:commuter_client/modules/auth/sign_up/controllers/sign_up_bloc/sign_up_bloc.dart';
 import 'package:commuter_client/modules/auth/widgets/google_btn.dart';
@@ -13,8 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/routes/app_route.dart';
-import '../../../../core/themes/controller/app_theme_bloc.dart';
-import '../../../../core/utils/assets_manger.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 import '../../../../core/widgets/app_snack_bar.dart';
 part 'widgets/sign_up_actions.dart';
 part 'widgets/sign_up_form.dart';
@@ -48,7 +46,7 @@ class _SignUpView extends StatelessWidget {
           },
           failure: (error) {
             AppSnackBar.show(
-              title: language.Failure,
+              title: language.failure,
               msg: error,
               type: ContentType.failure,
               context: context,
@@ -61,10 +59,6 @@ class _SignUpView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: ColorManger.primaryContainer,
-        appBar: AppBar(
-          backgroundColor: ColorManger.primaryContainer,
-          actions: const [LanguageBTN()],
-        ),
         body: Padding(
           padding: EdgeInsets.all(10.w),
           child: ListView(

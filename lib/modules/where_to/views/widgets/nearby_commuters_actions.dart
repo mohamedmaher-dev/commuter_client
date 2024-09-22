@@ -1,11 +1,12 @@
 part of '../whare_to_view.dart';
 
 class _NearbyCommutersActions extends StatelessWidget {
-  const _NearbyCommutersActions({super.key});
+  const _NearbyCommutersActions();
 
   @override
   Widget build(BuildContext context) {
     final whereToSwitchCubit = BlocProvider.of<WhereToSwitchCubit>(context);
+    final Language language = Language.of(context);
     return BlocBuilder<WhereToBloc, WhereToState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -16,8 +17,7 @@ class _NearbyCommutersActions extends StatelessWidget {
                 SizedBox(height: 10.w),
                 Row(
                   children: [
-                    // const _NearestStationsBtn(),
-                    // SizedBox(width: 10.w),
+                    const Spacer(),
                     Expanded(
                       child:
                           BlocBuilder<WhereToSwitchCubit, WhereToSwitchState>(
@@ -27,7 +27,7 @@ class _NearbyCommutersActions extends StatelessWidget {
                               whereToSwitchCubit.changeVisibility();
                             },
                             label: Text(
-                              'Nearby Commuters',
+                              language.nearby_commuters,
                               style: TextStyles.ts10B,
                             ),
                             icon: whereToSwitchCubit.visibility
@@ -60,7 +60,8 @@ class _NearbyCommutersSwitchs extends StatelessWidget {
         return Visibility(
           visible: whereToSwitchCubit.visibility,
           child: Card(
-            color: ColorManger.background.withAlpha(150),
+            color: ColorManger.transparent,
+            elevation: 0,
             child: Row(
               children: [
                 Expanded(
@@ -90,6 +91,10 @@ class _NearbyCommutersSwitchs extends StatelessWidget {
                 ),
               ],
             ),
+          ).frosted(
+            blur: 3,
+            borderRadius: BorderRadius.circular(10.w),
+            frostColor: ColorManger.background,
           ),
         );
       },

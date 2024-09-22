@@ -20,9 +20,13 @@ default_platform(:android)
 
 platform :android do
   desc "Lane for  Android App Distribution" 
+  
   lane :dev do
+    latest_release = firebase_app_distribution_get_latest_release(
+      app: ENV['FIREBASE_ANDROID_APP_ID']
+    )
     sh "flutter clean"
-    sh "flutter build apk --release --no-tree-shake-icons"
+    sh "flutter build apk --release --no-tree-shake-icons --build-number=#{latest_release[:buildVersion].to_i + 1}"
     release =  firebase_app_distribution(
       app: ENV['FIREBASE_ANDROID_APP_ID'],
       firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
@@ -32,7 +36,8 @@ platform :android do
       release_notes: "test release notes",
     )
   end
-  lane :stage do
+
+  lane :test do
     sh "flutter clean"
     sh "flutter build apk --release --no-tree-shake-icons"
     release =  firebase_app_distribution(

@@ -8,8 +8,7 @@ class PickLocationRebo {
   const PickLocationRebo(this._locationService);
 
   Future<LatLng> getCurrentPosition() async {
-    return await _locationService.getCurrentPosition() ??
-        LocationService.defaultLatLong;
+    return await _locationService.getCurrentPosition() ?? const LatLng(0, 0);
   }
 
   Future<Placemark> getLocationName({required LatLng latLng}) {

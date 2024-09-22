@@ -1,15 +1,17 @@
-import 'package:commuter_client/core/themes/controller/app_theme_bloc.dart';
-import 'package:commuter_client/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jiffy/jiffy.dart';
+
+import '../../../../core/localization/generated/l10n.dart';
+import '../../../../core/themes/app_theme_controller.dart';
 
 class WalletView extends StatelessWidget {
   const WalletView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final language = Language.of(context);
     return ListView(
       shrinkWrap: true,
       children: [
@@ -32,7 +34,7 @@ class WalletView extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        'Current Balance',
+                        language.current_balance,
                         textAlign: TextAlign.center,
                         style: TextStyles.tsP10B.copyWith(
                           color: ColorManger.primaryContainer,
@@ -55,7 +57,7 @@ class WalletView extends StatelessWidget {
                         style: TextStyles.ts25B.copyWith(),
                       ),
                       subtitle: Text(
-                        'Balance Used',
+                        language.balance_used,
                         textAlign: TextAlign.center,
                         style: TextStyles.tsP10B.copyWith(
                           color: ColorManger.white,
@@ -107,7 +109,7 @@ class WalletView extends StatelessWidget {
                       padding: EdgeInsets.all(10.w),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          hintText: 'Enter Amount',
+                          hintText: language.enter_amount,
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
                             borderRadius: BorderRadius.circular(
@@ -122,7 +124,7 @@ class WalletView extends StatelessWidget {
                       padding: EdgeInsets.all(10.w),
                       child: FilledButton(
                         onPressed: () {},
-                        child: const Text('Charge'),
+                        child: Text(language.charge),
                       ),
                     ),
                   ],
@@ -130,11 +132,11 @@ class WalletView extends StatelessWidget {
               );
             },
             icon: const Icon(Icons.add),
-            label: const Text('Charge Balance'),
+            label: Text(language.charge_balance),
           ),
         ),
-        const ListTile(
-          title: Text('Transaction History'),
+        ListTile(
+          title: Text(language.transactions),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -160,7 +162,7 @@ class WalletView extends StatelessWidget {
           child: Card(
             child: ExpansionTile(
               leading: const Icon(Icons.arrow_drop_down_rounded),
-              title: const Text('Add To Balance'),
+              title: Text(language.added_to_balance),
               subtitle: Text(
                 Jiffy.now().add(minutes: 26).toNow().toString(),
               ),

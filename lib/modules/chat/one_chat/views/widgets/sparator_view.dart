@@ -14,9 +14,9 @@ class _SparatorView extends StatelessWidget {
       } else {
         return Center(
           child: Container(
-            padding: EdgeInsets.all(3.w),
+            padding: EdgeInsets.all(5.w),
             decoration: BoxDecoration(
-              color: ColorManger.secondaryContainer,
+              color: ColorManger.textFormbBackground,
               borderRadius: BorderRadius.circular(5.r),
             ),
             child: Text(

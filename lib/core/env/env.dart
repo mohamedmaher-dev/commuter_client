@@ -11,6 +11,9 @@ abstract class Env {
   @EnviedField()
   static const String apiChatBaseUrl = _Env.apiChatBaseUrl;
   @EnviedField()
+  static const String apiNearbyCommutersBaseUrl =
+      _Env.apiNearbyCommutersBaseUrl;
+  @EnviedField()
   static const String apiNotifiBaseUrl = _Env.apiNotifiBaseUrl;
   @EnviedField()
   static const String fcmSenderId = _Env.fcmSenderId;

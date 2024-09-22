@@ -6,7 +6,7 @@ _rebosDIInit() {
       di<ApiService>(),
       di<LocalStorageService>(),
       di<NotifiApiService>(),
-      di<FCMManger>(),
+      di<NotifiService>(),
     ),
   );
   di.registerLazySingleton(
@@ -14,7 +14,7 @@ _rebosDIInit() {
       di<ApiService>(),
       di<LocalStorageService>(),
       di<NotifiApiService>(),
-      di<FCMManger>(),
+      di<NotifiService>(),
     ),
   );
   di.registerLazySingleton(
@@ -31,7 +31,6 @@ _rebosDIInit() {
     () => WhereToRebo(
       placesService: di<PlacesService>(),
       apiService: di<ApiService>(),
-      userSecretDataModel: di<UserSecretDataModel>(),
       locationService: di<LocationService>(),
       localStorageService: di<LocalStorageService>(),
     ),
@@ -55,30 +54,55 @@ _rebosDIInit() {
   );
 
   di.registerLazySingleton(
-    () => OneChatRoomRebo(
-      secretDataModel: di<UserSecretDataModel>(),
-    ),
+    () => OneChatRoomRebo(),
   );
 
   di.registerLazySingleton(
     () => ChatRoomRebo(
       apiChatService: di<ApiChatService>(),
-      userSecretDataModel: di<UserSecretDataModel>(),
+      localStorageService: di<LocalStorageService>(),
     ),
   );
 
   di.registerLazySingleton(
     () => NotifiRebo(
       notifiApiService: di<NotifiApiService>(),
-      userSecretDataModel: di<UserSecretDataModel>(),
-      fcmManger: di<FCMManger>(),
+      fcmManger: di<NotifiService>(),
+      localStorageService: di<LocalStorageService>(),
     ),
   );
 
   di.registerLazySingleton(
     () => HomeRebo(
       notifiApiService: di<NotifiApiService>(),
-      userSecretDataModel: di<UserSecretDataModel>(),
+      localStorageService: di<LocalStorageService>(),
+    ),
+  );
+
+  di.registerLazySingleton(
+    () => MyProfileRebo(
+      di<ApiService>(),
+      di<LocalStorageService>(),
+    ),
+  );
+  di.registerLazySingleton(
+    () => CheckPermissionRebo(
+      locationPermission: di<CheckLocationPermission>(),
+      notifiPermission: di<CheckNotifiPermission>(),
+    ),
+  );
+  di.registerLazySingleton(
+    () => NearbyCommutersRebo(
+      apiNearbyCommutersService: di<NearbyCommutersApiService>(),
+      apiService: di<ApiService>(),
+      locationService: di<LocationService>(),
+      localStorageService: di<LocalStorageService>(),
+    ),
+  );
+  di.registerLazySingleton(
+    () => SettingsRebo(
+      di<ApiService>(),
+      di<LocalStorageService>(),
     ),
   );
 }
