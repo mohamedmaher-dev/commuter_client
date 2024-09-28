@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'change_pass_response_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ChangePassResponseModel {
   final String token;
 

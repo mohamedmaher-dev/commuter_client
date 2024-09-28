@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'sign_up_request_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createFactory: false)
 class SignUpRequestModel {
   final String name;
   final String email;

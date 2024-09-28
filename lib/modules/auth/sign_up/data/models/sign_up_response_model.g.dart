@@ -12,13 +12,6 @@ SignUpResponseModel _$SignUpResponseModelFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String,
     );
 
-Map<String, dynamic> _$SignUpResponseModelToJson(
-        SignUpResponseModel instance) =>
-    <String, dynamic>{
-      'data': instance.userData,
-      'token': instance.token,
-    };
-
 _UserData _$UserDataFromJson(Map<String, dynamic> json) => _UserData(
       id: json['_id'] as String,
       name: json['name'] as String,
@@ -27,12 +20,3 @@ _UserData _$UserDataFromJson(Map<String, dynamic> json) => _UserData(
       role: json['role'] as String,
       active: json['active'] as bool,
     );
-
-Map<String, dynamic> _$UserDataToJson(_UserData instance) => <String, dynamic>{
-      '_id': instance.id,
-      'name': instance.name,
-      'email': instance.email,
-      'password': instance.password,
-      'role': instance.role,
-      'active': instance.active,
-    };

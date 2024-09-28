@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: unused_element
-
 part of 'change_pass_response_model.dart';
 
 // **************************************************************************
@@ -13,9 +11,3 @@ ChangePassResponseModel _$ChangePassResponseModelFromJson(
     ChangePassResponseModel(
       token: json['token'] as String,
     );
-
-Map<String, dynamic> _$ChangePassResponseModelToJson(
-        ChangePassResponseModel instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-    };

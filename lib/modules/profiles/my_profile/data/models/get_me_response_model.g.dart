@@ -11,11 +11,6 @@ GetMeResponseModel _$GetMeResponseModelFromJson(Map<String, dynamic> json) =>
       userData: _UserData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$GetMeResponseModelToJson(GetMeResponseModel instance) =>
-    <String, dynamic>{
-      'data': instance.userData,
-    };
-
 _UserData _$UserDataFromJson(Map<String, dynamic> json) => _UserData(
       name: json['name'] as String,
       email: json['email'] as String,
@@ -23,11 +18,3 @@ _UserData _$UserDataFromJson(Map<String, dynamic> json) => _UserData(
       image: json['image'] as String?,
       ratingsQuantity: (json['ratingsQuantity'] as num?)?.toDouble(),
     );
-
-Map<String, dynamic> _$UserDataToJson(_UserData instance) => <String, dynamic>{
-      'ratingsQuantity': instance.ratingsQuantity,
-      'name': instance.name,
-      'email': instance.email,
-      'phone': instance.phone,
-      'image': instance.image,
-    };

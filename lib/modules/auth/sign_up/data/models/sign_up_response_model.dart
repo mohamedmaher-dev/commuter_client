@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'sign_up_response_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class SignUpResponseModel {
   @JsonKey(name: 'data')
   final _UserData userData;
@@ -15,7 +15,7 @@ class SignUpResponseModel {
       _$SignUpResponseModelFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _UserData {
   @JsonKey(name: '_id')
   final String id;

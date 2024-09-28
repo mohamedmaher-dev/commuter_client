@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'get_me_response_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class GetMeResponseModel {
   @JsonKey(name: 'data')
   final _UserData userData;
@@ -34,7 +34,7 @@ class GetMeResponseModel {
   }
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _UserData {
   final double? ratingsQuantity;
   final String name;

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'one_message_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class OneMessageModel {
   @JsonKey(name: '_id')
   final String messageId;

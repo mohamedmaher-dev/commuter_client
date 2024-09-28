@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: unused_element
-
 part of 'one_message_model.dart';
 
 // **************************************************************************
@@ -16,12 +14,3 @@ OneMessageModel _$OneMessageModelFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String,
       timestamp: DateTime.parse(json['timestamp'] as String),
     );
-
-Map<String, dynamic> _$OneMessageModelToJson(OneMessageModel instance) =>
-    <String, dynamic>{
-      '_id': instance.messageId,
-      'senderId': instance.senderId,
-      'receiverId': instance.receiverId,
-      'message': instance.message,
-      'timestamp': instance.timestamp.toIso8601String(),
-    };
