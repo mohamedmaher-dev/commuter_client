@@ -42,7 +42,7 @@ class NearbyCommutersTabsBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: Align(
-                    alignment: Alignment.centerRight,
+                    alignment: AlignmentDirectional.centerStart,
                     child: ElevatedButton.icon(
                       style: const ButtonStyle(
                         backgroundColor:

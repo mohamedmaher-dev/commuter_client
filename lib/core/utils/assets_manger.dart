@@ -10,9 +10,9 @@ class AssetsManger {
   /// assets/fonts/Lato-Regular.ttf
   static const String fontsLatoRegular = "assets/fonts/Lato-Regular.ttf";
 
-  /// Assets for imagesAppIcon
-  /// assets/images/app_icon.png
-  static const String imagesAppIcon = "assets/images/app_icon.png";
+  /// Assets for iconIcon
+  /// assets/icon/icon.png
+  static const String iconIcon = "assets/icon/icon.png";
 
   /// Assets for imagesCarIcon
   /// assets/images/car_icon.png

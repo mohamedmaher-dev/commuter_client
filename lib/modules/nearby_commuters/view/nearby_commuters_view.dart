@@ -87,8 +87,8 @@ class _NearbyCommutersViewBody extends StatelessWidget {
         BlocListener<NearbyCommutersBloc, NearbyCommutersState>(
           listener: (context, state) {
             state.whenOrNull(
-              success: (list) => tabBloc.changeTab(NearbyCommutersTabs.all),
-              empty: () => tabBloc.changeTab(NearbyCommutersTabs.all),
+              success: (list, id) => tabBloc.changeTab(tabBloc.tab),
+              empty: () => tabBloc.changeTab(tabBloc.tab),
             );
           },
         ),
@@ -103,7 +103,7 @@ class _NearbyCommutersViewBody extends StatelessWidget {
                   builder: (context, state) {
                     return state.maybeWhen(
                       orElse: () => const LoadingView(),
-                      success: (commuters) => ListView.builder(
+                      success: (commuters, id) => ListView.builder(
                         itemCount: commuters.length,
                         padding: EdgeInsets.all(10.w),
                         itemBuilder: (context, index) =>

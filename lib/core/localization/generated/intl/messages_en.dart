@@ -139,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "No nearby commuters right now, please try again later"),
         "no_notifications":
             MessageLookupByLibrary.simpleMessage("No notifications"),
+        "no_schedules_trips_found_please_add_one":
+            MessageLookupByLibrary.simpleMessage(
+                "No schedules trips found, please add one"),
         "not_available": MessageLookupByLibrary.simpleMessage("Not available"),
         "not_selected": MessageLookupByLibrary.simpleMessage("Not selected"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),

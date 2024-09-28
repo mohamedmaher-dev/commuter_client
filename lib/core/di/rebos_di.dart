@@ -105,4 +105,9 @@ _rebosDIInit() {
       di<LocalStorageService>(),
     ),
   );
+  di.registerLazySingleton(
+    () => AddScheduleRebo(
+      di<LocalStorageService>(),
+    ),
+  );
 }

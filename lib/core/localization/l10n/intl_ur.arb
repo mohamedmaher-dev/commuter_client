@@ -137,5 +137,6 @@
     "car_brand_Model" : "کار برانڈ - ماڈل",
     "time_left" : "منتقل میں وقت",
     "no_nearby_commuters_right_now_try_again_later" : "جبتے ہیں کوئی متنفلون میں نہیں ہے، لطفا مجددا تلاش کریں",
-    "joined_commute_successfully" : "سفر کامیابی"
+    "joined_commute_successfully" : "سفر کامیابی",
+    "no_schedules_trips_found_please_add_one" : "کوئی جدول یا سفر موجود نہیں ہے، لطفا کوئی واحد اضاف کریں"
 }

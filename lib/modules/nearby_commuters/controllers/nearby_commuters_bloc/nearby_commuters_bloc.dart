@@ -58,7 +58,7 @@ class NearbyCommutersBloc
     if (commuters.isEmpty) {
       emitter(const NearbyCommutersState.empty());
     } else {
-      emitter(NearbyCommutersState.success(commuters));
+      emitter(NearbyCommutersState.success(commuters, state.hashCode));
     }
   }
 

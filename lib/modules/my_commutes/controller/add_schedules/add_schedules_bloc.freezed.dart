@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'nearby_commuters_bloc.dart';
+part of 'add_schedules_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,65 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$NearbyCommutersEvent {
+mixin _$AddSchedulesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(NearbyCommutersTabs tab) changeTab,
-    required TResult Function(Type filter) changeFilter,
+    required TResult Function(LocalScheduleModel localScheduleModel) add,
+    required TResult Function(LocalScheduleModel localScheduleModel) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(NearbyCommutersTabs tab)? changeTab,
-    TResult? Function(Type filter)? changeFilter,
+    TResult? Function(LocalScheduleModel localScheduleModel)? add,
+    TResult? Function(LocalScheduleModel localScheduleModel)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(NearbyCommutersTabs tab)? changeTab,
-    TResult Function(Type filter)? changeFilter,
+    TResult Function(LocalScheduleModel localScheduleModel)? add,
+    TResult Function(LocalScheduleModel localScheduleModel)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
-    required TResult Function(_ChangeFilter value) changeFilter,
+    required TResult Function(_Add value) add,
+    required TResult Function(_Delete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
-    TResult? Function(_ChangeFilter value)? changeFilter,
+    TResult? Function(_Add value)? add,
+    TResult? Function(_Delete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
-    TResult Function(_ChangeFilter value)? changeFilter,
+    TResult Function(_Add value)? add,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NearbyCommutersEventCopyWith<$Res> {
-  factory $NearbyCommutersEventCopyWith(NearbyCommutersEvent value,
-          $Res Function(NearbyCommutersEvent) then) =
-      _$NearbyCommutersEventCopyWithImpl<$Res, NearbyCommutersEvent>;
+abstract class $AddSchedulesEventCopyWith<$Res> {
+  factory $AddSchedulesEventCopyWith(
+          AddSchedulesEvent value, $Res Function(AddSchedulesEvent) then) =
+      _$AddSchedulesEventCopyWithImpl<$Res, AddSchedulesEvent>;
 }
 
 /// @nodoc
-class _$NearbyCommutersEventCopyWithImpl<$Res,
-        $Val extends NearbyCommutersEvent>
-    implements $NearbyCommutersEventCopyWith<$Res> {
-  _$NearbyCommutersEventCopyWithImpl(this._value, this._then);
+class _$AddSchedulesEventCopyWithImpl<$Res, $Val extends AddSchedulesEvent>
+    implements $AddSchedulesEventCopyWith<$Res> {
+  _$AddSchedulesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,7 +89,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AddSchedulesEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -104,7 +103,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'NearbyCommutersEvent.started()';
+    return 'AddSchedulesEvent.started()';
   }
 
   @override
@@ -120,8 +119,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(NearbyCommutersTabs tab) changeTab,
-    required TResult Function(Type filter) changeFilter,
+    required TResult Function(LocalScheduleModel localScheduleModel) add,
+    required TResult Function(LocalScheduleModel localScheduleModel) delete,
   }) {
     return started();
   }
@@ -130,8 +129,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(NearbyCommutersTabs tab)? changeTab,
-    TResult? Function(Type filter)? changeFilter,
+    TResult? Function(LocalScheduleModel localScheduleModel)? add,
+    TResult? Function(LocalScheduleModel localScheduleModel)? delete,
   }) {
     return started?.call();
   }
@@ -140,8 +139,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(NearbyCommutersTabs tab)? changeTab,
-    TResult Function(Type filter)? changeFilter,
+    TResult Function(LocalScheduleModel localScheduleModel)? add,
+    TResult Function(LocalScheduleModel localScheduleModel)? delete,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -154,8 +153,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
-    required TResult Function(_ChangeFilter value) changeFilter,
+    required TResult Function(_Add value) add,
+    required TResult Function(_Delete value) delete,
   }) {
     return started(this);
   }
@@ -164,8 +163,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
-    TResult? Function(_ChangeFilter value)? changeFilter,
+    TResult? Function(_Add value)? add,
+    TResult? Function(_Delete value)? delete,
   }) {
     return started?.call(this);
   }
@@ -174,8 +173,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
-    TResult Function(_ChangeFilter value)? changeFilter,
+    TResult Function(_Add value)? add,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -185,101 +184,100 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements NearbyCommutersEvent {
+abstract class _Started implements AddSchedulesEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$ChangeTabImplCopyWith<$Res> {
-  factory _$$ChangeTabImplCopyWith(
-          _$ChangeTabImpl value, $Res Function(_$ChangeTabImpl) then) =
-      __$$ChangeTabImplCopyWithImpl<$Res>;
+abstract class _$$AddImplCopyWith<$Res> {
+  factory _$$AddImplCopyWith(_$AddImpl value, $Res Function(_$AddImpl) then) =
+      __$$AddImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({NearbyCommutersTabs tab});
+  $Res call({LocalScheduleModel localScheduleModel});
 }
 
 /// @nodoc
-class __$$ChangeTabImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersEventCopyWithImpl<$Res, _$ChangeTabImpl>
-    implements _$$ChangeTabImplCopyWith<$Res> {
-  __$$ChangeTabImplCopyWithImpl(
-      _$ChangeTabImpl _value, $Res Function(_$ChangeTabImpl) _then)
+class __$$AddImplCopyWithImpl<$Res>
+    extends _$AddSchedulesEventCopyWithImpl<$Res, _$AddImpl>
+    implements _$$AddImplCopyWith<$Res> {
+  __$$AddImplCopyWithImpl(_$AddImpl _value, $Res Function(_$AddImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tab = null,
+    Object? localScheduleModel = null,
   }) {
-    return _then(_$ChangeTabImpl(
-      null == tab
-          ? _value.tab
-          : tab // ignore: cast_nullable_to_non_nullable
-              as NearbyCommutersTabs,
+    return _then(_$AddImpl(
+      null == localScheduleModel
+          ? _value.localScheduleModel
+          : localScheduleModel // ignore: cast_nullable_to_non_nullable
+              as LocalScheduleModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChangeTabImpl implements _ChangeTab {
-  const _$ChangeTabImpl(this.tab);
+class _$AddImpl implements _Add {
+  const _$AddImpl(this.localScheduleModel);
 
   @override
-  final NearbyCommutersTabs tab;
+  final LocalScheduleModel localScheduleModel;
 
   @override
   String toString() {
-    return 'NearbyCommutersEvent.changeTab(tab: $tab)';
+    return 'AddSchedulesEvent.add(localScheduleModel: $localScheduleModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeTabImpl &&
-            (identical(other.tab, tab) || other.tab == tab));
+            other is _$AddImpl &&
+            (identical(other.localScheduleModel, localScheduleModel) ||
+                other.localScheduleModel == localScheduleModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tab);
+  int get hashCode => Object.hash(runtimeType, localScheduleModel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeTabImplCopyWith<_$ChangeTabImpl> get copyWith =>
-      __$$ChangeTabImplCopyWithImpl<_$ChangeTabImpl>(this, _$identity);
+  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
+      __$$AddImplCopyWithImpl<_$AddImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(NearbyCommutersTabs tab) changeTab,
-    required TResult Function(Type filter) changeFilter,
+    required TResult Function(LocalScheduleModel localScheduleModel) add,
+    required TResult Function(LocalScheduleModel localScheduleModel) delete,
   }) {
-    return changeTab(tab);
+    return add(localScheduleModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(NearbyCommutersTabs tab)? changeTab,
-    TResult? Function(Type filter)? changeFilter,
+    TResult? Function(LocalScheduleModel localScheduleModel)? add,
+    TResult? Function(LocalScheduleModel localScheduleModel)? delete,
   }) {
-    return changeTab?.call(tab);
+    return add?.call(localScheduleModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(NearbyCommutersTabs tab)? changeTab,
-    TResult Function(Type filter)? changeFilter,
+    TResult Function(LocalScheduleModel localScheduleModel)? add,
+    TResult Function(LocalScheduleModel localScheduleModel)? delete,
     required TResult orElse(),
   }) {
-    if (changeTab != null) {
-      return changeTab(tab);
+    if (add != null) {
+      return add(localScheduleModel);
     }
     return orElse();
   }
@@ -288,137 +286,138 @@ class _$ChangeTabImpl implements _ChangeTab {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
-    required TResult Function(_ChangeFilter value) changeFilter,
+    required TResult Function(_Add value) add,
+    required TResult Function(_Delete value) delete,
   }) {
-    return changeTab(this);
+    return add(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
-    TResult? Function(_ChangeFilter value)? changeFilter,
+    TResult? Function(_Add value)? add,
+    TResult? Function(_Delete value)? delete,
   }) {
-    return changeTab?.call(this);
+    return add?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
-    TResult Function(_ChangeFilter value)? changeFilter,
+    TResult Function(_Add value)? add,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) {
-    if (changeTab != null) {
-      return changeTab(this);
+    if (add != null) {
+      return add(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeTab implements NearbyCommutersEvent {
-  const factory _ChangeTab(final NearbyCommutersTabs tab) = _$ChangeTabImpl;
+abstract class _Add implements AddSchedulesEvent {
+  const factory _Add(final LocalScheduleModel localScheduleModel) = _$AddImpl;
 
-  NearbyCommutersTabs get tab;
+  LocalScheduleModel get localScheduleModel;
   @JsonKey(ignore: true)
-  _$$ChangeTabImplCopyWith<_$ChangeTabImpl> get copyWith =>
+  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChangeFilterImplCopyWith<$Res> {
-  factory _$$ChangeFilterImplCopyWith(
-          _$ChangeFilterImpl value, $Res Function(_$ChangeFilterImpl) then) =
-      __$$ChangeFilterImplCopyWithImpl<$Res>;
+abstract class _$$DeleteImplCopyWith<$Res> {
+  factory _$$DeleteImplCopyWith(
+          _$DeleteImpl value, $Res Function(_$DeleteImpl) then) =
+      __$$DeleteImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Type filter});
+  $Res call({LocalScheduleModel localScheduleModel});
 }
 
 /// @nodoc
-class __$$ChangeFilterImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersEventCopyWithImpl<$Res, _$ChangeFilterImpl>
-    implements _$$ChangeFilterImplCopyWith<$Res> {
-  __$$ChangeFilterImplCopyWithImpl(
-      _$ChangeFilterImpl _value, $Res Function(_$ChangeFilterImpl) _then)
+class __$$DeleteImplCopyWithImpl<$Res>
+    extends _$AddSchedulesEventCopyWithImpl<$Res, _$DeleteImpl>
+    implements _$$DeleteImplCopyWith<$Res> {
+  __$$DeleteImplCopyWithImpl(
+      _$DeleteImpl _value, $Res Function(_$DeleteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? filter = null,
+    Object? localScheduleModel = null,
   }) {
-    return _then(_$ChangeFilterImpl(
-      null == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as Type,
+    return _then(_$DeleteImpl(
+      null == localScheduleModel
+          ? _value.localScheduleModel
+          : localScheduleModel // ignore: cast_nullable_to_non_nullable
+              as LocalScheduleModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChangeFilterImpl implements _ChangeFilter {
-  const _$ChangeFilterImpl(this.filter);
+class _$DeleteImpl implements _Delete {
+  const _$DeleteImpl(this.localScheduleModel);
 
   @override
-  final Type filter;
+  final LocalScheduleModel localScheduleModel;
 
   @override
   String toString() {
-    return 'NearbyCommutersEvent.changeFilter(filter: $filter)';
+    return 'AddSchedulesEvent.delete(localScheduleModel: $localScheduleModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeFilterImpl &&
-            (identical(other.filter, filter) || other.filter == filter));
+            other is _$DeleteImpl &&
+            (identical(other.localScheduleModel, localScheduleModel) ||
+                other.localScheduleModel == localScheduleModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, filter);
+  int get hashCode => Object.hash(runtimeType, localScheduleModel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeFilterImplCopyWith<_$ChangeFilterImpl> get copyWith =>
-      __$$ChangeFilterImplCopyWithImpl<_$ChangeFilterImpl>(this, _$identity);
+  _$$DeleteImplCopyWith<_$DeleteImpl> get copyWith =>
+      __$$DeleteImplCopyWithImpl<_$DeleteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(NearbyCommutersTabs tab) changeTab,
-    required TResult Function(Type filter) changeFilter,
+    required TResult Function(LocalScheduleModel localScheduleModel) add,
+    required TResult Function(LocalScheduleModel localScheduleModel) delete,
   }) {
-    return changeFilter(filter);
+    return delete(localScheduleModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(NearbyCommutersTabs tab)? changeTab,
-    TResult? Function(Type filter)? changeFilter,
+    TResult? Function(LocalScheduleModel localScheduleModel)? add,
+    TResult? Function(LocalScheduleModel localScheduleModel)? delete,
   }) {
-    return changeFilter?.call(filter);
+    return delete?.call(localScheduleModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(NearbyCommutersTabs tab)? changeTab,
-    TResult Function(Type filter)? changeFilter,
+    TResult Function(LocalScheduleModel localScheduleModel)? add,
+    TResult Function(LocalScheduleModel localScheduleModel)? delete,
     required TResult orElse(),
   }) {
-    if (changeFilter != null) {
-      return changeFilter(filter);
+    if (delete != null) {
+      return delete(localScheduleModel);
     }
     return orElse();
   }
@@ -427,73 +426,74 @@ class _$ChangeFilterImpl implements _ChangeFilter {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
-    required TResult Function(_ChangeFilter value) changeFilter,
+    required TResult Function(_Add value) add,
+    required TResult Function(_Delete value) delete,
   }) {
-    return changeFilter(this);
+    return delete(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
-    TResult? Function(_ChangeFilter value)? changeFilter,
+    TResult? Function(_Add value)? add,
+    TResult? Function(_Delete value)? delete,
   }) {
-    return changeFilter?.call(this);
+    return delete?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
-    TResult Function(_ChangeFilter value)? changeFilter,
+    TResult Function(_Add value)? add,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) {
-    if (changeFilter != null) {
-      return changeFilter(this);
+    if (delete != null) {
+      return delete(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeFilter implements NearbyCommutersEvent {
-  const factory _ChangeFilter(final Type filter) = _$ChangeFilterImpl;
+abstract class _Delete implements AddSchedulesEvent {
+  const factory _Delete(final LocalScheduleModel localScheduleModel) =
+      _$DeleteImpl;
 
-  Type get filter;
+  LocalScheduleModel get localScheduleModel;
   @JsonKey(ignore: true)
-  _$$ChangeFilterImplCopyWith<_$ChangeFilterImpl> get copyWith =>
+  _$$DeleteImplCopyWith<_$DeleteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$NearbyCommutersState {
+mixin _$AddSchedulesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
     required TResult Function() empty,
-    required TResult Function(String msg) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
     TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
     TResult Function()? empty,
-    TResult Function(String msg)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -502,8 +502,8 @@ mixin _$NearbyCommutersState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -511,8 +511,8 @@ mixin _$NearbyCommutersState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -520,25 +520,24 @@ mixin _$NearbyCommutersState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
     TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NearbyCommutersStateCopyWith<$Res> {
-  factory $NearbyCommutersStateCopyWith(NearbyCommutersState value,
-          $Res Function(NearbyCommutersState) then) =
-      _$NearbyCommutersStateCopyWithImpl<$Res, NearbyCommutersState>;
+abstract class $AddSchedulesStateCopyWith<$Res> {
+  factory $AddSchedulesStateCopyWith(
+          AddSchedulesState value, $Res Function(AddSchedulesState) then) =
+      _$AddSchedulesStateCopyWithImpl<$Res, AddSchedulesState>;
 }
 
 /// @nodoc
-class _$NearbyCommutersStateCopyWithImpl<$Res,
-        $Val extends NearbyCommutersState>
-    implements $NearbyCommutersStateCopyWith<$Res> {
-  _$NearbyCommutersStateCopyWithImpl(this._value, this._then);
+class _$AddSchedulesStateCopyWithImpl<$Res, $Val extends AddSchedulesState>
+    implements $AddSchedulesStateCopyWith<$Res> {
+  _$AddSchedulesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -555,7 +554,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AddSchedulesStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -569,7 +568,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'NearbyCommutersState.initial()';
+    return 'AddSchedulesState.initial()';
   }
 
   @override
@@ -586,9 +585,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
     required TResult Function() empty,
-    required TResult Function(String msg) failure,
   }) {
     return initial();
   }
@@ -598,9 +597,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
     TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
   }) {
     return initial?.call();
   }
@@ -610,9 +609,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
     TResult Function()? empty,
-    TResult Function(String msg)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -627,8 +626,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
   }) {
     return initial(this);
   }
@@ -639,8 +638,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
   }) {
     return initial?.call(this);
   }
@@ -651,8 +650,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
     TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -662,7 +661,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements NearbyCommutersState {
+abstract class _Initial implements AddSchedulesState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -675,7 +674,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AddSchedulesStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -689,7 +688,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'NearbyCommutersState.loading()';
+    return 'AddSchedulesState.loading()';
   }
 
   @override
@@ -706,9 +705,9 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
     required TResult Function() empty,
-    required TResult Function(String msg) failure,
   }) {
     return loading();
   }
@@ -718,9 +717,9 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
     TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
   }) {
     return loading?.call();
   }
@@ -730,9 +729,9 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
     TResult Function()? empty,
-    TResult Function(String msg)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -747,8 +746,8 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
   }) {
     return loading(this);
   }
@@ -759,8 +758,8 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
   }) {
     return loading?.call(this);
   }
@@ -771,8 +770,8 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
     TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -782,7 +781,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements NearbyCommutersState {
+abstract class _Loading implements AddSchedulesState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -792,12 +791,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<NearbyCommutersModel> list, int id});
+  $Res call({List<LocalScheduleModel> list});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$AddSchedulesStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -807,17 +806,12 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? list = null,
-    Object? id = null,
   }) {
     return _then(_$SuccessImpl(
       null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
-              as List<NearbyCommutersModel>,
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as List<LocalScheduleModel>,
     ));
   }
 }
@@ -825,23 +819,19 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<NearbyCommutersModel> list, this.id)
-      : _list = list;
+  const _$SuccessImpl(final List<LocalScheduleModel> list) : _list = list;
 
-  final List<NearbyCommutersModel> _list;
+  final List<LocalScheduleModel> _list;
   @override
-  List<NearbyCommutersModel> get list {
+  List<LocalScheduleModel> get list {
     if (_list is EqualUnmodifiableListView) return _list;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_list);
   }
 
   @override
-  final int id;
-
-  @override
   String toString() {
-    return 'NearbyCommutersState.success(list: $list, id: $id)';
+    return 'AddSchedulesState.success(list: $list)';
   }
 
   @override
@@ -849,13 +839,12 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
-            (identical(other.id, id) || other.id == id));
+            const DeepCollectionEquality().equals(other._list, _list));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list), id);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
   @JsonKey(ignore: true)
   @override
@@ -868,11 +857,11 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
     required TResult Function() empty,
-    required TResult Function(String msg) failure,
   }) {
-    return success(list, id);
+    return success(list);
   }
 
   @override
@@ -880,11 +869,11 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
     TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
   }) {
-    return success?.call(list, id);
+    return success?.call(list);
   }
 
   @override
@@ -892,13 +881,13 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
     TResult Function()? empty,
-    TResult Function(String msg)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(list, id);
+      return success(list);
     }
     return orElse();
   }
@@ -909,8 +898,8 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
   }) {
     return success(this);
   }
@@ -921,8 +910,8 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
   }) {
     return success?.call(this);
   }
@@ -933,8 +922,8 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
     TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -944,15 +933,133 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements NearbyCommutersState {
-  const factory _Success(final List<NearbyCommutersModel> list, final int id) =
-      _$SuccessImpl;
+abstract class _Success implements AddSchedulesState {
+  const factory _Success(final List<LocalScheduleModel> list) = _$SuccessImpl;
 
-  List<NearbyCommutersModel> get list;
-  int get id;
+  List<LocalScheduleModel> get list;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailureImplCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$AddSchedulesStateCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl();
+
+  @override
+  String toString() {
+    return 'AddSchedulesState.failure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
+    required TResult Function() empty,
+  }) {
+    return failure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
+    TResult? Function()? empty,
+  }) {
+    return failure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failure implements AddSchedulesState {
+  const factory _Failure() = _$FailureImpl;
 }
 
 /// @nodoc
@@ -964,7 +1071,7 @@ abstract class _$$EmptyImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmptyImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersStateCopyWithImpl<$Res, _$EmptyImpl>
+    extends _$AddSchedulesStateCopyWithImpl<$Res, _$EmptyImpl>
     implements _$$EmptyImplCopyWith<$Res> {
   __$$EmptyImplCopyWithImpl(
       _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
@@ -978,7 +1085,7 @@ class _$EmptyImpl implements _Empty {
 
   @override
   String toString() {
-    return 'NearbyCommutersState.empty()';
+    return 'AddSchedulesState.empty()';
   }
 
   @override
@@ -995,9 +1102,9 @@ class _$EmptyImpl implements _Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
+    required TResult Function(List<LocalScheduleModel> list) success,
+    required TResult Function() failure,
     required TResult Function() empty,
-    required TResult Function(String msg) failure,
   }) {
     return empty();
   }
@@ -1007,9 +1114,9 @@ class _$EmptyImpl implements _Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult? Function(List<LocalScheduleModel> list)? success,
+    TResult? Function()? failure,
     TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
   }) {
     return empty?.call();
   }
@@ -1019,9 +1126,9 @@ class _$EmptyImpl implements _Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
+    TResult Function(List<LocalScheduleModel> list)? success,
+    TResult Function()? failure,
     TResult Function()? empty,
-    TResult Function(String msg)? failure,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -1036,8 +1143,8 @@ class _$EmptyImpl implements _Empty {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_Empty value) empty,
   }) {
     return empty(this);
   }
@@ -1048,8 +1155,8 @@ class _$EmptyImpl implements _Empty {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_Empty value)? empty,
   }) {
     return empty?.call(this);
   }
@@ -1060,8 +1167,8 @@ class _$EmptyImpl implements _Empty {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
     TResult Function(_Failure value)? failure,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -1071,157 +1178,6 @@ class _$EmptyImpl implements _Empty {
   }
 }
 
-abstract class _Empty implements NearbyCommutersState {
+abstract class _Empty implements AddSchedulesState {
   const factory _Empty() = _$EmptyImpl;
-}
-
-/// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
-      __$$FailureImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String msg});
-}
-
-/// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$NearbyCommutersStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? msg = null,
-  }) {
-    return _then(_$FailureImpl(
-      null == msg
-          ? _value.msg
-          : msg // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FailureImpl implements _Failure {
-  const _$FailureImpl(this.msg);
-
-  @override
-  final String msg;
-
-  @override
-  String toString() {
-    return 'NearbyCommutersState.failure(msg: $msg)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.msg, msg) || other.msg == msg));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, msg);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<NearbyCommutersModel> list, int id) success,
-    required TResult Function() empty,
-    required TResult Function(String msg) failure,
-  }) {
-    return failure(msg);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<NearbyCommutersModel> list, int id)? success,
-    TResult? Function()? empty,
-    TResult? Function(String msg)? failure,
-  }) {
-    return failure?.call(msg);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<NearbyCommutersModel> list, int id)? success,
-    TResult Function()? empty,
-    TResult Function(String msg)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(msg);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Failure implements NearbyCommutersState {
-  const factory _Failure(final String msg) = _$FailureImpl;
-
-  String get msg;
-  @JsonKey(ignore: true)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

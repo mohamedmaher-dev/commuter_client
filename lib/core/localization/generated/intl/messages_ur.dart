@@ -132,6 +132,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "جبتے ہیں کوئی متنفلون میں نہیں ہے، لطفا مجددا تلاش کریں"),
         "no_notifications":
             MessageLookupByLibrary.simpleMessage("کوئی نوٹیفیکیشن نہیں"),
+        "no_schedules_trips_found_please_add_one":
+            MessageLookupByLibrary.simpleMessage(
+                "کوئی جدول یا سفر موجود نہیں ہے، لطفا کوئی واحد اضاف کریں"),
         "not_available": MessageLookupByLibrary.simpleMessage("دستیاب نہیں"),
         "not_selected": MessageLookupByLibrary.simpleMessage("منتخب نہیں"),
         "notifications": MessageLookupByLibrary.simpleMessage("نوٹیفیکیشنز"),

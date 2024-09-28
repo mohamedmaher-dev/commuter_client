@@ -137,5 +137,6 @@
     "car_brand_Model" : "Car brand - Model",
     "time_left" : "Time left",
     "no_nearby_commuters_right_now_try_again_later" : "No nearby commuters right now, please try again later",
-    "joined_commute_successfully" : "Joined commute successfully"
+    "joined_commute_successfully" : "Joined commute successfully",
+    "no_schedules_trips_found_please_add_one" : "No schedules trips found, please add one"
 }

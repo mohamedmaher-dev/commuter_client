@@ -1,5 +1,6 @@
 import 'package:commuter_client/core/local_storage/local_storage_consts.dart';
 import 'package:commuter_client/core/local_storage/models/app_settings_model.dart';
+import 'package:commuter_client/core/local_storage/models/local_schedule_model.dart';
 import 'package:commuter_client/core/local_storage/models/user_secret_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -10,6 +11,7 @@ class LocalStorageService {
   final FlutterSecureStorage _flutterSecureStorage;
   late Box<AppSettingsModel> _appSettingsBox;
   late Box<LocalCommuteModel> _localCommuteBox;
+  late Box<LocalScheduleModel> _localScheduleBox;
   static late UserSecretDataModel userSecretDataModel;
   LocalStorageService(this._flutterSecureStorage);
 
@@ -17,6 +19,7 @@ class LocalStorageService {
     await Hive.initFlutter();
     Hive.registerAdapter(AppSettingsModelAdapter());
     Hive.registerAdapter(LocalCommuteModelAdapter());
+    Hive.registerAdapter(LocalScheduleModelAdapter());
     userSecretDataModel =
         await getUserSecretData ?? UserSecretDataModel.defaultUser;
   }
@@ -25,6 +28,13 @@ class LocalStorageService {
     final userSecretDataModel = await getUserSecretData;
     _localCommuteBox = await Hive.openBox<LocalCommuteModel>(
       '${LocalStorageConsts.localCommuteBox}_${userSecretDataModel!.userId}',
+    );
+  }
+
+  Future<void> _openLocalScheduleBox() async {
+    final userSecretDataModel = await getUserSecretData;
+    _localScheduleBox = await Hive.openBox<LocalScheduleModel>(
+      '${LocalStorageConsts.localScheduleBox}_${userSecretDataModel!.userId}',
     );
   }
 
@@ -121,5 +131,21 @@ class LocalStorageService {
         isPinned: !localCommuteModel.isPinned,
       ),
     );
+  }
+
+  Future<List<LocalScheduleModel>> getLocalSchedules() async {
+    await _openLocalScheduleBox();
+    return _localScheduleBox.values.toList();
+  }
+
+  Future<void> addLocalSchedule(
+      {required LocalScheduleModel localScheduleModel}) async {
+    await _localScheduleBox.put(localScheduleModel.id, localScheduleModel);
+  }
+
+  Future<void> deleteSchedule({
+    required LocalScheduleModel localScheduleModel,
+  }) async {
+    await _localScheduleBox.delete(localScheduleModel.id);
   }
 }

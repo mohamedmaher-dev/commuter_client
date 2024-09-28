@@ -54,7 +54,7 @@ class _SplashView extends StatelessWidget {
             children: [
               const Spacer(),
               Image.asset(
-                AssetsManger.imagesAppIcon,
+                AssetsManger.iconIcon,
                 fit: BoxFit.fitHeight,
                 width: MediaQuery.of(context).size.width / 3,
                 height: MediaQuery.of(context).size.width / 3,

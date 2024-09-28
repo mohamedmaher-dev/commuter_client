@@ -123,4 +123,7 @@ _blocDiInit() {
       di<NearbyCommutersRebo>(),
     ),
   );
+  di.registerFactory<AddSchedulesBloc>(() => AddSchedulesBloc(
+        di<AddScheduleRebo>(),
+      ));
 }

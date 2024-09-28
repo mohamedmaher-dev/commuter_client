@@ -2,6 +2,7 @@ import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/widgets/empty_view.dart';
 import 'package:commuter_client/core/widgets/error_view.dart';
 import 'package:commuter_client/core/widgets/loading_view.dart';
+import 'package:commuter_client/modules/my_commutes/controller/add_schedules/add_schedules_bloc.dart';
 import 'package:commuter_client/modules/my_commutes/controller/commutes_bloc/commutes_bloc.dart';
 import 'package:commuter_client/modules/my_commutes/controller/my_commutes_tab/my_commmutes_tab_cubit.dart';
 import 'package:commuter_client/modules/my_commutes/views/widgets/add_commute_botttom_sheet_body.dart';
@@ -27,10 +28,12 @@ class MyCommutesView extends StatelessWidget {
           create: (context) => di<MyCommmutesTabCubit>(),
         ),
         BlocProvider(
-          create: (context) => di<CommutesBloc>()
-            ..add(
-              const CommutesEvent.started(),
-            ),
+          create: (context) =>
+              di<CommutesBloc>()..add(const CommutesEvent.started()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              di<AddSchedulesBloc>()..add(const AddSchedulesEvent.started()),
         ),
       ],
       child: const _MyCommutesViewBody(),
@@ -45,7 +48,7 @@ class _MyCommutesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final myCommmutesTabCubi = BlocProvider.of<MyCommmutesTabCubit>(context);
     final addCommuteBloc = BlocProvider.of<CommutesBloc>(context);
-
+    final addSchedulesBloc = BlocProvider.of<AddSchedulesBloc>(context);
     final language = Language.of(context);
 
     return Scaffold(
@@ -68,7 +71,8 @@ class _MyCommutesViewBody extends StatelessWidget {
               showModalBottomSheet(
                 showDragHandle: true,
                 context: context,
-                builder: (context) => const AddSchedulesBottomSheetBody(),
+                builder: (context) =>
+                    AddSchedulesBottomSheetBody(bloc: addSchedulesBloc),
               );
               break;
           }
@@ -119,11 +123,26 @@ class _MyCommutesViewBody extends StatelessWidget {
                   ),
                 if (myCommmutesTabCubi.page == MyCommutesTab.scheduledTrips)
                   Expanded(
-                    child: ListView.builder(
-                      padding: EdgeInsets.all(10.w),
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return const SchedulesItemBody();
+                    child: BlocBuilder<AddSchedulesBloc, AddSchedulesState>(
+                      builder: (context, state) {
+                        return state.maybeWhen(
+                          orElse: () => const LoadingView(),
+                          failure: () => const ErrorView(),
+                          empty: () => EmptyView(
+                            icon: Icons.calendar_month,
+                            text: language
+                                .no_schedules_trips_found_please_add_one,
+                          ),
+                          success: (commutes) => ListView.builder(
+                            padding: EdgeInsets.all(10.w),
+                            itemCount: commutes.length,
+                            itemBuilder: (context, index) {
+                              return SchedulesItemBody(
+                                localScheduleModel: commutes[index],
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
                   ),

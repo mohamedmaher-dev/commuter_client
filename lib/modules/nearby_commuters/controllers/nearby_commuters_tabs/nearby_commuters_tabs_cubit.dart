@@ -5,9 +5,11 @@ part 'nearby_commuters_tabs_state.dart';
 part 'nearby_commuters_tabs_cubit.freezed.dart';
 
 class NearbyCommutersTabsCubit extends Cubit<NearbyCommutersTabsState> {
+  NearbyCommutersTabs tab = NearbyCommutersTabs.all;
   NearbyCommutersTabsCubit() : super(const NearbyCommutersTabsState.initial());
 
   void changeTab(NearbyCommutersTabs tab) {
+    this.tab = tab;
     emit(NearbyCommutersTabsState.success(tab));
   }
 }

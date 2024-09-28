@@ -4,4 +4,5 @@ class HiveAdapterType {
   static const localCommuteModle = 2;
   static const appGeneralSettingsModel = 3;
   static const appMapSettingsModel = 4;
+  static const localScheduleModel = 5;
 }

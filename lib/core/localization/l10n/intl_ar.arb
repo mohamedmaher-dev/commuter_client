@@ -137,5 +137,6 @@
     "car_brand_Model" : "ماركة السيارة - موديل",
     "time_left" : "الوقت المتبقي",
     "no_nearby_commuters_right_now_try_again_later" : "لا يوجد متنفلون في الوقت الحالي، الرجاء المحاولة مرة أخرى في وقت لاحق",
-    "joined_commute_successfully" : "تم الانضمام بنجاح"
+    "joined_commute_successfully" : "تم الانضمام بنجاح",
+    "no_schedules_trips_found_please_add_one" : "لا توجد جدولات , رحلات موجودة، الرجاء اضافة واحدة"
 }

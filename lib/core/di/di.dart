@@ -13,6 +13,7 @@ import 'package:commuter_client/core/notifications/notifi_service.dart';
 import 'package:commuter_client/modules/app_map/controllers/app_map/app_map_bloc.dart';
 import 'package:commuter_client/modules/check_permission/controllers/check_perm_indicator_cubit/check_perm_indicator_cubit.dart';
 import 'package:commuter_client/modules/check_permission/controllers/check_permission_bloc/check_permission_bloc.dart';
+import 'package:commuter_client/modules/my_commutes/controller/add_schedules/add_schedules_bloc.dart';
 import 'package:commuter_client/modules/my_commutes/controller/commutes_bloc/commutes_bloc.dart';
 import 'package:commuter_client/modules/my_commutes/data/rebos/add_commute_rebo.dart';
 import 'package:commuter_client/modules/auth/change_password/controllers/change_password_bloc/change_password_bloc.dart';
@@ -30,6 +31,7 @@ import 'package:commuter_client/modules/chat/one_chat/data/rebos/chat_room_rebo.
 import 'package:commuter_client/modules/home/controllers/notifi_icon_bloc/notifi_icon_bloc.dart';
 import 'package:commuter_client/modules/home/data/rebos/home_rebo.dart';
 import 'package:commuter_client/modules/my_commutes/controller/my_commutes_tab/my_commmutes_tab_cubit.dart';
+import 'package:commuter_client/modules/my_commutes/data/rebos/add_schedule_rebo.dart';
 import 'package:commuter_client/modules/nearby_commuters/controllers/join_commute/join_commute_bloc.dart';
 import 'package:commuter_client/modules/nearby_commuters/controllers/nearby_commuters_bloc/nearby_commuters_bloc.dart';
 import 'package:commuter_client/modules/nearby_commuters/controllers/nearby_commuters_tabs/nearby_commuters_tabs_cubit.dart';

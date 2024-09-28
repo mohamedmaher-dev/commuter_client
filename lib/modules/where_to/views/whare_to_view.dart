@@ -130,7 +130,7 @@ void Function(BuildContext, WhereToState) listenerWhereTo = (context, state) {
 void Function(BuildContext, NearbyCommutersState) listenerNearbyCommuters =
     (context, state) {
   state.whenOrNull(
-    success: (list) {
+    success: (list, id) {
       setMarkers(context);
     },
   );

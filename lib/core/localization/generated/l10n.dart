@@ -1439,6 +1439,16 @@ class Language {
       args: [],
     );
   }
+
+  /// `No schedules trips found, please add one`
+  String get no_schedules_trips_found_please_add_one {
+    return Intl.message(
+      'No schedules trips found, please add one',
+      name: 'no_schedules_trips_found_please_add_one',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Language> {

@@ -132,6 +132,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "لا يوجد متنفلون في الوقت الحالي، الرجاء المحاولة مرة أخرى في وقت لاحق"),
         "no_notifications":
             MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
+        "no_schedules_trips_found_please_add_one":
+            MessageLookupByLibrary.simpleMessage(
+                "لا توجد جدولات , رحلات موجودة، الرجاء اضافة واحدة"),
         "not_available": MessageLookupByLibrary.simpleMessage("غير متوفر"),
         "not_selected": MessageLookupByLibrary.simpleMessage("غير محدد"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
