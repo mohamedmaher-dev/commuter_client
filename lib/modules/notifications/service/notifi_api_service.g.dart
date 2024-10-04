@@ -23,7 +23,7 @@ class _NotifiApiService implements NotifiApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<List<dynamic>>(_setStreamType<List<NotifiResponseModel>>(Options(
       method: 'GET',
@@ -53,7 +53,7 @@ class _NotifiApiService implements NotifiApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<List<dynamic>>(_setStreamType<List<NotifiResponseModel>>(Options(
       method: 'GET',
@@ -83,7 +83,7 @@ class _NotifiApiService implements NotifiApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'PATCH',
       headers: _headers,
@@ -110,7 +110,7 @@ class _NotifiApiService implements NotifiApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'DELETE',
       headers: _headers,

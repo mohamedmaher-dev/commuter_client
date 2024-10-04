@@ -1,4 +1,4 @@
-icon_path: &icon_path assets/images/splash_icon.png
+icon_path: &icon_path assets/icon/icon.png
 color_light: &color_light "#001C51"
 color_dark: &color_dark "#181a1d"
 
@@ -7,10 +7,13 @@ flutter_native_splash:
   image: *icon_path
   color_dark: *color_dark
   image_dark: *icon_path
-  # android_12:
-  #   image: *icon_path
-  #   color: *color_light
-  #   image_dark: *icon_path
-  #   color_dark: *color_dark
+  android_12:
+    image: *icon_path
+    color: *color_light
+    icon_background_color: *color_light
+    image_dark: *icon_path
+    color_dark: *color_light
+    icon_background_color_dark: *color_light
   android: true
   ios: true
+  web: false

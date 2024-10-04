@@ -22,6 +22,7 @@ platform :android do
   desc "Lane for  Android App Distribution" 
   
   lane :dev do
+    apk_path = "../build/app/outputs/flutter-apk/app-release.apk"
     latest_release = firebase_app_distribution_get_latest_release(
       app: ENV['FIREBASE_ANDROID_APP_ID']
     )
@@ -31,22 +32,25 @@ platform :android do
       app: ENV['FIREBASE_ANDROID_APP_ID'],
       firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
       android_artifact_type: "APK",
-      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      android_artifact_path: apk_path,
       testers: "mohamedmaher.personal@gmail.com",
-      release_notes: "test release notes",
+      # release_notes: "test release notes",
     )
   end
 
   lane :test do
+    apk_path = "../build/app/outputs/flutter-apk/app-release.apk"
+    latest_release = firebase_app_distribution_get_latest_release(
+      app: ENV['FIREBASE_ANDROID_APP_ID']
+    )
     sh "flutter clean"
-    sh "flutter build apk --release --no-tree-shake-icons"
+    sh "flutter build apk --release --no-tree-shake-icons --build-number=#{latest_release[:buildVersion].to_i + 1}"
     release =  firebase_app_distribution(
       app: ENV['FIREBASE_ANDROID_APP_ID'],
       firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
       android_artifact_type: "APK",
-      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      android_artifact_path: apk_path,
       groups: "app_testers",
-      release_notes: "test release notes",
     )
   end
 end

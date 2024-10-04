@@ -22,6 +22,7 @@ mixin _$SignInEvent {
     required TResult Function() changePassIsHide,
     required TResult Function() forgotPass,
     required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$SignInEvent {
     TResult? Function()? changePassIsHide,
     TResult? Function()? forgotPass,
     TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$SignInEvent {
     TResult Function()? changePassIsHide,
     TResult Function()? forgotPass,
     TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$SignInEvent {
     required TResult Function(ChangePassIsHide value) changePassIsHide,
     required TResult Function(ForgotPasss value) forgotPass,
     required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$SignInEvent {
     TResult? Function(ChangePassIsHide value)? changePassIsHide,
     TResult? Function(ForgotPasss value)? forgotPass,
     TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$SignInEvent {
     TResult Function(ChangePassIsHide value)? changePassIsHide,
     TResult Function(ForgotPasss value)? forgotPass,
     TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() changePassIsHide,
     required TResult Function() forgotPass,
     required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
   }) {
     return started();
   }
@@ -139,6 +146,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? changePassIsHide,
     TResult? Function()? forgotPass,
     TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
   }) {
     return started?.call();
   }
@@ -150,6 +158,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? changePassIsHide,
     TResult Function()? forgotPass,
     TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,6 +174,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(ChangePassIsHide value) changePassIsHide,
     required TResult Function(ForgotPasss value) forgotPass,
     required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
   }) {
     return started(this);
   }
@@ -176,6 +186,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(ChangePassIsHide value)? changePassIsHide,
     TResult? Function(ForgotPasss value)? forgotPass,
     TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
   }) {
     return started?.call(this);
   }
@@ -187,6 +198,7 @@ class _$StartedImpl implements _Started {
     TResult Function(ChangePassIsHide value)? changePassIsHide,
     TResult Function(ForgotPasss value)? forgotPass,
     TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -242,6 +254,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     required TResult Function() changePassIsHide,
     required TResult Function() forgotPass,
     required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
   }) {
     return changePassIsHide();
   }
@@ -253,6 +266,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     TResult? Function()? changePassIsHide,
     TResult? Function()? forgotPass,
     TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
   }) {
     return changePassIsHide?.call();
   }
@@ -264,6 +278,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     TResult Function()? changePassIsHide,
     TResult Function()? forgotPass,
     TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (changePassIsHide != null) {
@@ -279,6 +294,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     required TResult Function(ChangePassIsHide value) changePassIsHide,
     required TResult Function(ForgotPasss value) forgotPass,
     required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
   }) {
     return changePassIsHide(this);
   }
@@ -290,6 +306,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     TResult? Function(ChangePassIsHide value)? changePassIsHide,
     TResult? Function(ForgotPasss value)? forgotPass,
     TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
   }) {
     return changePassIsHide?.call(this);
   }
@@ -301,6 +318,7 @@ class _$ChangePassIsHideImpl implements ChangePassIsHide {
     TResult Function(ChangePassIsHide value)? changePassIsHide,
     TResult Function(ForgotPasss value)? forgotPass,
     TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (changePassIsHide != null) {
@@ -356,6 +374,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     required TResult Function() changePassIsHide,
     required TResult Function() forgotPass,
     required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
   }) {
     return forgotPass();
   }
@@ -367,6 +386,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     TResult? Function()? changePassIsHide,
     TResult? Function()? forgotPass,
     TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
   }) {
     return forgotPass?.call();
   }
@@ -378,6 +398,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     TResult Function()? changePassIsHide,
     TResult Function()? forgotPass,
     TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -393,6 +414,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     required TResult Function(ChangePassIsHide value) changePassIsHide,
     required TResult Function(ForgotPasss value) forgotPass,
     required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
   }) {
     return forgotPass(this);
   }
@@ -404,6 +426,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     TResult? Function(ChangePassIsHide value)? changePassIsHide,
     TResult? Function(ForgotPasss value)? forgotPass,
     TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
   }) {
     return forgotPass?.call(this);
   }
@@ -415,6 +438,7 @@ class _$ForgotPasssImpl implements ForgotPasss {
     TResult Function(ChangePassIsHide value)? changePassIsHide,
     TResult Function(ForgotPasss value)? forgotPass,
     TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -470,6 +494,7 @@ class _$SignInImpl implements SignIn {
     required TResult Function() changePassIsHide,
     required TResult Function() forgotPass,
     required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
   }) {
     return signIn();
   }
@@ -481,6 +506,7 @@ class _$SignInImpl implements SignIn {
     TResult? Function()? changePassIsHide,
     TResult? Function()? forgotPass,
     TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
   }) {
     return signIn?.call();
   }
@@ -492,6 +518,7 @@ class _$SignInImpl implements SignIn {
     TResult Function()? changePassIsHide,
     TResult Function()? forgotPass,
     TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -507,6 +534,7 @@ class _$SignInImpl implements SignIn {
     required TResult Function(ChangePassIsHide value) changePassIsHide,
     required TResult Function(ForgotPasss value) forgotPass,
     required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
   }) {
     return signIn(this);
   }
@@ -518,6 +546,7 @@ class _$SignInImpl implements SignIn {
     TResult? Function(ChangePassIsHide value)? changePassIsHide,
     TResult? Function(ForgotPasss value)? forgotPass,
     TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
   }) {
     return signIn?.call(this);
   }
@@ -529,6 +558,7 @@ class _$SignInImpl implements SignIn {
     TResult Function(ChangePassIsHide value)? changePassIsHide,
     TResult Function(ForgotPasss value)? forgotPass,
     TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -540,6 +570,126 @@ class _$SignInImpl implements SignIn {
 
 abstract class SignIn implements SignInEvent {
   const factory SignIn() = _$SignInImpl;
+}
+
+/// @nodoc
+abstract class _$$SignInWithGoogleImplCopyWith<$Res> {
+  factory _$$SignInWithGoogleImplCopyWith(_$SignInWithGoogleImpl value,
+          $Res Function(_$SignInWithGoogleImpl) then) =
+      __$$SignInWithGoogleImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignInWithGoogleImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$SignInWithGoogleImpl>
+    implements _$$SignInWithGoogleImplCopyWith<$Res> {
+  __$$SignInWithGoogleImplCopyWithImpl(_$SignInWithGoogleImpl _value,
+      $Res Function(_$SignInWithGoogleImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignInWithGoogleImpl implements SignInWithGoogle {
+  const _$SignInWithGoogleImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.signInWithGoogle()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignInWithGoogleImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() changePassIsHide,
+    required TResult Function() forgotPass,
+    required TResult Function() signIn,
+    required TResult Function() signInWithGoogle,
+  }) {
+    return signInWithGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? changePassIsHide,
+    TResult? Function()? forgotPass,
+    TResult? Function()? signIn,
+    TResult? Function()? signInWithGoogle,
+  }) {
+    return signInWithGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? changePassIsHide,
+    TResult Function()? forgotPass,
+    TResult Function()? signIn,
+    TResult Function()? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ChangePassIsHide value) changePassIsHide,
+    required TResult Function(ForgotPasss value) forgotPass,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignInWithGoogle value) signInWithGoogle,
+  }) {
+    return signInWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ChangePassIsHide value)? changePassIsHide,
+    TResult? Function(ForgotPasss value)? forgotPass,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignInWithGoogle value)? signInWithGoogle,
+  }) {
+    return signInWithGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ChangePassIsHide value)? changePassIsHide,
+    TResult Function(ForgotPasss value)? forgotPass,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignInWithGoogle value)? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGoogle implements SignInEvent {
+  const factory SignInWithGoogle() = _$SignInWithGoogleImpl;
 }
 
 /// @nodoc

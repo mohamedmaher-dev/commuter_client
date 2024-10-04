@@ -14,6 +14,10 @@ class AssetsManger {
   /// assets/icon/icon.png
   static const String iconIcon = "assets/icon/icon.png";
 
+  /// Assets for iconIconBackground
+  /// assets/icon/icon-background.png
+  static const String iconIconBackground = "assets/icon/icon-background.png";
+
   /// Assets for imagesCarIcon
   /// assets/images/car_icon.png
   static const String imagesCarIcon = "assets/images/car_icon.png";
@@ -33,10 +37,6 @@ class AssetsManger {
   /// Assets for imagesLogo
   /// assets/images/logo.png
   static const String imagesLogo = "assets/images/logo.png";
-
-  /// Assets for imagesSplashIcon
-  /// assets/images/splash_icon.png
-  static const String imagesSplashIcon = "assets/images/splash_icon.png";
 
   /// Assets for lottieLocation
   /// assets/lottie/location.json

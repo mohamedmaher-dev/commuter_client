@@ -17,7 +17,7 @@ class _SignInActions extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10.h),
-        GoogleBTN(onPressed: () async {}, language: language),
+        // const SignWithGoogleView(),
         SizedBox(height: 10.h),
         TextButton(
           onPressed: () {

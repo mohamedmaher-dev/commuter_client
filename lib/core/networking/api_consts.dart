@@ -1,5 +1,6 @@
 class ApiConsts {
   ApiConsts._();
+  static const signWithGoogle = '/api/protected/auth/google/user';
   static const signIn = 'auth/user/login';
   static const forgotPassword = 'auth/user/forgotPassword';
   static const verifyResetCode = 'auth/user/verifyResetCode';

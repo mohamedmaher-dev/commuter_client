@@ -69,13 +69,16 @@ class NearbyCommutersRebo {
     return await _localStorageService.getLocalCommutes();
   }
 
-  Future<ApiResult<void>> joinCommute(String driverId, String commuteId) async {
+  Future<ApiResult<void>> joinCommute(NearbyCommutersModel commute) async {
     try {
       final userSecretDataModel = await _localStorageService.getUserSecretData;
       final response = await _apiService.joinCommute(
-        driverId,
-        commuteId,
-        JoinCommuteRequestModel(userId: userSecretDataModel!.userId),
+        commute.driver.id,
+        commute.commute.id,
+        JoinCommuteRequestModel(
+          userId: userSecretDataModel!.userId,
+          type: commute.commute.status.name,
+        ),
       );
       return ApiResult.success(response);
     } on DioException catch (e) {

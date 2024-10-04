@@ -31,7 +31,7 @@ class _PlacesService implements PlacesService {
       r'key': apiKey,
     };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PredictionsResponseModel>(Options(
       method: 'GET',
@@ -64,7 +64,7 @@ class _PlacesService implements PlacesService {
       r'key': apiKey,
     };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PlaceDetailsResponseModel>(Options(
       method: 'GET',

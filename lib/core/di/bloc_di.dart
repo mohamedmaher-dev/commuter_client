@@ -126,4 +126,7 @@ _blocDiInit() {
   di.registerFactory<AddSchedulesBloc>(() => AddSchedulesBloc(
         di<AddScheduleRebo>(),
       ));
+  di.registerFactory<SignWithGoogleBloc>(() => SignWithGoogleBloc(
+        di<SignWithGoogleRebo>(),
+      ));
 }

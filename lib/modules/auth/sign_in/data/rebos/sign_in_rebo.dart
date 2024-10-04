@@ -10,8 +10,6 @@ import 'package:commuter_client/modules/auth/sign_in/data/models/sign_in_respons
 import 'package:commuter_client/modules/notifications/data/models/send_fcm_token_model.dart';
 import 'package:commuter_client/modules/notifications/service/notifi_api_service.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-
 import '../../../../../core/local_storage/local_storage_service.dart';
 import '../../../otp_forgot_password/data/models/forgot_pass_request_model.dart';
 import '../../../otp_forgot_password/data/models/forgot_pass_response_model.dart';
@@ -30,14 +28,12 @@ class SignInRebo {
     try {
       final response = await _apiService.signIn(signInRequestModel);
       DioFactory.setToken(response.token);
-      if (!kDebugMode) {
-        await _notifiApiService.sendFcmToken(
-          response.userData.id,
-          SendFcmTokenRequestModel(
-            fcmToken: await _fcmManger.getToken(),
-          ),
-        );
-      }
+      await _notifiApiService.sendFcmToken(
+        response.userData.id,
+        SendFcmTokenRequestModel(
+          fcmToken: await _fcmManger.getToken(),
+        ),
+      );
       return ApiResult.success(response);
     } on DioException catch (e) {
       return ApiResult.failure(ApiErrorModel.fromDioException(dioException: e));

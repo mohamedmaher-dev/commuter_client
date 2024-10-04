@@ -10,4 +10,5 @@ Map<String, dynamic> _$JoinCommuteRequestModelToJson(
         JoinCommuteRequestModel instance) =>
     <String, dynamic>{
       'userId': instance.userId,
+      'type': instance.type,
     };

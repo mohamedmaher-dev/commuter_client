@@ -5,6 +5,8 @@ part 'env.g.dart';
 @Envied(useConstantCase: true)
 abstract class Env {
   @EnviedField()
+  static const String signWithGoogleBaseUrl = _Env.signWithGoogleBaseUrl;
+  @EnviedField()
   static const String apiBaseUrl = _Env.apiBaseUrl;
   @EnviedField()
   static const String socketIoBaseUrl = _Env.socketIoBaseUrl;

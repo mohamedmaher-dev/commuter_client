@@ -110,4 +110,14 @@ _rebosDIInit() {
       di<LocalStorageService>(),
     ),
   );
+  di.registerLazySingleton(
+    () => SignWithGoogleRebo(
+      localStorageService: di<LocalStorageService>(),
+      fcmManger: di<NotifiService>(),
+      notifiApiService: di<NotifiApiService>(),
+      authService: di<FirebaseAuth>(),
+      googleSignIn: di<GoogleSignIn>(),
+      signWithGoogleService: di<SignWithGoogleService>(),
+    ),
+  );
 }

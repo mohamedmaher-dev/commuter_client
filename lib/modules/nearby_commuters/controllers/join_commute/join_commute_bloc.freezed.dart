@@ -16,21 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$JoinCommuteEvent {
-  String get driverId => throw _privateConstructorUsedError;
-  String get commuteId => throw _privateConstructorUsedError;
+  NearbyCommutersModel get commute => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String driverId, String commuteId) joinCommute,
+    required TResult Function(NearbyCommutersModel commute) joinCommute,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String driverId, String commuteId)? joinCommute,
+    TResult? Function(NearbyCommutersModel commute)? joinCommute,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String driverId, String commuteId)? joinCommute,
+    TResult Function(NearbyCommutersModel commute)? joinCommute,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +61,7 @@ abstract class $JoinCommuteEventCopyWith<$Res> {
           JoinCommuteEvent value, $Res Function(JoinCommuteEvent) then) =
       _$JoinCommuteEventCopyWithImpl<$Res, JoinCommuteEvent>;
   @useResult
-  $Res call({String driverId, String commuteId});
+  $Res call({NearbyCommutersModel commute});
 }
 
 /// @nodoc
@@ -78,18 +77,13 @@ class _$JoinCommuteEventCopyWithImpl<$Res, $Val extends JoinCommuteEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? driverId = null,
-    Object? commuteId = null,
+    Object? commute = freezed,
   }) {
     return _then(_value.copyWith(
-      driverId: null == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
-              as String,
-      commuteId: null == commuteId
-          ? _value.commuteId
-          : commuteId // ignore: cast_nullable_to_non_nullable
-              as String,
+      commute: freezed == commute
+          ? _value.commute
+          : commute // ignore: cast_nullable_to_non_nullable
+              as NearbyCommutersModel,
     ) as $Val);
   }
 }
@@ -102,7 +96,7 @@ abstract class _$$JoinCommuteImplCopyWith<$Res>
       __$$JoinCommuteImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String driverId, String commuteId});
+  $Res call({NearbyCommutersModel commute});
 }
 
 /// @nodoc
@@ -116,18 +110,13 @@ class __$$JoinCommuteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? driverId = null,
-    Object? commuteId = null,
+    Object? commute = freezed,
   }) {
     return _then(_$JoinCommuteImpl(
-      driverId: null == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
-              as String,
-      commuteId: null == commuteId
-          ? _value.commuteId
-          : commuteId // ignore: cast_nullable_to_non_nullable
-              as String,
+      commute: freezed == commute
+          ? _value.commute
+          : commute // ignore: cast_nullable_to_non_nullable
+              as NearbyCommutersModel,
     ));
   }
 }
@@ -135,16 +124,14 @@ class __$$JoinCommuteImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$JoinCommuteImpl implements _JoinCommute {
-  const _$JoinCommuteImpl({required this.driverId, required this.commuteId});
+  const _$JoinCommuteImpl({required this.commute});
 
   @override
-  final String driverId;
-  @override
-  final String commuteId;
+  final NearbyCommutersModel commute;
 
   @override
   String toString() {
-    return 'JoinCommuteEvent.joinCommute(driverId: $driverId, commuteId: $commuteId)';
+    return 'JoinCommuteEvent.joinCommute(commute: $commute)';
   }
 
   @override
@@ -152,14 +139,12 @@ class _$JoinCommuteImpl implements _JoinCommute {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinCommuteImpl &&
-            (identical(other.driverId, driverId) ||
-                other.driverId == driverId) &&
-            (identical(other.commuteId, commuteId) ||
-                other.commuteId == commuteId));
+            const DeepCollectionEquality().equals(other.commute, commute));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, driverId, commuteId);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(commute));
 
   @JsonKey(ignore: true)
   @override
@@ -170,27 +155,27 @@ class _$JoinCommuteImpl implements _JoinCommute {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String driverId, String commuteId) joinCommute,
+    required TResult Function(NearbyCommutersModel commute) joinCommute,
   }) {
-    return joinCommute(driverId, commuteId);
+    return joinCommute(commute);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String driverId, String commuteId)? joinCommute,
+    TResult? Function(NearbyCommutersModel commute)? joinCommute,
   }) {
-    return joinCommute?.call(driverId, commuteId);
+    return joinCommute?.call(commute);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String driverId, String commuteId)? joinCommute,
+    TResult Function(NearbyCommutersModel commute)? joinCommute,
     required TResult orElse(),
   }) {
     if (joinCommute != null) {
-      return joinCommute(driverId, commuteId);
+      return joinCommute(commute);
     }
     return orElse();
   }
@@ -225,14 +210,11 @@ class _$JoinCommuteImpl implements _JoinCommute {
 }
 
 abstract class _JoinCommute implements JoinCommuteEvent {
-  const factory _JoinCommute(
-      {required final String driverId,
-      required final String commuteId}) = _$JoinCommuteImpl;
+  const factory _JoinCommute({required final NearbyCommutersModel commute}) =
+      _$JoinCommuteImpl;
 
   @override
-  String get driverId;
-  @override
-  String get commuteId;
+  NearbyCommutersModel get commute;
   @override
   @JsonKey(ignore: true)
   _$$JoinCommuteImplCopyWith<_$JoinCommuteImpl> get copyWith =>

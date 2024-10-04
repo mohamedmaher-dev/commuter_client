@@ -6,4 +6,5 @@ class SignInEvent with _$SignInEvent {
   const factory SignInEvent.changePassIsHide() = ChangePassIsHide;
   const factory SignInEvent.forgotPass() = ForgotPasss;
   const factory SignInEvent.signIn() = SignIn;
+  const factory SignInEvent.signInWithGoogle() = SignInWithGoogle;
 }

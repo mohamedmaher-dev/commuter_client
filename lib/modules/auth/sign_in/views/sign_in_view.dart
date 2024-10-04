@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/themes/app_theme_controller.dart';
-import '../../widgets/google_btn.dart';
+import '../../sign_in_with_google/views/sign_with_google_view.dart';
 import '../controllers/sign_in_bloc/sign_in_bloc.dart';
 part 'widgets/intro_msg.dart';
 part 'widgets/sign_in_actions.dart';

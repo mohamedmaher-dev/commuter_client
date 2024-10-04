@@ -28,6 +28,8 @@ _utilsDiInit() async {
     ),
   );
   di.registerLazySingleton<Dio>(() => DioFactory.getDio());
+  di.registerLazySingleton<GoogleSignIn>(() => GoogleSignFactory.instance());
+
   di.registerLazySingleton<ApiService>(
     () => ApiService(di<Dio>(), baseUrl: Env.apiBaseUrl),
   );
@@ -71,4 +73,11 @@ _utilsDiInit() async {
   di.registerLazySingleton<CheckNotifiPermission>(() => CheckNotifiPermission(
         di<FirebaseMessaging>(),
       ));
+  di.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
+  di.registerLazySingleton<SignWithGoogleService>(
+    () => SignWithGoogleService(
+      di<Dio>(),
+      baseUrl: Env.signWithGoogleBaseUrl,
+    ),
+  );
 }

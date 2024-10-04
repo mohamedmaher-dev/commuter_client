@@ -291,12 +291,7 @@ class _ActionsBodyView extends StatelessWidget {
         Expanded(
           child: TextButton.icon(
             onPressed: () {
-              bloc.add(
-                JoinCommuteEvent.joinCommute(
-                  driverId: model.driver.id,
-                  commuteId: model.commute.id,
-                ),
-              );
+              bloc.add(JoinCommuteEvent.joinCommute(commute: model));
             },
             label: Text(
               model.commute.status == CommuteStatus.online
