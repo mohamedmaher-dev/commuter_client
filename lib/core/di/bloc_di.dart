@@ -7,21 +7,22 @@ _blocDiInit() {
       di<AppLocalizationController>(),
     ),
   );
+
   di.registerFactory<SignInBloc>(
     () => SignInBloc(
-      di<SignInRebo>(),
+      di<SignInWithEmailRebo>(),
     ),
   );
   di.registerFactory<OtpForgotPasswordBloc>(
     () => OtpForgotPasswordBloc(
-      di<OtpForgotPasswordRebo>(),
+      di<AuthRebo>(),
       di<MainBloc>().signInBloc,
     ),
   );
   di.registerFactory<ChangePasswordBloc>(
     () => ChangePasswordBloc(
       di<MainBloc>().signInBloc,
-      di<ChangePassRebo>(),
+      di<AuthRebo>(),
     ),
   );
   di.registerFactory<SignUpBloc>(
@@ -127,6 +128,6 @@ _blocDiInit() {
         di<AddScheduleRebo>(),
       ));
   di.registerFactory<SignWithGoogleBloc>(() => SignWithGoogleBloc(
-        di<SignWithGoogleRebo>(),
+        di<SignInWithGoogleRebo>(),
       ));
 }

@@ -35,12 +35,12 @@ class _WhereToNearbyCommutersBottomSheetBody extends StatelessWidget {
                       ? ColorManger.orange
                       : ColorManger.red,
             ),
-            child: ProfileImage(
-              fontSize: 10.sp,
-              value: model.driver.name,
-              type: ImageType.avatar,
-              size: 10.r,
-              color: ColorManger.random,
+            child: ProfileAvatar(
+              name: model.driver.name,
+              imageUrl: model.driver.image,
+              size: 25.w,
+              radius: 100.r,
+              color: ColorManger.primaryContainer,
             ),
           ),
           title: Row(

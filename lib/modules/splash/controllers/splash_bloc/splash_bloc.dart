@@ -34,27 +34,18 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     UserSecretDataModel userSecretDataModel,
   ) async {
     emit(const SplashState.loading());
-    final loginResult = await _splashRebo.signIn();
+    final loginResult = await _splashRebo.getMe();
     await loginResult.when(
       success: (data) async {
-        final saveUserSecretDataResult = await _splashRebo.saveUserAuthInfo(
-          email: data.userData.email,
-          password: userSecretDataModel.password,
-          id: data.userData.id,
-          token: data.token,
-        );
-        await saveUserSecretDataResult.when(
-          success: (result) async {
-            emit(const SplashState.success());
-          },
-          failure: (error) {
-            emit(SplashState.failure(error: error, code: 0));
-          },
-        );
+        emit(const SplashState.success());
       },
       failure: (apiErrorModel) {
-        emit(SplashState.failure(
-            error: apiErrorModel.msg, code: apiErrorModel.code));
+        emit(
+          SplashState.failure(
+            error: apiErrorModel.msg,
+            code: apiErrorModel.code,
+          ),
+        );
       },
     );
   }

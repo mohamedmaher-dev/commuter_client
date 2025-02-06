@@ -39,31 +39,23 @@ class _AccountBody extends StatelessWidget {
                 builder: (context, state) {
                   return state.when(
                     initial: () {
-                      if (userData.userData.image == null) {
-                        return ProfileImage(
-                          fontSize: 15.sp,
-                          value: userData.userData.name,
-                          type: ImageType.avatar,
-                          size: MediaQuery.of(context).size.width / 6,
-                          color: ColorManger.primaryContainer,
-                        );
-                      } else {
-                        return ProfileImage(
-                          fontSize: 15.sp,
-                          value: userData.userData.image!,
-                          type: ImageType.networkImage,
-                          size: MediaQuery.of(context).size.width / 3,
-                          color: ColorManger.primaryContainer,
-                        );
-                      }
+                      return ProfileAvatar(
+                        name: userData.userData.name,
+                        imageUrl: userData.userData.image,
+                        size: MediaQuery.of(context).size.width / 3,
+                        radius: 100.r,
+                        color: ColorManger.primaryContainer,
+                      );
                     },
                     imageSelected: (image) {
-                      return ProfileImage(
-                        fontSize: 15.sp,
-                        value: image.path,
-                        type: ImageType.localImage,
-                        size: MediaQuery.of(context).size.width / 3,
-                        color: ColorManger.primaryContainer,
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(100.r),
+                        child: Image.file(
+                          File(image.path),
+                          width: MediaQuery.of(context).size.width / 3,
+                          height: MediaQuery.of(context).size.width / 3,
+                          fit: BoxFit.cover,
+                        ),
                       );
                     },
                   );

@@ -14,25 +14,14 @@ class _RoomItemView extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(5.w),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(100.r),
-                child: Hero(
-                  tag: room.id,
-                  child: room.image == null
-                      ? ProfileImage(
-                          fontSize: 15.sp,
-                          size: 35.w,
-                          type: ImageType.avatar,
-                          value: room.name,
-                          color: color,
-                        )
-                      : ProfileImage(
-                          fontSize: 15.sp,
-                          size: 35.w,
-                          type: ImageType.networkImage,
-                          value: room.image!,
-                          color: color,
-                        ),
+              child: Hero(
+                tag: room.id,
+                child: ProfileAvatar(
+                  size: 35.w,
+                  radius: 100.r,
+                  color: ColorManger.myBlue,
+                  name: room.name,
+                  imageUrl: room.image,
                 ),
               ),
             ),

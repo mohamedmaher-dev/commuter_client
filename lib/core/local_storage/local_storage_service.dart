@@ -48,19 +48,9 @@ class LocalStorageService {
   }
 
   Future<UserSecretDataModel> saveUserSecretData({
-    required String userEmail,
-    required String userPassword,
     required String userId,
     required String userToken,
   }) async {
-    await _flutterSecureStorage.write(
-      key: LocalStorageConsts.userEmailKey,
-      value: userEmail,
-    );
-    await _flutterSecureStorage.write(
-      key: LocalStorageConsts.userPasswordKey,
-      value: userPassword,
-    );
     await _flutterSecureStorage.write(
       key: LocalStorageConsts.userIdKey,
       value: userId,
@@ -72,8 +62,6 @@ class LocalStorageService {
     return UserSecretDataModel(
       userId: userId,
       userToken: userToken,
-      email: userEmail,
-      password: userPassword,
     );
   }
 

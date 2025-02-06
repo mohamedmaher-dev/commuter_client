@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:commuter_client/core/di/di.dart';
 import 'package:commuter_client/core/localization/generated/l10n.dart';

@@ -54,6 +54,7 @@ dependencies:
   bottom_bar: ^2.0.3
   smooth_page_indicator: ^1.2.0+3
   blur: ^3.1.0
+  flutter_initicon: ^2.0.0
 
   # ===== Logic =====
   permission_handler: ^11.3.1
@@ -138,7 +139,6 @@ flutter:
     - assets/icon/
     - assets/svgs/
     - assets/fonts/
-    - assets/lottie/
     - assets/mapStyles/
     - shorebird.yaml
 

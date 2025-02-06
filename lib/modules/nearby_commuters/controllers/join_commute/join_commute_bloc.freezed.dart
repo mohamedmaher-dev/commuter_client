@@ -77,10 +77,10 @@ class _$JoinCommuteEventCopyWithImpl<$Res, $Val extends JoinCommuteEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? commute = freezed,
+    Object? commute = null,
   }) {
     return _then(_value.copyWith(
-      commute: freezed == commute
+      commute: null == commute
           ? _value.commute
           : commute // ignore: cast_nullable_to_non_nullable
               as NearbyCommutersModel,
@@ -110,10 +110,10 @@ class __$$JoinCommuteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? commute = freezed,
+    Object? commute = null,
   }) {
     return _then(_$JoinCommuteImpl(
-      commute: freezed == commute
+      commute: null == commute
           ? _value.commute
           : commute // ignore: cast_nullable_to_non_nullable
               as NearbyCommutersModel,
@@ -139,12 +139,11 @@ class _$JoinCommuteImpl implements _JoinCommute {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinCommuteImpl &&
-            const DeepCollectionEquality().equals(other.commute, commute));
+            (identical(other.commute, commute) || other.commute == commute));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(commute));
+  int get hashCode => Object.hash(runtimeType, commute);
 
   @JsonKey(ignore: true)
   @override

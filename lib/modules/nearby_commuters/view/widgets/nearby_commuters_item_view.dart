@@ -18,12 +18,12 @@ class NearbyCommutersItemView extends StatelessWidget {
                     ? ColorManger.orange
                     : ColorManger.red,
           ),
-          child: ProfileImage(
-            fontSize: 10.sp,
-            value: model.driver.name,
-            type: ImageType.avatar,
-            size: 10.r,
-            color: ColorManger.random,
+          child: ProfileAvatar(
+            size: 35.w,
+            radius: 100.r,
+            color: ColorManger.myBlue,
+            name: model.driver.name,
+            imageUrl: model.driver.image,
           ),
         ),
         title: Text(

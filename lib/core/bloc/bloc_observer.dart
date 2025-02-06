@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:commuter_client/core/bloc/main_bloc.dart';
-import 'package:commuter_client/modules/auth/sign_in/controllers/sign_in_bloc/sign_in_bloc.dart';
+import 'package:commuter_client/modules/auth/controllers/sign_in_bloc/sign_in_bloc.dart';
 import 'package:logger/logger.dart';
 
 class MyBlocObserver extends BlocObserver {

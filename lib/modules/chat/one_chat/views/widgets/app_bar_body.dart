@@ -10,25 +10,13 @@ class _AppBarBody extends StatelessWidget implements PreferredSize {
     return AppBar(
       title: ListTile(
         onTap: () {},
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(100.r),
-          child: Hero(
-            tag: args.friendId,
-            child: args.friendImageUrl == null
-                ? ProfileImage(
-                    fontSize: 20.sp,
-                    size: 15.w,
-                    type: ImageType.avatar,
-                    value: args.friendName,
-                    color: args.color,
-                  )
-                : ProfileImage(
-                    fontSize: 15.sp,
-                    size: 30.w,
-                    type: ImageType.networkImage,
-                    value: args.friendImageUrl!,
-                    color: args.color,
-                  ),
+        leading: Hero(
+          tag: args.friendId,
+          child: ProfileAvatar(
+            size: 25.w,
+            radius: 100.r,
+            name: args.friendName,
+            imageUrl: args.friendImageUrl,
           ),
         ),
         title: Text(

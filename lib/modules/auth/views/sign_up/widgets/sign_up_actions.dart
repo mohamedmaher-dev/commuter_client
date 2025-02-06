@@ -1,0 +1,34 @@
+part of '../sign_up_view.dart';
+
+class _SignUpActions extends StatelessWidget {
+  const _SignUpActions();
+
+  @override
+  Widget build(BuildContext context) {
+    Language language = Language.of(context);
+    final SignUpBloc signUpBloc = BlocProvider.of<SignUpBloc>(context);
+    return Column(
+      children: [
+        FilledButton(
+          onPressed: () {
+            signUpBloc.add(const SignUpEvent.signUp());
+          },
+          child: Text(
+            language.create_account,
+          ),
+        ),
+        SizedBox(height: 10.h),
+        const SignWithGoogleView(),
+        SizedBox(height: 10.h),
+        TextButton(
+          onPressed: () {
+            AppRouter.pushReplacement(context: context, page: Pages.signIn);
+          },
+          child: Text(
+            language.already_have_an_account,
+          ),
+        )
+      ],
+    );
+  }
+}

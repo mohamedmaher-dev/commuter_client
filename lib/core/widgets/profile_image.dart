@@ -1,64 +1,58 @@
 import 'dart:io';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:commuter_client/core/widgets/loading_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_initicon/flutter_initicon.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../themes/app_theme_controller.dart';
 
-class ProfileImage extends StatelessWidget {
-  const ProfileImage({
+class ProfileAvatar extends StatelessWidget {
+  const ProfileAvatar({
     super.key,
-    required this.value,
-    required this.type,
-    required this.size,
-    required this.color,
-    required this.fontSize,
+    required this.name,
+    this.radius = 100,
+    this.size = 45,
+    this.color = ColorManger.myBlue,
+    this.imagePath,
+    this.imageUrl,
   });
-  final ImageType type;
-  final String value;
+  final String name;
   final double size;
+  final num radius;
   final Color color;
-  final double fontSize;
+  final String? imagePath;
+  final String? imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return switch (type) {
-      ImageType.networkImage => ClipRRect(
-          borderRadius: BorderRadius.circular(100.r),
-          child: CachedNetworkImage(
-            fit: BoxFit.cover,
-            height: size,
-            width: size,
-            imageUrl: value,
-            placeholder: (context, imageProvider) => const LoadingView(),
-          ),
+    if (imagePath != null) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(radius.r),
+        child: Image.file(
+          File(imagePath!),
+          fit: BoxFit.cover,
+          width: size,
+          height: size,
         ),
-      ImageType.avatar => CircleAvatar(
-          backgroundColor: color,
-          maxRadius: size,
-          minRadius: size,
-          child: Text(
-            value.characters.first.toUpperCase(),
-            style: TextStyle(fontSize: fontSize, color: ColorManger.white),
-          ),
+      );
+    } else if (imageUrl != null) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(radius.r),
+        child: CachedNetworkImage(
+          fit: BoxFit.cover,
+          height: size,
+          width: size,
+          imageUrl: imageUrl!,
+          placeholder: (context, imageProvider) => const LoadingView(),
         ),
-      ImageType.localImage => ClipRRect(
-          borderRadius: BorderRadius.circular(100.r),
-          child: Image.file(
-            File(value),
-            fit: BoxFit.cover,
-            width: size,
-            height: size,
-          ),
-        ),
-    };
+      );
+    } else {
+      return Initicon(
+        size: size,
+        backgroundColor: color,
+        borderRadius: BorderRadius.circular(radius.r),
+        text: name,
+      );
+    }
   }
-}
-
-enum ImageType {
-  networkImage,
-  avatar,
-  localImage,
 }

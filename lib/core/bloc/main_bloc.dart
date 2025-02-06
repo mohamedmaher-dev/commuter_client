@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:commuter_client/core/localization/app_localization_controller.dart';
 import 'package:commuter_client/core/themes/app_theme_controller.dart';
-import 'package:commuter_client/modules/auth/sign_in/controllers/sign_in_bloc/sign_in_bloc.dart';
+import 'package:commuter_client/modules/auth/controllers/sign_in_bloc/sign_in_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

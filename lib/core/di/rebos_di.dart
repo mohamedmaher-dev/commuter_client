@@ -2,31 +2,14 @@ part of 'di.dart';
 
 _rebosDIInit() {
   di.registerLazySingleton(
-    () => SignInRebo(
-      di<ApiService>(),
-      di<LocalStorageService>(),
-      di<NotifiApiService>(),
-      di<NotifiService>(),
-    ),
-  );
-  di.registerLazySingleton(
     () => SignUpRebo(
-      di<ApiService>(),
+      di<ApiAuthService>(),
       di<LocalStorageService>(),
       di<NotifiApiService>(),
       di<NotifiService>(),
     ),
   );
-  di.registerLazySingleton(
-    () => OtpForgotPasswordRebo(
-      di<ApiService>(),
-    ),
-  );
-  di.registerLazySingleton(
-    () => ChangePassRebo(
-      di<ApiService>(),
-    ),
-  );
+
   di.registerLazySingleton(
     () => WhereToRebo(
       placesService: di<PlacesService>(),
@@ -111,13 +94,25 @@ _rebosDIInit() {
     ),
   );
   di.registerLazySingleton(
-    () => SignWithGoogleRebo(
+    () => AuthRebo(
+      apiAuthService: di<ApiAuthService>(),
+    ),
+  );
+  di.registerLazySingleton<SignInWithGoogleRebo>(
+    () => SignInWithGoogleRebo(
       localStorageService: di<LocalStorageService>(),
-      fcmManger: di<NotifiService>(),
+      apiAuthService: di<ApiAuthService>(),
       notifiApiService: di<NotifiApiService>(),
-      authService: di<FirebaseAuth>(),
-      googleSignIn: di<GoogleSignIn>(),
       signWithGoogleService: di<SignWithGoogleService>(),
+      googleSignIn: di<GoogleSignIn>(),
+      firebaseAuthService: di<FirebaseAuth>(),
+    ),
+  );
+  di.registerFactory<SignInWithEmailRebo>(
+    () => SignInWithEmailRebo(
+      localStorageService: di<LocalStorageService>(),
+      apiAuthService: di<ApiAuthService>(),
+      notifiApiService: di<NotifiApiService>(),
     ),
   );
 }

@@ -1,5 +1,5 @@
-import 'package:commuter_client/modules/auth/change_password/views/change_password_view.dart';
-import 'package:commuter_client/modules/auth/otp_forgot_password/views/otp_forgot_password_view.dart';
+import 'package:commuter_client/modules/auth/views/change_password/change_password_view.dart';
+import 'package:commuter_client/modules/auth/views/otp_forgot_password/otp_forgot_password_view.dart';
 import 'package:commuter_client/modules/chat/chat_rooms/views/chat_rooms.dart';
 import 'package:commuter_client/modules/home/views/home_view.dart';
 import 'package:commuter_client/modules/my_commutes/views/my_commutes_view.dart';
@@ -14,8 +14,8 @@ import 'package:commuter_client/modules/transactions/wallet/views/wallet_view.da
 import 'package:commuter_client/modules/where_to/views/whare_to_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../modules/auth/sign_in/views/sign_in_view.dart';
-import '../../modules/auth/sign_up/views/sign_up_view.dart';
+import '../../modules/auth/views/sign_in/sign_in_view.dart';
+import '../../modules/auth/views/sign_up/sign_up_view.dart';
 import '../../modules/check_permission/views/check_permission_view.dart';
 import '../../modules/profiles/commuter_profile/views/commuter_profile_view.dart';
 import '../../modules/support_help/views/support_help_view.dart';
