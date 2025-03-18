@@ -64,7 +64,7 @@
     "commuter_name": "اسم الناقل",
     "my_commutes": "تنقلاتي",
     "commutes": "التنقلات",
-    "schedules_trips": "الرحلات المجدولة",
+    "scheduled_trips": "الرحلات المجدولة",
     "no_commutes_found": "لم يتم العثور على تنقلات، يرجى إضافة واحدة",
     "filter_by": "تصفية حسب",
     "choose_your_preference": "اختر تفضيلاتك",

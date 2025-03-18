@@ -700,11 +700,11 @@ class Language {
     );
   }
 
-  /// `Schedules trips`
-  String get schedules_trips {
+  /// `Scheduled trips`
+  String get scheduled_trips {
     return Intl.message(
-      'Schedules trips',
-      name: 'schedules_trips',
+      'Scheduled trips',
+      name: 'scheduled_trips',
       desc: '',
       args: [],
     );

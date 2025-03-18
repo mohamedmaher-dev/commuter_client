@@ -64,7 +64,7 @@
     "commuter_name" : "Commuter name",
     "my_commutes" : "My commutes",
     "commutes" : "Commutes",
-    "schedules_trips" : "Schedules trips",
+    "scheduled_trips" : "Scheduled trips",
     "no_commutes_found"  : "No commutes found, Please add one",
     "filter_by" : "Filter by",
     "choose_your_preference" : "Choose your preference",

@@ -178,8 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "readed": MessageLookupByLibrary.simpleMessage("Readed"),
         "resend_otp_code":
             MessageLookupByLibrary.simpleMessage("Resend OTP code"),
-        "schedules_trips":
-            MessageLookupByLibrary.simpleMessage("Schedules trips"),
+        "scheduled_trips":
+            MessageLookupByLibrary.simpleMessage("Scheduled trips"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "search_for_place":
             MessageLookupByLibrary.simpleMessage("Search for place"),

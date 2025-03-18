@@ -90,7 +90,7 @@ class _MyCommutesViewBody extends StatelessWidget {
                   children: {
                     MyCommutesTab.myCommutes: Text(language.commutes),
                     MyCommutesTab.scheduledTrips:
-                        Text(language.schedules_trips),
+                        Text(language.scheduled_trips),
                   },
                   onValueChanged: (value) {
                     BlocProvider.of<MyCommmutesTabCubit>(context)

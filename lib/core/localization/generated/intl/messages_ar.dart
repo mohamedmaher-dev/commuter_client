@@ -170,7 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "readed": MessageLookupByLibrary.simpleMessage("تمت القراءة"),
         "resend_otp_code":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال رمز OTP"),
-        "schedules_trips":
+        "scheduled_trips":
             MessageLookupByLibrary.simpleMessage("الرحلات المجدولة"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "search_for_place":
