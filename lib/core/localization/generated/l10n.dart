@@ -18,17 +18,20 @@ class Language {
   static Language? _current;
 
   static Language get current {
-    assert(_current != null,
-        'No instance of Language was loaded. Try to initialize the Language delegate before accessing Language.current.');
+    assert(
+      _current != null,
+      'No instance of Language was loaded. Try to initialize the Language delegate before accessing Language.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<Language> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class Language {
 
   static Language of(BuildContext context) {
     final instance = Language.maybeOf(context);
-    assert(instance != null,
-        'No instance of Language present in the widget tree. Did you add Language.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of Language present in the widget tree. Did you add Language.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -82,12 +87,7 @@ class Language {
 
   /// `Sign In`
   String get Sign_In {
-    return Intl.message(
-      'Sign In',
-      name: 'Sign_In',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Sign In', name: 'Sign_In', desc: '', args: []);
   }
 
   /// `Create Account`
@@ -102,22 +102,12 @@ class Language {
 
   /// `Mail`
   String get Mail {
-    return Intl.message(
-      'Mail',
-      name: 'Mail',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Mail', name: 'Mail', desc: '', args: []);
   }
 
   /// `Password`
   String get Password {
-    return Intl.message(
-      'Password',
-      name: 'Password',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Password', name: 'Password', desc: '', args: []);
   }
 
   /// `Confirm Password`
@@ -142,32 +132,17 @@ class Language {
 
   /// `Name`
   String get Name {
-    return Intl.message(
-      'Name',
-      name: 'Name',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Name', name: 'Name', desc: '', args: []);
   }
 
   /// `Phone`
   String get Phone {
-    return Intl.message(
-      'Phone',
-      name: 'Phone',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Phone', name: 'Phone', desc: '', args: []);
   }
 
   /// `Search`
   String get Search {
-    return Intl.message(
-      'Search',
-      name: 'Search',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Search', name: 'Search', desc: '', args: []);
   }
 
   /// `Phone Verification`
@@ -212,12 +187,7 @@ class Language {
 
   /// `English`
   String get Language_Name {
-    return Intl.message(
-      'English',
-      name: 'Language_Name',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('English', name: 'Language_Name', desc: '', args: []);
   }
 
   /// `Already Have An Account`
@@ -232,12 +202,7 @@ class Language {
 
   /// `Commuter`
   String get App_Name {
-    return Intl.message(
-      'Commuter',
-      name: 'App_Name',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Commuter', name: 'App_Name', desc: '', args: []);
   }
 
   /// `Sign With Google`
@@ -262,12 +227,7 @@ class Language {
 
   /// `Confirm`
   String get Confirm {
-    return Intl.message(
-      'Confirm',
-      name: 'Confirm',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Confirm', name: 'Confirm', desc: '', args: []);
   }
 
   /// `You Cannot Leave The Email Empty`
@@ -312,22 +272,12 @@ class Language {
 
   /// `Warning`
   String get Warning {
-    return Intl.message(
-      'Warning',
-      name: 'Warning',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Warning', name: 'Warning', desc: '', args: []);
   }
 
   /// `Ok`
   String get Ok {
-    return Intl.message(
-      'Ok',
-      name: 'Ok',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Ok', name: 'Ok', desc: '', args: []);
   }
 
   /// `This Account Not Active`
@@ -342,22 +292,12 @@ class Language {
 
   /// `Failure`
   String get Failure {
-    return Intl.message(
-      'Failure',
-      name: 'Failure',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Failure', name: 'Failure', desc: '', args: []);
   }
 
   /// `Timeout`
   String get Timeout {
-    return Intl.message(
-      'Timeout',
-      name: 'Timeout',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Timeout', name: 'Timeout', desc: '', args: []);
   }
 
   /// `You Cannot Verify The Code Because Timeout`
@@ -372,12 +312,7 @@ class Language {
 
   /// `Verify Code`
   String get Verify_Code {
-    return Intl.message(
-      'Verify Code',
-      name: 'Verify_Code',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Verify Code', name: 'Verify_Code', desc: '', args: []);
   }
 
   /// `Change Password`
